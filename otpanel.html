@@ -1,0 +1,73 @@
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/mdui.css"/>
+  <script src="./js/mdui.js"></script>
+  <link rel="stylesheet" href="./css/docs.css"/>
+<div class="mdui-container doc-container doc-no-cover">
+<div class="null">
+<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+</div>
+<script>
+if ( $(".null").length > 0 ) { 
+   $('.null').css('display', 'none'); // 存在
+}
+</script>
+  <h1 class="doc-title mdui-text-color-theme">运行在其他面板</h1><span>这里以MCSM为例</span>
+	<div class="doc-chapter">
+		<div class="mdui-typo">
+			<h2 class="doc-title mdui-text-color-theme">运行在Mcserver Manager</h2>
+			<h3>前提是你安装了nodejs</h3>
+			<p>第一步：打开你的面板->服务端管理->直接创建新的服务器 如何配置看图片</p>
+			<img src='https://i.natfrp.org/d9d3455d527e62dac457a8b08c6b0d48.png' alt='image'>
+			<p>第二步：先把我们要启动的Mcserver面板复制到刚刚创建的服务端目录<code>./server/server_core/你的服务器名字</code>里</p>
+			<img src='https://i.natfrp.org/7c07f13562c8834cab6ae99f037993f1.jpg' alt='image'>
+			<p>第三步：点击 <span style="color:#0075D5">创建服务器</span></p>
+			<img src='https://i.natfrp.org/353905a4069dc7ccf3bed2eef434dada.jpg' alt='image'>
+			<p>第四步：点击旁边的 <span style="color: #005EDD">参数</span> 输入自定义命令<code>node app.js</code></p>
+			<img src='https://i.natfrp.org/f9b7b8fde5c6a15071a94efe0e69808f.jpg' alt='image'>
+			<img src='https://i.natfrp.org/79944d1a5dbca0e4edee61e4d6ee54b1.jpg' alt='image'>
+			<p>最后一步：进入终端输入点击<kbt>开启服务器</kbt>启动你的面板</p>
+			<img src='https://i.natfrp.org/cab521f64624fd2232f9d96e4e3c8254.jpg' alt='image'>
+			<p>注意了：控制台日志编码一定要<code>UTf 8</code>的，不然会乱码。关闭面板必须要点击<kbt>强制结束进程</kbt>才会关闭</p>
+		</div>
+ <div class="mdui-typo">
+	<h2>原理：把面板文件上传到目录，然后使用自定义命令<code>node app.js</code>启动即可</h2><span>可适用于MU，翼龙等面板。<span style="color:red">web面板除外</span></span>
+	</div>
+   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+	<br>
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">关于此文档</h4>
+	  <p>如果你觉得此文档有什么不完善的地方或者说你有什么更好的建议，可以发送邮箱至<a href="mailto:lazy_creeper@qq.com"> lazy_creeper@qq.com</a>。</p>
+	  <p><label>文档作者：<a href="http://lazy233.top">Lazy</a></label></p>
+      <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="http://lazy233.top/" target="_blank">Lazy's Home</a>
+		   | <a href="https://mcllxz.cc/" target="_blank">LL Town Server</a> | <a href="http://mcsm.mcllxz.cc/" target="_blank">MCSM-Help镜像(由LL小镇提供)</a></label></p>
+		<label>© 2019 Lazy All Rights Reserved.</label>
+		<p>该页面最后编辑于<code>2019/5/3</code><p>
+    </div>
+	</div>
+  </div>
+</div>
+<!--正文结束-->
+	
+<!--Next-->
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a data-left href="in-android.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_back</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">运行在Android设备</div>
+        </div>
+      </a>
+      
+            <a data-left href="structure.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_forward</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">目录结构</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>

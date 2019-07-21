@@ -1,0 +1,98 @@
+  <link rel="stylesheet" href="./css/mdui.css"/>
+  <script src="./js/mdui.js"></script>
+  <link rel="stylesheet" href="./css/docs.css"/>
+<div class="mdui-container doc-container doc-no-cover">
+
+<div class="null">
+<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+</div>
+<script>
+if ( $(".null").length > 0 ) { 
+   $('.null').css('display', 'none'); // 存在
+}
+</script>
+  <h1 class="doc-title mdui-text-color-theme">运行在Windows</h1>
+	<div class="doc-chapter">
+   
+	<div id="win" class="mdui-typo">
+	  <h2 class="doc-title mdui-text-color-theme"></h2>
+	  <p>第一步：下载<a href="https://mcsm.suwing.top/">Mcserver Manager</a></p>
+	  <img src='https://i.natfrp.org/d4ec05856a053b9c6e73c88712770c6e.jpg' alt='image' class="mdui-hoverable">
+	  <p>第二步：解压到一个你喜欢的地方</p>
+	 <img src='https://i.natfrp.org/a34f1910bcd1bccbfc3b184b6870c1c8.jpg' alt='image' class="mdui-hoverable">
+	  <p>第三步：双击<code>Start.bat</code>运行</p>
+	  <img src='https://i.natfrp.org/a98bb91c2af0e802b4561308d5c6296c.jpg' alt='image' class="mdui-hoverable">
+	  <p>第四步：打开浏览器输入<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>然后输入账号：<code>#master</code>密码：<code>123456</code>就可以进入面板啦！</p>
+	  <img src='https://i.natfrp.org/204c3d7aae1271a51cb49fc456c43622.jpg' alt='image' class="mdui-hoverable">
+	  <p>如果你对文字不感兴趣，你可以试试下面的视频教程</p>
+	  <iframe src="//player.bilibili.com/player.html?aid=39646347&cid=69643709&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" class="mdui-video-container">你的浏览器不支持iframe标签，请使用Chrome/FireFox等知名浏览器 </iframe>
+	  
+	  <h2 calss="doc-title mdui-text-color-theme">Windows 高级用户</h2>
+		<strong>方法一：</strong>
+	  <p>第一步：安装<code>Nodejs</code>和。（版本要大于<code>8.0</code>）</p>
+		<img src='https://i.natfrp.org/69d585f0660c5659f26f177ebf272fc5.jpg' alt='image' class="mdui-hoverable">
+		<p>第二步：下载MCSM源代码并解压: <a href="https://github.com/Suwings/MCSManager/archive/master.zip">https://github.com/Suwings/MCSManager/archive/master.zip</a></p>
+		<p>第三步：进入程序根目录，按 <kbd>Shift</kbd> + <kbd>鼠标右键</kbd>选择<code>打开命令行窗口</code></p>
+		<img src='https://i.natfrp.org/9775c633f92b7c5e0f505ef1ae199593.jpg' alt='image' class="mdui-hoverable">
+		<p>第四步：执行命令<code>npm install --production</code>进行安装</p>
+		<img src="https://i.loli.net/2019/06/28/5d1613f87aff514719.jpg" class="mdui-hoverable"/>
+		<p>第五步：执行命令<code>node app.js</code>或者<code>npm start</code>启动面板</p>
+		<img src="https://i.loli.net/2019/06/28/5d16145e11a9575411.jpg" class="mdui-hoverable"/>
+		<p>最后一步：打开浏览器输入<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>就可以进入面板啦！账号是<code>#master</code>，密码是<code>123456</code></p>
+		<br>
+		<strong>方法2：</strong>
+		<P>第一步：下载并安装<a href="https://nodejs.org">Nodejs</a>和<a href="https://git-scm.com/downloads">Git</a>工具</P>
+		<div class="mdui-row-xs-2">
+			<img src='https://i.natfrp.org/69d585f0660c5659f26f177ebf272fc5.jpg' alt='image' class="mdui-col mdui-hoverable">
+			<img src="https://i.loli.net/2019/06/28/5d160e58baf0921875.jpg" class="mdui-col mdui-hoverable" />
+		</div>
+		<p>第二步：在一个你喜欢的地方新建一个文件夹</p>
+		<img src="https://i.loli.net/2019/06/28/5d161135038b126018.png" class="mdui-hoverable"/>
+		<p>第三步：按 <kbd>Shift</kbd> + <kbd>鼠标右键</kbd>选择<code>打开命令行窗口</code></p>
+		<img src='https://i.natfrp.org/9775c633f92b7c5e0f505ef1ae199593.jpg' alt='image' class="mdui-hoverable">
+		<p>第四步：输入命令<code>git clone https://github.com/Suwings/MCSManager.git</code>克隆代码</p>
+		<img src="https://i.loli.net/2019/06/28/5d16125695ec373473.jpg"  class="mdui-hoverable"/>
+		<p>第五步：执行命令<code>npm install --production</code>进行安装</p>
+		<img src="https://i.loli.net/2019/06/28/5d1613f87aff514719.jpg" class="mdui-hoverable"/>
+		<p>第六步：执行命令<code>node app.js</code>或者<code>npm start</code>启动面板</p>
+		<img src="https://i.loli.net/2019/06/28/5d16145e11a9575411.jpg" class="mdui-hoverable"/>
+		<p>最后一步：打开浏览器输入<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>就可以进入面板啦！账号是<code>#master</code>，密码是<code>123456</code></p>
+	</div>
+		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+	<br>
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">关于此文档</h4>
+	  <p><label>文档作者：<a href="http://lazy233.top">Lazy</a></label></p>
+      <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="http://lazy233.top/" target="_blank">Lazy's Home</a>
+		   | <a href="https://mcllxz.cc/" target="_blank">LL Town Server</a> | <a href="http://mcsm.mcllxz.cc/" target="_blank">MCSM-Doc镜像(由LL小镇提供)</a></label></p>
+		<label>© 2019 Lazy All Rights Reserved.</label>
+		<p>该页面最后编辑于<code>2019/5/19</code></p>
+    </div>
+		</div>
+  </div>
+</div>
+<!--正文结束-->
+	
+<!--Next-->
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a data-left href="./index.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_back</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">文档首页</div>
+        </div>
+      </a>
+      
+            <a data-left href="./in-linux.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_forward</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">运行在Linux</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>

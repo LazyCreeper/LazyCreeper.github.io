@@ -1,0 +1,72 @@
+   <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/mdui.css"/>
+  <script src="./js/mdui.js"></script>
+  <link rel="stylesheet" href="./css/docs.css"/>
+<!--正文开始-->
+<div class="mdui-container doc-container doc-no-cover" >
+
+<div class="null">
+<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+</div>
+<script>
+if ( $(".null").length > 0 ) { 
+   $('.null').css('display', 'none'); // 存在
+}
+</script>
+
+  <h1 class="doc-title mdui-text-color-theme">运行在Linux</h1><small>（因为没有Linux机器所以我用Win子系统Ubuntu演示)</small>
+	<div class="doc-chapter">	
+	<div class="mdui-typo">
+	<p>第一步：输入<code>apt update</code>更新包</p>
+	<img>
+	<p>第二步：输入<code>apt install nodejs</code>安装<code>nodejs</code></p>
+	<img>
+		<p>第三步：输入<code>apt install git</code>安装<code>git</code>
+		<img>
+		<p>第四步：执行命令：<code>git clone https://github.com/Suwings/MCSManager.git</code>克隆源码</p>
+		<img>
+		<p>第五步：输入命令<code>cd MCSManager</code>进入程序根目录，然后执行命令<code>npm install --production</code></p>
+		<img>
+		<p>第六步：执行命令<code>node app.js</code>或者<code>npm start</code>启动面板</p>
+		<img>
+		<p>最后一步：打开浏览器输入<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>然后输入默认账号：<code>#master</code>密码：<code>123456</code>就可以进入面板啦！</p>
+   </div>
+
+   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+	<br>
+    <div class="mdui-typo">
+      <h4 class="doc-article-title">关于此文档</h4>
+	  <p><label>文档作者：<a href="http://lazy233.top">Lazy</a></label></p>
+      <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="http://lazy233.top/" target="_blank">Lazy's Home</a>
+		   | <a href="https://mcllxz.cc/" target="_blank">LL Town Server</a> | <a href="http://mcsm.mcllxz.cc/" target="_blank">MCSM-Doc镜像(由LL小镇提供)</a></label></p>
+		<label>© 2019 Lazy All Rights Reserved.</label>
+		<p>该页面最后编辑于<code>2019/7/20</code></p>
+    </div>
+		</div>
+	</div>
+  </div>
+<!--正文结束-->
+	
+<!--Next-->
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a  data-left href="./in-win.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_back</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">运行在Windows</div>
+        </div>
+      </a>
+      
+            <a data-left href="./in-macos.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_forward</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">运行在MacOS</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
