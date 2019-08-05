@@ -19,17 +19,19 @@ if ( $(".null").length > 0 ) {
     <div class="mdui-typo">
 		<p>第一步：安装 <a href="https://termux.com/">Termux</a></p>
 		<img src='https://i.natfrp.org/40287c482fcaa65dcdc945400ada512f.png' alt='image'>
-		<p>第二步：打开Termux，输入<code>apt update</code>并按回车进行升级</p>
+		<p>第二步：打开Termux，输入<code>apt update</code>并按回车更新包</p>
 		<img src='https://i.natfrp.org/4ea528871704d03aecc60009c17e6225.png' alt='image'>
 		<p>第三步：输入<code>apt install nodejs</code>安装Nodejs</p>
 		<img src='https://i.natfrp.org/bc59b15cfd12b000e0bd896b8fadece5.png' alt='image'>
-		<p>第四步：输入<code>wget https://github.com/Suwings/MCSManager/archive/master.zip</code>下载MCSM</p>
-		<img src='https://i.natfrp.org/9a99a8f57ef7902c23f2e4aeeb7b2ee5.png' alt='image'>
-		<p>第五步：输入<code>unzip master.zip</code>解压MCSM</p>
-		<img src='https://i.natfrp.org/96cd75c1c87ee0dc9394dce061c54a0c.png' alt='image'>
-		<p>第六步：输入<code>cd MCSManager-master</code>进入程序根目录</p>
+		<p>第四步：输入<code>apt install git</code>安装git</p>
+		<img src='https://i.loli.net/2019/08/05/lRkOs7Za1iQwrAH.jpg' alt='image'>
+		<p>第五步[可选]：输入命令<code>pkg install npm</code>安装npm</p>
+		<img src='https://imgs.lovpass.cn/img/2019/08/05/5d482db5a7784.jpg' alt='image'>
+		<p>第六步：输入<code>git clone https://github.com/Suwings/MCSManager.git</code>克隆源代码</p>
+		<img src="https://imgs.lovpass.cn/img/2019/08/05/5d482eac79924.png">
+		<p>第七步：输入<code>cd MCSManager</code>进入程序根目录</p>
 		<img src='https://i.natfrp.org/b82faae104485be006c1c749d3795b34.png' alt='image'>
-		<p>第七步：输入<code>npm install --production</code>安装(如果出现错误请先执行命令安装npm<code>apt install npm</code>)</p>
+		<p>第八步：输入<code>npm install --production</code>安装(如果出现错误请从第五步开始)</p>
 		<img src='https://i.natfrp.org/dc11c99b16c7954e027b0f2014be0d68.png' alt='image'>
 		<p>最后输入<code>npm start</code>或者<code>node app.js</code>启动你的面板</p>
 		<img src='https://i.natfrp.org/8856ac5c4a491c82d5b01dcf665ab268.png' alt='image'>
