@@ -3,6 +3,7 @@
   <script src="./js/mdui.js"></script>
   <link rel="stylesheet" href="./css/docs.css"/>
 <div class="mdui-container doc-container doc-no-cover">
+<!--防止pjax-->
 <div class="null">
 <h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
 <a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
@@ -37,13 +38,10 @@ if ( $(".null").length > 0 ) {
    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
 	<br>
     <div class="mdui-typo">
-      <h4 class="doc-article-title">关于此文档</h4>
-	  <p>如果你觉得此文档有什么不完善的地方或者说你有什么更好的建议，可以发送邮箱至<a href="mailto:lazy_creeper@qq.com"> lazy_creeper@qq.com</a>。</p>
-	  <p><label>文档作者：<a href="http://lazy233.top">Lazy</a></label></p>
-      <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="http://lazy233.top/" target="_blank">Lazy's Home</a>
-		   | <a href="https://mcllxz.cc/" target="_blank">LL Town Server</a> | <a href="http://mcsm.mcllxz.cc/" target="_blank">MCSM-Help镜像(由LL小镇提供)</a></label></p>
-		<label>© 2019 Lazy All Rights Reserved.</label>
-		<p>该页面最后编辑于<code>2019/5/3</code><p>
+		<div class="mdui-chip"> 
+		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2019/8/5</code></span>
+		</div>
     </div>
 	</div>
   
@@ -51,6 +49,20 @@ if ( $(".null").length > 0 ) {
 </div>
 <!--正文结束-->
 	
+	<!--右下角浮动按钮-->
+<div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
+  <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
+    <!-- 默认显示的图标 -->
+    <i class="mdui-icon material-icons">add</i>
+    
+	<!--hover-->
+    <i class="mdui-icon mdui-fab-opened material-icons">add</i>
+  </button>
+  <div class="mdui-fab-dial">
+    <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#" mdui-tooltip="{content: '回到顶部'}"><i class="mdui-icon material-icons">navigation</i></a>
+    <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" href="https://imgs.lovpass.cn/img/2019/08/04/5d46e137187ba.jpg" mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
+  </div>
+</div>
 <!--Next-->
 <div class="doc-footer-nav mdui-color-theme">
   <div class="mdui-container">

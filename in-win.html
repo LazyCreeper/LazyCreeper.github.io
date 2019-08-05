@@ -16,6 +16,7 @@ if ( $(".null").length > 0 ) {
 	<div class="doc-chapter">
    
 	<div id="win" class="mdui-typo">
+	<strong>方法一：</strong>
 	  <h2 class="doc-title mdui-text-color-theme"></h2>
 	  <p>第一步：从<a href="https://pan.baidu.com/s/1XXf7PwnTBN6o5kxWCkfUyA">百度网盘</a>下载已经整合好的<a href="https://mcsm.suwing.top/">Mcserver Manager</a></p>
 	  <img src='https://i.natfrp.com/d4ec05856a053b9c6e73c88712770c6e.jpg' alt='image' class="mdui-hoverable">
@@ -27,20 +28,19 @@ if ( $(".null").length > 0 ) {
 	  <img src='https://i.natfrp.org/204c3d7aae1271a51cb49fc456c43622.jpg' alt='image' class="mdui-hoverable">
 	  <p>如果你对文字不感兴趣，你可以试试<a href="https://www.bilibili.com/video/av39646347/">视频教程</a></p>
 
-	  <h2 calss="doc-title mdui-text-color-theme">Windows 高级用户</h2>
-		<strong>方法一：</strong>
+		<strong>方法二：</strong>
 	  <p>第一步：安装<code>Nodejs</code>（版本要大于<code>8.0</code>）</p>
 		<img src='https://i.natfrp.org/69d585f0660c5659f26f177ebf272fc5.jpg' alt='image' class="mdui-hoverable">
 		<p>第二步：下载MCSM源代码并解压到一个你喜欢的地方: <a href="https://github.com/Suwings/MCSManager/archive/master.zip">https://github.com/Suwings/MCSManager/archive/master.zip</a></p>
-		<p>第三步：进入程序根目录，按 <kbd>Shift</kbd> + <kbd>鼠标右键</kbd>选择<code>打开命令行窗口</code></p>
+		<p>第三步：进入程序根目录，按 <kbd>Shift</kbd> + <kbd>鼠标右键</kbd>选择<code>打开命令行窗口(请忽略那个npm install)</code></p>
 		<img src='https://i.natfrp.org/9775c633f92b7c5e0f505ef1ae199593.jpg' alt='image' class="mdui-hoverable">
-		<p>第四步：执行命令<code>npm install --production</code>进行安装</p>
+		<p>第四步：输入<code>cd MCSManager</code>进入<abbr title="MCSManager">MCSM</abbr>目录然后执行命令<code>npm install --production</code>进行安装</p>
 		<img src="https://i.loli.net/2019/06/28/5d1613f87aff514719.jpg" class="mdui-hoverable"/>
 		<p>第五步：执行命令<code>node app.js</code>或者<code>npm start</code>启动面板</p>
 		<img src="https://i.loli.net/2019/06/28/5d16145e11a9575411.jpg" class="mdui-hoverable"/>
 		<p>最后一步：打开浏览器输入<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>就可以进入面板啦！账号是<code>#master</code>，密码是<code>123456</code></p>
 		<br>
-		<strong>方法2：</strong>
+		<strong>方法三：</strong>
 		<P>第一步：下载并安装<a href="https://nodejs.org">Nodejs</a>和<a href="https://git-scm.com/downloads">Git</a>工具</P>
 		<div class="mdui-row-xs-2">
 			<img src='https://i.natfrp.org/69d585f0660c5659f26f177ebf272fc5.jpg' alt='image' class="mdui-col mdui-hoverable">
@@ -57,17 +57,35 @@ if ( $(".null").length > 0 ) {
 		<p>第六步：执行命令<code>node app.js</code>或者<code>npm start</code>启动面板</p>
 		<img src="https://i.loli.net/2019/06/28/5d16145e11a9575411.jpg" class="mdui-hoverable"/>
 		<p>最后一步：打开浏览器输入<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>就可以进入面板啦！账号是<code>#master</code>，密码是<code>123456</code></p>
+		<p><strong>注意，方法2和方法3的区别就是有没有使用Git工具。。。</strong></p>
 	</div>
 		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
 	<br>
     <div class="mdui-typo">
-		<p>该页面最后编辑于<code>2019/8/3</code></p>
+		<div class="mdui-chip"> 
+		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2019/8/5</code></span>
+		</div>
     </div>
 		</div>
   </div>
 </div>
 <!--正文结束-->
-	
+
+	<!--右下角浮动按钮-->
+<div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
+  <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
+    <!-- 默认显示的图标 -->
+    <i class="mdui-icon material-icons">add</i>
+    
+	<!--hover-->
+    <i class="mdui-icon mdui-fab-opened material-icons">add</i>
+  </button>
+  <div class="mdui-fab-dial">
+    <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#" mdui-tooltip="{content: '回到顶部'}"><i class="mdui-icon material-icons">navigation</i></a>
+    <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" href="https://imgs.lovpass.cn/img/2019/08/04/5d46e137187ba.jpg" mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
+  </div>
+</div>
 <!--Next-->
 <div class="doc-footer-nav mdui-color-theme">
   <div class="mdui-container">
