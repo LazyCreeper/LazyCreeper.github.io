@@ -1,7 +1,12 @@
-  <meta charset="utf-8">
+<!--简单暴力文档防炸措施区域-->
+<!--重新定义UTF-8编码，防止乱码--> 
+ <meta charset="utf-8">
+ 
+ <!--重新引入css，js文件--> 
   <link rel="stylesheet" href="./css/mdui.css"/>
   <script src="./js/mdui.js"></script>
   <link rel="stylesheet" href="./css/docs.css"/>
+  
 <div class="mdui-container doc-container doc-no-cover">
 <div class="null">
 <h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
@@ -10,9 +15,11 @@
 
 <script>
 if ( $(".null").length > 0 ) { 
-   $('.null').css('display', 'none'); // 存在
+   $('.null').css('display', 'none'); // 判断文档是否完整
 }
 </script>
+<!--简单暴力文档防炸措施区域结束-->
+
   <h1 class="doc-title mdui-text-color-theme">MCSM 文档镜像</h1>
 	<div class="doc-chapter">
 		<div class="mdui-typo">
@@ -72,7 +79,13 @@ if ( $(".null").length > 0 ) {
 	  <tr>
         <td>8</td>
         <td><a href="https://mcsm.netlify.com" target="_blank">https://mcsm.netlify.com</a></td>
-        <td>全球CDN加速</td>
+        <td>新加坡节点</td>
+        <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
+      </tr>
+	  <tr>
+        <td>9</td>
+        <td><a href="https://mcsm.islmh.cn/" target="_blank">https://mcsm.islmh.cn/</a></td>
+        <td>上海阿里云</td>
         <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
       </tr>
     </tbody>
@@ -84,7 +97,7 @@ if ( $(".null").length > 0 ) {
     <div class="mdui-typo">
 		<div class="mdui-chip"> 
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2019/8/20</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2019/9/8</code></span>
 		</div>
     </div>
 	</div>
