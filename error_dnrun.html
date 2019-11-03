@@ -1,0 +1,56 @@
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/mdui.css"/>
+  <script src="./js/mdui.js"></script>
+  <link rel="stylesheet" href="./css/docs.css"/>
+<div class="mdui-container doc-container doc-no-cover">
+<div class="null">
+<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+</div>
+<script>
+if ( $(".null").length > 0 ) { 
+   $('.null').css('display', 'none'); // 存在
+}
+</script>
+
+  <h1 class="doc-title mdui-text-color-theme">面板无法启动？的解决方案</h1>
+	<div class="doc-chapter">
+		<div class="mdui-typo">
+		   <h6>1.请检查你的面板是否完整，如果是从百度云下载的直接解压就能启动，如果是从<a href="https://github.com/Suwings/MCSManager" target="_blank">Github</a>上克隆的源码，请使用<code>npm install --production</code>命令安装所需的依赖库。具体教程请<a href="./in-win.html" data-left>点击这里</a></h6>
+		   <h6>2.如果使用命令安装时弹出错误，请检查你的<code>npm</code>版本。</h6>
+		   <h6>3.检查你的面板端口是否被占用 [ 默认为<code>23333</code>端口 ]。如果是，请<span class="mdui-text-color-red-500">关闭</span>占用端口的程序或者打开面板目录下的<code>property.js</code>文件修改面板端口。</h6>
+		</div>
+   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+	<br>
+    <div class="mdui-typo">
+		<div class="mdui-chip"> 
+		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2019/11/3</code></span>
+		</div>
+    </div>
+	</div>
+  </div>
+</div>
+<!--正文结束-->
+	
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a data-left href="./error_dnrun.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_back</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">上一个</div>
+        </div>
+      </a>
+      
+            <a data-left href="./404.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_forward</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">404</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
