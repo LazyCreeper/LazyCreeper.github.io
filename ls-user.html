@@ -1,0 +1,104 @@
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/mdui.css"/>
+  <script src="./js/mdui.js"></script>
+  <link rel="stylesheet" href="./css/docs.css"/>
+<div class="mdui-container doc-container doc-no-cover">
+<div class="null">
+<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+</div>
+<script>
+if ( $(".null").length > 0 ) { 
+   $('.null').css('display', 'none'); // 存在
+}
+</script>
+  <h1 class="doc-title mdui-text-color-theme">用户管理详解</h1>
+	<div class="doc-chapter">
+		<div class="mdui-typo">
+		   <div class="row">
+		<div class="col-md-12 ">
+			<div class="Panel PanelBlue">
+				<div class="PanelTitle">用户中心</div>
+				<div class="PanelBody">
+					<div class="row">
+						<div class="col-sm-12 PanelItemF">
+							<div class="PanelItem mdui-hoverable" v-on:click="createUser = !createUser">
+								<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 创建新用户
+							</div>
+							<div class="PanelItem mdui-hoverable" v-on:click="refresh()">
+								<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 从内存刷新
+							</div>
+							<div class="PanelItem mdui-hoverable" v-on:click="reloadUser()">
+								<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 重新从文件刷新用户
+							</div>
+						</div>
+					</div>
+					<div class="ItemTableList"></div>
+					<div class="PanelItem ItemTableList mdui-hoverable" v-for="item of items">
+						<div class="row">
+							<div class="col-md-7">
+								<div class="PanelItemInfo">
+									<h4>
+										<span v-if="TOOLS.isMaster(item.username)" class="color-high-red">[管理账号] </span>
+										<span v-else class="color-green">[普通账号] </span>
+										<span v-text="item.username"></span>
+									</h4>
+									<div>
+										<span v-if="item.data.online" class="color-green">正在线上</span>
+										<span v-if="!item.data.online" class="color-red">离线</span>
+										| 创建时间:
+										<span v-text="item.data.createDate"> </span>
+										| 最后上线:
+										<span v-text="item.data.lastDate"> </span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-5 NextCol">
+								<div class="PanelItemMuem">
+									<!-- <button class="btn btn-primary" v-on:click="">权限配置</button> -->
+									<button class="btn btn-success">详细信息</button>
+									<span style="margin-left: 8px;"> | </span>
+									<button class="btn btn-danger" >删除</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+	<br>
+    <div class="mdui-typo">
+		<div class="mdui-chip"> 
+		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2019/8/5</code></span>
+		</div>
+    </div>
+	</div>
+  </div>
+</div>
+<!--正文结束-->
+	
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a data-left href="./ls-server.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_back</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">服务器管理详解</div>
+        </div>
+      </a>
+      
+            <a data-left href="./ls-feedback.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_forward</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">服务与支持界面</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
