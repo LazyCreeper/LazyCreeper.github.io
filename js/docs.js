@@ -25,8 +25,8 @@ $$('.viewsource').on('click', function () {
  * 设置文档主题
  */
 (function () {
-  var DEFAULT_PRIMARY = 'indigo';
-  var DEFAULT_ACCENT = 'pink';
+  var DEFAULT_PRIMARY = 'red';
+  var DEFAULT_ACCENT = 'indigo';
   var DEFAULT_LAYOUT = '';
 
   // 设置 cookie
