@@ -9,6 +9,9 @@
 `或`从[这里](https://github.com/LazyCreeper/LazyCreeper.github.io.git)克隆文档到本地浏览【`index.html`】
 ### 文档镜像站
 >详情请见`mirror.html`
+
+---
+
 ##想帮编写/修正文档？
->下载模板文件`模板.html`
-然后按规范填写然后提交`push`，我审查过后即可
+2.下载模板文件`模板.html`
+1.然后按规范填写然后提交`push`，我审查过后即可
