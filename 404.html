@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--404页面有什么好看的。。。-->
+<!--这是为了防止某些服务商不能自定义错误页面的404页面。。。-->
 <html lang="zh-cmn-Hans">
 <head>
   <meta charset="utf-8">
@@ -62,14 +62,13 @@ body {
       <div class="load mdui-spinner mdui-spinner-colorful"></div>
 	
     <div class="mdui-toolbar-spacer"></div>
-	<a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="./openapi/?action=location" mdui-tooltip="{content: '使用Sakura Frp账号登录'}"><i class="mdui-icon material-icons">directions_bike</i></a>
 	  
      <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#mcsm-doc-info'}" mdui-tooltip="{content: '查看公告'}"><i class="mdui-icon material-icons">message</i></span>
 	  
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">color_lens</i></span>
     <a href="https://github.com/Suwings/MCSManager" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
-        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+        <path fill-rule="evenodd" clip-rule="evenodd"  d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
 	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
 	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
 	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
@@ -82,91 +81,7 @@ body {
 <!--左侧的菜单-->
 <div class="mdui-drawer" id="main-drawer">
   <div class="mdui-list" mdui-collapse="{accordion: true}" style="margin-bottom: 76px;">
-    <div class="mdui-collapse-item ">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">near_me</i>
-        <div class="mdui-list-item-content">开始使用</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list">
-        <a href="in-win.html" class="mdui-list-item mdui-ripple" data-left>Windows</a>
-        <a data-left href="in-linux.html" class="mdui-list-item mdui-ripple ">Linux</a>
-	<a data-left href="in-macos.html" class="mdui-list-item mdui-ripple ">MacOS</a>
-	<a data-left href="in-android.html" class="mdui-list-item mdui-ripple ">Android</a>
-	<a data-left href="otpanel.html" class="mdui-list-item mdui-ripple ">其他面板</a>
-      </div>
-    </div>
 
-    <div class="mdui-collapse-item">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">layers</i>
-        <div class="mdui-list-item-content">面板详解</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list">
-        <a data-left href="structure.html" class="mdui-list-item mdui-ripple ">目录结构</a>
-		<a data-left href="ls-center.html" class="mdui-list-item mdui-ripple ">数据监控中心</a>
-		<a data-left href="ls-server.html" class="mdui-list-item mdui-ripple ">服务器管理</a>
-		<a data-left href="ls-user.html" class="mdui-list-item mdui-ripple ">用户管理</a>
-		<a data-left href="ls-feedback.html" class="mdui-list-item mdui-ripple ">服务与支持</a>
-		<a data-left href="ls-property.html" class="mdui-list-item mdui-ripple ">property.js文件</a>
-		
-      </div>
-	  
-    </div>
-	 <div class="mdui-collapse-item ">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-pink-500">storage</i>
-        <div class="mdui-list-item-content">MC服务器相关</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list">
-        <a data-left href="startserver.html" class="mdui-list-item mdui-ripple ">创建服务器</a>
-        <a data-left href="setserver.html" class="mdui-list-item mdui-ripple ">配置服务器</a>
-	<a data-left href="mcdocker.html" class="mdui-list-item mdui-ripple ">使用Docker</a>
-      </div>
-    </div>
-	
-	<div class="mdui-collapse-item ">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">edit</i>
-        <div class="mdui-list-item-content">面板修改</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list">
-        <a data-left href="front_end_edit.html" class="mdui-list-item mdui-ripple ">登录界面修改</a>
-		<a data-left href="rear_end_edit.html" class="mdui-list-item mdui-ripple ">index.html修改</a>
-		<a data-left href="rear_end_edit.html" class="mdui-list-item mdui-ripple ">template模板修改</a>
-      </div>
-    </div>
-
-    <div class="mdui-collapse-item ">
-     <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-       <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-yellow">help_outline</i>
-       <div class="mdui-list-item-content">常见问题</div>
-       <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-     </div>
-     <div class="mdui-collapse-item-body mdui-list">
-		 <a data-left href="./error/dnrun.html" class="mdui-list-item mdui-ripple ">面板无法启动</a>
-		 <a data-left href="./error/fguser.html" class="mdui-list-item mdui-ripple ">忘记用户名和密码</a>
-		 <a data-left href="./error/nohttp.html" class="mdui-list-item mdui-ripple ">http无响应</a>
-		 <a data-left href="./error/ftperr.html" class="mdui-list-item mdui-ripple ">FTP无法连接</a>
-		 <a data-left href="./error/nomcserver.html" class="mdui-list-item mdui-ripple ">服务器无法开启</a>
-		 <a data-left href="./error/safe.html" class="mdui-list-item mdui-ripple ">面板安全吗？</a>
-     </div>
-   </div>
-	  
-    <div class="mdui-collapse-item ">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">local_mall</i>
-        <div class="mdui-list-item-content">资源</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list">
-        <a data-left href="mcsmtheme.html" class="mdui-list-item mdui-ripple ">主题中心</a>
-	<a data-left href="othermcsm.html" class="mdui-list-item mdui-ripple ">MCSM其他版本</a>
-      </div>
-    </div>
     <div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-800">info_outline</i>
@@ -190,21 +105,12 @@ body {
    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
 	<br>
     <div class="mdui-typo">
-      <h4 class="doc-article-title">关于此文档</h4>
-	  <p><label>文档作者：<a href="http://blog.imlazy.ink:233">Lazy</a></label></p>
-      <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="http://blog.imlazy,ink:233/" target="_blank">Lazy's Blog</a>
-		   | <a href="http://mcllxz.cc:88/" target="_blank">LL Town Server</a></label></p>
-		   <p>文档镜像：<a href="http://mcsm.mcllxz.cc/" target="_blank">MCSM-Doc镜像[由LL小镇提供]</a> | <a href="https://qaq.lazy6.xyz">MCSM-Doc镜像[香港腾讯云服务器]</a> | <a href="http://mcsm.imlazy.ink:233" target="_blank">MCSM-Doc镜像[浙江阿里云服务器]</a> | <a href="https://mirror.mcsmdoc.lazy6.xyz" target="_blank">MCSM-Doc镜像[Github Page]</a> | <a href="https://mcsm.cancer360.top" target="_blank">MCSM-Doc镜像[浙江阿里云服务器]</a></p>
-		<div class="mdui-chip">
-             <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">copyright</i></span>
-             <span class="mdui-chip-title">2019 Lazy All Rights Reserved.</span>
-        </div>
 		<div class="mdui-chip"> 
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2019/8/5</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/1/28</code></span>
 		</div>
-		<p></p>
     </div>
+	</div>
 		</div>
   </div>
 </div>
