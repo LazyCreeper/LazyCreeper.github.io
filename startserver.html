@@ -1,0 +1,76 @@
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/mdui.css"/>
+  <script src="./js/mdui.js"></script>
+  <link rel="stylesheet" href="./css/docs.css"/>
+<div class="mdui-container doc-container doc-no-cover">
+<div class="null">
+<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+</div>
+<script>
+if ( $(".null").length > 0 ) { 
+   $('.null').css('display', 'none'); // 存在
+}
+</script>
+
+  <h1 class="doc-title mdui-text-color-theme">创建服务器</h1>
+	<div class="doc-chapter">
+		<div class="mdui-typo">
+		   <p class="mdui-typo-headline">首先让我们进入面板，然后点击服务器管理。</p>
+		   <img src="https://i.zerodream.net/9f89900b8c87c365f79992d433298c95.jpg" class="mdui-hoverable">
+		   
+		   <p class="mdui-typo-headline">点击 引导创建应用（推荐）</p>
+		   <img src="https://i.zerodream.net/3e99882af82d9ef679da449ec31cb6ab.jpg" class="mdui-hoverable">
+		   <p>Java路径：默认填<code>java</code>。<br>
+		   服务器名字：自己取一个喜欢的就行了。<br>
+		   附加启动参数：不用填，除非你有需要。<br>
+		   最大内存和最小内存：根据你电脑内存的实际情况来填，只要最小内存不要大于最大内存就可以了。<span class="mdui-text-color-red-500">记得内存后面加单位 M！</span><br>
+		   服务端文件目录：位于面板根目录下的<code>server/server_core/服务器名称</code>，也可以指定服务器目录，比如<code>D:\MyData\MinecraftServer</code></p>
+		   
+		   <p class="mdui-typo-headline">往下拉，填写服务端名称，例如<code>1.14.4.jar</code>，然后点 创建Minecraft服务端</p>
+		   <img src="https://i.zerodream.net/38239bf63566e2d2569567554c767b26.jpg" class="mdui-hoverable">
+		   <img src="https://i.zerodream.net/4f5a1e7bcc393fb7597b34430eb30e2c.jpg" class="mdui-hoverable">
+		   
+		   <p class="mdui-typo-headline">创建之后先不要着急，先去<a href="https://mirror.zerodream.net/" target="_blank">https://mirror.zerodream.net/</a>下载一个服务端，然后把它复制到你的服务端文件夹里面并把名称改为刚才设置的名称。<small>或者用面板自带的文件管理上传也可以</small></p>
+		   <img src="https://i.zerodream.net/4c0f4c1edee0fa0ea35a2dc98531c9cd.jpg" class="mdui-hoverable">
+		   
+		   <p class="mdui-typo-headline">然后新建一个<code>eula.txt</code>文件，里面写上<pre>eula=true</pre></p><p class="mdui-typo-headline">同意Mojang的Eula协议</p>
+		   <img class="mdui-hoverable" src="https://imgs.lovpass.cn/img/2020/01/28/68f53fb9d58b620200128.jpg">
+		   
+		   <p class="mdui-typo-headline">最后，进入控制台，点击开启服务器吧</p>
+		   <img src="https://imgs.lovpass.cn/img/2020/01/28/d280925820a4c20200128.jpg" class="mdui-hoverable">
+		</div>
+   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+	<br>
+    <div class="mdui-typo">
+		<div class="mdui-chip"> 
+		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/1/28</code></span>
+		</div>
+    </div>
+	</div>
+  </div>
+</div>
+<!--正文结束-->
+	
+<div class="doc-footer-nav mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+            <a data-left href="./structure.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_back</i>
+          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">目录结构</div>
+        </div>
+      </a>
+      
+            <a data-left href="./setserver.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+        <div class="doc-footer-nav-text">
+          <i class="mdui-icon material-icons">arrow_forward</i>
+          <span class="doc-footer-nav-direction">Next</span>
+          <div class="doc-footer-nav-chapter">配置服务器</div>
+        </div>
+      </a>
+          </div>
+  </div>
+</div>
