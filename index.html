@@ -21,8 +21,10 @@
   $(function(){
     $(document).ready(function(){ $(".load").fadeOut(700); })//我不会加载动画啊。。算了直接隐藏把。。
 });
+
 $(document).on('pjax:send', function() { 
     $(".load").css("display", "block");//pjax链接点击后显示加载动画；
+	
 });
 $(document).on('pjax:complete', function() { 
     $(".load").css("display", "none");//pjax链接加载完成后隐藏加载动画；
@@ -33,23 +35,19 @@ mdui.snackbar({
   });
 });
 </script>
-
 	<!--简单暴力Pjax-->
 <script>
 	$(document).pjax('a[data-left]', '#right')
 </script>
 </head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-red mdui-theme-accent-indigo">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-teal mdui-theme-accent-indigo">
 <header class="mdui-appbar mdui-appbar-fixed">
 <!--没用的进度条-->
 <div class="mdui-progress load">
   <div class="mdui-progress-indeterminate"></div>
 </div>
 <!------------------>
-  <div class="mdui-toolbar mdui-color-theme" style="
-    background: url(https://imgs.lovpass.cn/img/2020/01/19/8e69b886dd77d20200119.png);
-    background-size: contain;
-">
+  <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
     <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">Mcserver Manager 文档</a>
 	
@@ -162,7 +160,7 @@ mdui.snackbar({
     <div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-800">info_outline</i>
-        <div class="mdui-list-item-content"><a data-left href="about.html">关于此文档</a></div> 
+        <div class="mdui-list-item-content"><a onclick="$('#right').load('./about.html');" href="#">关于此文档</a></div> 
       </div>
     </div>
 	<div class="mdui-collapse-item ">
@@ -181,7 +179,6 @@ mdui.snackbar({
   <h1 class="doc-title mdui-text-color-theme">Mcserver Manager 文档</h1>
 	<div class="doc-chapter">
 		<div class="mdui-typo">
-		<h4 class="doc-title mdui-text-color-red">Happy New Years !</h4>
       <p>这是 Mcserver Manager 8.6 的文档。如果你在使用<a href="https://mcsm.suwings.top" target="_blank"> MCSM </a>的过程中出现了问题，请先阅读此文档.</p>
       <p>如果你觉得此文档有什么不完善的地方或者说你有什么更好的建议，可以发送邮箱至<a href="mailto:lazy_creeper@qq.com"> lazy_creeper@qq.com</a>。</p>
       <!--<img src="https://i.loli.net/2019/05/02/5ccb13495972a.jpg" class="mdui-hoverable" />-->
@@ -205,7 +202,7 @@ mdui.snackbar({
         </div>
 		<div class="mdui-chip">  
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/1/28</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/2/19</code></span>
 		</div>
 		<p></p>
     </div>
@@ -382,14 +379,14 @@ mdui.snackbar({
       </div>
       <div class="mdui-col mdui-text-color-red">
         <label class="mdui-radio mdui-m-b-1">
-          <input type="radio" name="doc-theme-primary" value="red" checked />
+          <input type="radio" name="doc-theme-primary" value="red" />
           <i class="mdui-radio-icon"></i>
           Red
         </label>
       </div>
       <div class="mdui-col mdui-text-color-teal">
         <label class="mdui-radio mdui-m-b-1">
-          <input type="radio" name="doc-theme-primary" value="teal" />
+          <input type="radio" name="doc-theme-primary" value="teal" checked/>
           <i class="mdui-radio-icon"></i>
           Teal
         </label>
