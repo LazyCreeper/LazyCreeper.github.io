@@ -15,29 +15,42 @@
   <link rel="stylesheet" href="./css/mdui.css"/>
   <link rel="stylesheet" href="./css/docs.css"/>
   <script src="./js/jq.js"></script>
-  <script src="./js/pjax.js"></script>
   <!--开始之前先来个没用的预加载--> <!--我不会js啊。。。所以别喷我行吗？。。。-->
   <script>
   $(function(){
     $(document).ready(function(){ $(".load").fadeOut(700); })//我不会加载动画啊。。算了直接隐藏把。。
 });
-
-$(document).on('pjax:send', function() { 
-    $(".load").css("display", "block");//pjax链接点击后显示加载动画；
-	
-});
-$(document).on('pjax:complete', function() { 
-    $(".load").css("display", "none");//pjax链接加载完成后隐藏加载动画；
-	var $$ = mdui.JQ;
+</script>
+	<!--简单暴力Ajax-->
+<script>
+	function a(url){
+		$.get(url,function(data){
+		
+		$(".load").css("display", "block");//首先显示加载动画
+		
+			$("#right").html(data)//然后加载页面
+			cache: false//清除缓存（不知道有没有用）
+			var $$ = mdui.JQ;//加载完了，弹出提示
 mdui.snackbar({
     message: '文档加载完成',
     position: 'right-top'
   });
-});
+  //$(this).addClass("mdui-list-item-active").siblings().removeClass("mdui-list-item-active"); //当前列表高亮
+  
+  $(".load").css("display", "none");//回收动画
+		});
+		
+		mdui.snackbar({//如果页面不存在怎么办呐~
+    message: '文档加载失败：404或502',
+    position: 'right-top'
+  });
+  
+	}
 </script>
-	<!--简单暴力Pjax-->
 <script>
-	$(document).pjax('a[data-left]', '#right')
+    $.ajax({
+        cache: false//清除缓存（不知道有没有用）
+    })
 </script>
 </head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-teal mdui-theme-accent-indigo">
@@ -49,7 +62,8 @@ mdui.snackbar({
 <!------------------>
   <div class="mdui-toolbar mdui-color-theme">
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
-    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">Mcserver Manager 文档</a>
+    <a href="index.html" class="mdui-typo-headline mdui-hidden-xs">Mcserver Manager</a>
+    <a href="index.html" class="mdui-typo-title">文档</a>
 	
       <div class="load mdui-spinner mdui-spinner-colorful"></div>
 	
@@ -81,11 +95,11 @@ mdui.snackbar({
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a href="in-win.html" class="mdui-list-item mdui-ripple" data-left>Windows</a>
-        <a data-left href="in-linux.html" class="mdui-list-item mdui-ripple ">Linux</a>
-	<a data-left href="in-macos.html" class="mdui-list-item mdui-ripple ">MacOS</a>
-	<a data-left href="in-android.html" class="mdui-list-item mdui-ripple ">Android</a>
-	<a data-left href="otpanel.html" class="mdui-list-item mdui-ripple ">其他面板</a>
+        <a onclick="a('in-win.html')" href="#in-win" class="mdui-list-item mdui-ripple">Windows</a>
+        <a onclick="a('in-linux.html')" href="#in-linux" class="mdui-list-item mdui-ripple">Linux</a>
+	<a onclick="a('in-macos.html')" href="#in-macos" class="mdui-list-item mdui-ripple ">MacOS</a>
+	<a onclick="a('in-android.html')" href="#in-android" class="mdui-list-item mdui-ripple ">Android</a>
+	<a onclick="a('otpanel.html')" href="#otpanel" class="mdui-list-item mdui-ripple ">其他面板</a>
       </div>
     </div>
 
@@ -96,7 +110,7 @@ mdui.snackbar({
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a data-left href="structure.html" class="mdui-list-item mdui-ripple ">目录结构</a>
+        <a onclick="a('structure.html')" href="#structure" class="mdui-list-item mdui-ripple ">目录结构</a>
       </div>
 	  
     </div>
@@ -107,9 +121,9 @@ mdui.snackbar({
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a data-left href="startserver.html" class="mdui-list-item mdui-ripple ">创建服务器</a>
-        <a data-left href="setserver.html" class="mdui-list-item mdui-ripple ">配置服务器</a>
-	<a data-left href="mcdocker.html" class="mdui-list-item mdui-ripple ">使用Docker</a>
+        <a onclick="a('startserver.html')" href="#startserver.html" class="mdui-list-item mdui-ripple ">创建服务器</a>
+        <a onclick="a('setserver.html')" href="#setserver.html" class="mdui-list-item mdui-ripple ">配置服务器</a>
+	<a onclick="a('mcdocker.html')" href="#mcdocker.html" class="mdui-list-item mdui-ripple ">使用Docker</a>
       </div>
     </div>
 	
@@ -120,8 +134,8 @@ mdui.snackbar({
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a data-left href="edit_login.html" class="mdui-list-item mdui-ripple ">登录界面修改</a>
-		<a data-left href="edit_their.html" class="mdui-list-item mdui-ripple ">其他页面修改</a>
+        <a onclick="a('edit_login.html')" href="#edit_login.html" class="mdui-list-item mdui-ripple ">登录界面修改</a>
+		<a onclick="a('edit_their.html')" href="#edit_their.html" class="mdui-list-item mdui-ripple ">其他页面修改</a>
       </div>
     </div>
 
@@ -132,14 +146,14 @@ mdui.snackbar({
        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
      </div>
      <div class="mdui-collapse-item-body mdui-list">
-	     <a data-left href="./error_cantpanel.html" class="mdui-list-item mdui-ripple ">无法访问面板</a>
-		 <a data-left href="./error_dnrun.html" class="mdui-list-item mdui-ripple ">面板无法启动</a>
-		 <a data-left href="./error_fguser.html" class="mdui-list-item mdui-ripple ">忘记用户名和密码</a>
-		 <a data-left href="./error_nohttp.html" class="mdui-list-item mdui-ripple ">http无响应</a>
-		 <a data-left href="./error_ftperr.html" class="mdui-list-item mdui-ripple ">FTP无法连接</a>
-		 <a data-left href="./error_nomcserver.html" class="mdui-list-item mdui-ripple ">服务器无法开启</a>
-		 <a data-left href="./error_safe.html" class="mdui-list-item mdui-ripple ">面板安全吗？</a>
-		 <a data-left href="./error_houtai.html" class="mdui-list-item mdui-ripple ">如何让面板在后台运行？</a>
+	     <a onclick="a('error_cantpanel.html')" href="#error_cantpanel.html" class="mdui-list-item mdui-ripple ">无法访问面板</a>
+		 <a onclick="a('error_dnrun.html')" href="#error_dnrun.html" class="mdui-list-item mdui-ripple ">面板无法启动</a>
+		 <a onclick="a('error_fguser.html')" href="#error_fguser.html" class="mdui-list-item mdui-ripple ">忘记用户名和密码</a>
+		 <a onclick="a('error_nohttp.html')" href="#error_nohttp.html" class="mdui-list-item mdui-ripple ">http无响应</a>
+		 <a onclick="a('error_ftperr.html')" href="#error_ftperr.html" class="mdui-list-item mdui-ripple ">FTP无法连接</a>
+		 <a onclick="a('error_nomcserver.html')" href="#error_nomcserver.html" class="mdui-list-item mdui-ripple ">服务器无法开启</a>
+		 <a onclick="a('error_safe.html')" href="#error_safe.html" class="mdui-list-item mdui-ripple ">面板安全吗？</a>
+		 <a onclick="a('error_houtai.html')" href="#error_houtai.html" class="mdui-list-item mdui-ripple ">如何让面板在后台运行？</a>
 		 <a href="#" class="mdui-list-item mdui-ripple ">更多问题请前往</a>
 		 <a href="#" class="mdui-list-item mdui-ripple ">Github提交或者</a>
 		 <a href="#" class="mdui-list-item mdui-ripple ">加群讨论</a>
@@ -153,8 +167,8 @@ mdui.snackbar({
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a data-left href="mcsmtheme.html" class="mdui-list-item mdui-ripple ">主题中心</a>
-	<a data-left href="othermcsm.html" class="mdui-list-item mdui-ripple ">MCSM其他版本</a>
+        <a onclick="a('mcsmtheme.html')" href="#mcsmtheme.html" class="mdui-list-item mdui-ripple ">主题中心</a>
+	<a onclick="a('othermcsm.html')" href="#othermcsm.html" class="mdui-list-item mdui-ripple ">MCSM其他版本</a>
       </div>
     </div>
     <div class="mdui-collapse-item ">
@@ -166,7 +180,7 @@ mdui.snackbar({
 	<div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown-700">&#xeb47;</i>
-        <div class="mdui-list-item-content"><a data-left href="mirror.html">文档镜像</a></div> 
+        <div class="mdui-list-item-content"><a onclick="a('https://mcsm.cancer360.top/mirror.html')" href="#mirror" href="mirror.html">文档镜像</a></div> 
       </div>
     </div>
   </div>
@@ -195,14 +209,14 @@ mdui.snackbar({
 	  <p><label>文档作者：<a href="https://www.imlazy.ink:233">Lazy</a></label></p>
       <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="https://blog.imlazy,ink:233/" target="_blank">Lazy's Blog</a> | <a href="https://api.imlazy.ink" target="_blank">Easy API</a>
 		   | <a href="http://mcllxz.cc:88/" target="_blank">LL Town Server</a></label></p>
-		   <p>文档镜像：<a data-left href="./mirror.html">点我查看</a></p>
+		   <p>文档镜像：<a onclick="a('https://qaq.imlazy.ink:233/mirror.html')" href="#mirror">点我查看</a></p>
 		<div class="mdui-chip">
              <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">copyright</i></span>
              <span class="mdui-chip-title">2020 Lazy All Rights Reserved.</span>
         </div>
 		<div class="mdui-chip">  
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/2/19</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/3/16</code></span>
 		</div>
 		<p></p>
     </div>
@@ -219,7 +233,7 @@ mdui.snackbar({
     <div class="mdui-row">
             <div class="mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left"></div>
       
-            <a data-left class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right" href="./in-win.html">
+            <a onclick="a('in-win.html')" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
         <div class="doc-footer-nav-text">
           <i class="mdui-icon material-icons">arrow_forward</i>
           <span class="doc-footer-nav-direction">Next</span>
@@ -234,7 +248,7 @@ mdui.snackbar({
 <!--公告-->
 <div class="mdui-dialog" id="mcsm-doc-info">
     <div class="mdui-dialog-title">公告</div>
-    <div class="mdui-dialog-content">暂无公告</div>
+    <div class="mdui-dialog-content"><p>文档已采用Ajax技术，不会一刷新就炸了233<br>如果显示加载失败，要么是请求超时要么就是没有这个页面。</p></div>
     <div class="mdui-dialog-actions" >
       <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
     </div>
