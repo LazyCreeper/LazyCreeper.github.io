@@ -1,0 +1,16 @@
+{
+"mirrors":[
+{
+  "number": "1",
+  "domain": "https://mcsm.imlazy.ink",
+  "name": "香港阿里云",
+  "status": "200 OK"
+},
+{
+  "number": "2",
+  "domain": "https://mcsm.cancer360.top",
+  "name": "深圳阿里云",
+  "status": "200 OK"
+}
+]
+}

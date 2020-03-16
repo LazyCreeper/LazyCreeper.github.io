@@ -1,24 +1,20 @@
 <!--简单暴力文档防炸措施区域-->
 <!--重新定义UTF-8编码，防止乱码--> 
  <meta charset="utf-8">
- 
  <!--重新引入css，js文件--> 
   <link rel="stylesheet" href="./css/mdui.css"/>
   <script src="./js/mdui.js"></script>
   <link rel="stylesheet" href="./css/docs.css"/>
-  
 <div class="mdui-container doc-container doc-no-cover">
 <div class="null">
 <h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
 <a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
 </div>
-
 <script>
 if ( $(".null").length > 0 ) { 
    $('.null').css('display', 'none'); // 判断文档是否完整
 }
 </script>
-<!--简单暴力文档防炸措施区域结束-->
 
   <h1 class="doc-title mdui-text-color-theme">MCSM 文档镜像</h1>
 	<div class="doc-chapter">
@@ -44,7 +40,7 @@ if ( $(".null").length > 0 ) {
         <td>2</td>
         <td><a href="https://opvnua.coding.io" target="_blank">https://opvnua.coding.io</a></td>
         <td>香港腾讯云</td>
-        <td>即将过期 <i class="mdui-icon material-icons mdui-text-color-red-500">&#xe002;</i></td>
+        <td>苟延残喘 <i class="mdui-icon material-icons mdui-text-color-red-500">&#xe002;</i></td>
       </tr>
       <tr>
         <td>3</td>
@@ -73,7 +69,7 @@ if ( $(".null").length > 0 ) {
 	  <tr>
         <td>7</td>
         <td><a href="https://mcsm.netlify.com" target="_blank">https://mcsm.netlify.com</a></td>
-        <td>疑似CDN</td>
+        <td>疑似新加坡</td>
         <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
       </tr>
 	  <tr>
@@ -92,7 +88,7 @@ if ( $(".null").length > 0 ) {
     <div class="mdui-typo">
 		<div class="mdui-chip"> 
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/1/28</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/3/16</code></span>
 		</div>
     </div>
 	</div>
@@ -103,7 +99,7 @@ if ( $(".null").length > 0 ) {
 <div class="doc-footer-nav mdui-color-theme">
   <div class="mdui-container">
     <div class="mdui-row">
-            <a data-left href="./about.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+            <a onclick="a('about.html')" href="#about.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
         <div class="doc-footer-nav-text">
           <i class="mdui-icon material-icons">arrow_back</i>
           <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
