@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--这是为了防止某些服务商不能自定义错误页面的404页面。。。-->
 <html lang="zh-cmn-Hans">
 <head>
   <meta charset="utf-8">
@@ -31,9 +30,36 @@ mdui.snackbar({
   });
 });
 </script>
-	<!--简单暴力Pjax-->
+	<!--简单暴力Ajax-->
 <script>
-	$(document).pjax('a[data-left]', '#right')
+	function a(url){
+		$.get(url,function(data){
+		
+		$(".load").css("display", "block");//首先显示加载动画
+		
+			$("#right").html(data)//然后加载页面
+			cache: false//清除缓存（不知道有没有用）
+			var $$ = mdui.JQ;//加载完了，弹出提示
+mdui.snackbar({
+    message: '文档加载完成',
+    position: 'right-top'
+  });
+  //$(this).addClass("mdui-list-item-active").siblings().removeClass("mdui-list-item-active"); //当前列表高亮
+  
+  $(".load").css("display", "none");//回收动画
+		});
+		
+		mdui.snackbar({//如果页面不存在怎么办呐~
+    message: '文档加载失败：404或502',
+    position: 'right-top'
+  });
+  
+	}
+</script>
+<script>
+    $.ajax({
+        cache: false//清除缓存（不知道有没有用）
+    })
 </script>
 <style>
 body {
@@ -68,7 +94,7 @@ body {
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">color_lens</i></span>
     <a href="https://github.com/Suwings/MCSManager" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
-        <path fill-rule="evenodd" clip-rule="evenodd"  d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#fff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
 	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
 	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
 	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
@@ -85,7 +111,7 @@ body {
     <div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-800">info_outline</i>
-        <div class="mdui-list-item-content"><a data-left href="about.html">关于此文档</a></div> 
+        <div class="mdui-list-item-content"><a onclick="a('about.html')" href="#about.html">关于此文档</a></div> 
       </div>
     </div>
   </div>
@@ -121,7 +147,7 @@ body {
 <!--公告-->
 <div class="mdui-dialog" id="mcsm-doc-info">
     <div class="mdui-dialog-title">公告</div>
-    <div class="mdui-dialog-content">文档支持全站https访问，如果Https打不开请刷新浏览器(至少10次)或者老实走233端口。</div>
+    <div class="mdui-dialog-content"><p>文档已采用Ajax技术，不会一刷新就炸了233<br>如果显示加载失败，要么是请求超时要么就是没有这个页面。</p></div>
     <div class="mdui-dialog-actions" >
       <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
     </div>

@@ -12,7 +12,6 @@ if ( $(".null").length > 0 ) {
    $('.null').css('display', 'none'); // 存在
 }
 </script>
-
   <h1 class="doc-title mdui-text-color-theme">无法访问面板？的解决方案</h1>
 	<div class="doc-chapter">
 		<div class="mdui-typo">
@@ -22,6 +21,7 @@ if ( $(".null").length > 0 ) {
       <li><a data-scroll="" href="#linux">Linux</a></li>
     </ul>
   </nav>
+  </div>
 		</div>
 		
 		<!--win-->
@@ -30,20 +30,21 @@ if ( $(".null").length > 0 ) {
 			<h5>1.检查你的浏览器URL是否输入错误。</h5>
 			<h5>2.如果你是VPS，请关闭Windows的防火墙功能，并开放面板相对应的端口。</h5>
 			<h5>3.如果你的服务商只提供了一个端口来运行服务器，那么你需要向你的服务商多<span class="mdui-text-color-red-500">恰</span>一个端口来访问面板。</h5>
+			<h5>4.如果你是用的Sakura Frp，那么请将你的线路改为<span class="mdui-text-color-red-500">国外线路</span>才能访问面板。</h5>
 		</div>
 		
 		<!--linux-->
 		<div class="mdui-typo" id="linux">
 		    <h2 class="doc-title mdui-text-color-theme">Linux 用户</h2>
 		    <h5>1.跟上面一样</h5>
-			<h5>2.看看面板是否在运行，建议使用<code>Screen</code>来运行面板防止关闭终端时把面板也跟着关了。具体如何操作请<a href="https://github.com/Suwings/MCSManager/wiki/Linux-%E4%B8%8B%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3#%E4%BF%9D%E6%8C%81%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C" target="_blank">点击这里</a>。</h5>
+			<h5>2.看看面板是否在运行，建议使用<code>Screen</code>来运行面板防止关闭终端时把面板也跟着关了。具体如何操作请<a onclick="a('error_houtai.html')">点击这里</a>。</h5>
 		</div>
    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
 	<br>
     <div class="mdui-typo">
 		<div class="mdui-chip"> 
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/1/28</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/3/16</code></span>
 		</div>
     </div>
 	</div>
@@ -54,15 +55,15 @@ if ( $(".null").length > 0 ) {
 <div class="doc-footer-nav mdui-color-theme">
   <div class="mdui-container">
     <div class="mdui-row">
-            <a href="./edit_template.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+            <a onclick="a('edit_their.html')" href="#edit_their.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
         <div class="doc-footer-nav-text">
           <i class="mdui-icon material-icons">arrow_back</i>
           <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
-          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">template模板修改</div>
+          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">其他页面修改</div>
         </div>
       </a>
       
-            <a href="./error_dnrun.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+            <a onclick="a('error_dnrun.html')" href="#error_dnrun.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
         <div class="doc-footer-nav-text">
           <i class="mdui-icon material-icons">arrow_forward</i>
           <span class="doc-footer-nav-direction">Next</span>
