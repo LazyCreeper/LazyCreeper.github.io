@@ -14,118 +14,521 @@ if ( $(".null").length > 0 ) {
    $('.null').css('display', 'none'); // 存在
 }
 </script>
-
-  <h1 class="doc-title mdui-text-color-theme">Mcserver目录结构</h1>
+<style>
+.fileicon {
+font-size: 16px;
+margin-right: 5px;
+}
+.foldericon {
+font-size: 20px;
+margin-right: 5px;
+}
+</style>
+  <h1 class="doc-title mdui-text-color-theme">MCSManager 目录结构 </h1>
 	<div class="doc-chapter">	
-	<div class="mdui-typo">
-	<div class="mdui-table-fluid">
-             <table class="mdui-table">
-<thead>
-<tr>
-<th>目录名</th>
-<th>详情/解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>property.js</strong></td>
-<td>控制面板配置文件</td>
-</tr>
-<tr>
-<td><strong>core/logo.txt</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>控制台输出 logo 文字</td>
-</tr>
-<tr>
-<td><strong>public/</strong></td>
-<td>前端所有代码，资源目录，前后端分离，使用 ws 和 ajax 通讯</td>
-</tr>
-<tr>
-<td><strong>public/login/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>纯 UI 逻辑登陆页面</td>
-</tr>
-<tr>
-<td><strong>public/template/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>前端业务模板，每个模板拥有着一个生命周期，开始与结束。</td>
-</tr>
-<tr>
-<td><strong>public/onlinefs_public/</strong> &nbsp; &nbsp; &nbsp;</td>
-<td>文件在线管理模块前端所有代码</td>
-</tr>
-<tr>
-<td><strong>public/common/js/meum.js</strong></td>
-<td>控制面板左侧菜单列表</td>
-</tr>
-<tr>
-<td><strong>public/common/js/login.js</strong></td>
-<td>通用登录流程逻辑，可重复利用在各类 HTML 登录模板</td>
-</tr>
-<tr>
-<td><strong>server/server_core</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>Minecraft 服务端核心目录，包括服务端文件，配置，Mod，以及插件</td>
-</tr>
-<tr>
-<td><strong>server/x.json</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>Minecraft 服务器面板配置文件</td>
-</tr>
-<tr>
-<td><strong>users/x.json</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>控制面板用户配置文件</td>
-</tr>
-<tr>
-<td><strong>route/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>控制器，HTTP 请求业务逻辑层（可二次扩展）</td>
-</tr>
-<tr>
-<td><strong>route/websocket/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>控制器，Webscoket 请求业务逻辑层（可二次扩展）</td>
-</tr>
-<tr>
-<td><strong>core/Process/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>Minecraft Server 类实现</td>
-</tr>
-<tr>
-<td><strong>core/User/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>User 类实现</td>
-</tr>
-<tr>
-<td><strong>core/DataModel.js</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>数据持久化模型，几乎是所有的配置的 I/O 模型</td>
-</tr>
-<tr>
-<td><strong>model/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>模型层，用于提供控制器与服务端，用户操作，也提供设计模式模型</td>
-</tr>
-<tr>
-<td><strong>helper/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>业务逻辑辅助层，用于辅助和重复利用业务逻辑</td>
-</tr>
-<tr>
-<td><strong>ftpd/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>FTP 独立模块，其中 ftpserver.js 已经实现了抽象 ftpServerInterface 接口</td>
-</tr>
-<tr>
-<td><strong>onlinefs/</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
-<td>文件管理独立模块 (<a href="https://github.com/Suwings/IndependentFileManager">Suwings/IndependentFileManager</a>)</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<strong>注意：由于MDUI的部分组件在PJAX下无法正常发挥，所以我无奈之下复制粘贴了Github的表格。。。。</strong>
-
+	<div class="mdui-typo"><small>文件夹可点击</small>
+		<!--开始套娃-->
+		<div class="mdui-panel mdui-panel-gapless" mdui-panel>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>Core</div>
+					<!--<div class="mdui-panel-item-summary"></div>-->
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<!-- 第一层套娃 -->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>Process</div>
+								<div class="mdui-panel-item-summary">Minecraft Server 类实现</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<div class="mdui-panel-item-body">
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>BaseMcserver.js</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>Mcserver.js</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>ServerCenter.js</p>
+							</div>
+						</div>
+					</div>
+					
+					<!--2-->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>User</div>
+								<div class="mdui-panel-item-summary">User 类实现</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<!--娃中娃-->
+							<div class="mdui-panel-item-body">
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>CryptoMine.js</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>User.js ——[ 创建用户所用到的用户模型 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>UserCenter.js</p>
+							</div>
+							
+						</div>
+					</div>
+					<p></p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>counter.js</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>DataModel.js ——[ 数据持久化模型，几乎是所有的配置的 I/O 模型 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>info.json</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>log.js ——[ log 输出标准 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>logo.txt ——[ 控制台输出 logo 文字 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>procexit.js ——[ MCSM 程序退出 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>tools.js ——[ 工具箱 ]</p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>ftpd</div>
+					<div class="mdui-panel-item-summary">FTP 独立模块，其中 ftpserver.js 已经实现了抽象 ftpServerInterface 接口</div>
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>ftpserver.js ——[ FTP服务器模块 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>index.js</p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>helper</div>
+					<div class="mdui-panel-item-summary">	业务逻辑辅助层，用于辅助和重复利用业务逻辑</div>
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>LogHistory.js ——[ 日志历史储存 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>LoginedContainer.js ——[ 登陆(时间)验证 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>MCPingProtocol.js ——[ 使用Ping查询MC服务器状态 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>Permission.js ——[ 权限检查 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>RecordCommand.js ——[ 日志命令操作类 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>Response.js ——[ (__)响应(__) ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>Schedule.js ——[ MC服务器计划任务模块 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>TokenManager.js ——[ Token管理 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>version.js ——[ 控制面板前端显示版本 ]</p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>Model</div>
+					<div class="mdui-panel-item-summary">模型层，用于提供控制器与服务端，用户操作，也提供设计模式模型</div>
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<!-- 第一层套娃 -->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>init_config</div>
+								<div class="mdui-panel-item-summary">请勿编辑此处文件！</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<!--娃中娃-->
+							<div class="mdui-panel-item-body">
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>info_reset.json</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>INIT_URL.js ——[ 标准URL定位器 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>property.js　——[ 控制面板配置文件 ]</p>
+							</div>
+						</div>
+					</div>
+					<p></p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>baseManagerModel.js</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>NewsCenter.js ——[ 最新动态信息获取模块 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>ObserverModel.js ——[ 一个专门为了解决内存泄露而设计的观察者模型 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>ServerModel.js ——[ MC服务器模型(内含是否自动同意Eula协议开关) ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>Table.js</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>UserModel.js ——[ 用户操作模块(比如创建，删除用户) ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>WebSocketModel.js ——[ 事件二次转发，监听ws/req即可监听所有Websocket请求 ]</p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>node_modules</div>
+					<div class="mdui-panel-item-summary">用于启动面板的 node 模块</div>
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<p>太多了，懒得列举，反正你也编辑不到~</p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>onlinefs</div>
+					<div class="mdui-panel-item-summary">文件管理独立模块 [<a href="https://github.com/Suwings/IndependentFileManager" target="_blank">Suwings/IndependentFileManager</a>]</div>
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i></p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>public</div>
+					<div class="mdui-panel-item-summary">前端所有代码，资源目录，前后端分离，使用 ws 和 ajax 通讯</div>
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<!-- common -->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>common</div>
+								<!--<div class="mdui-panel-item-summary"></div>-->
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<!--娃中娃-->
+							<div class="mdui-panel-item-body">
+								<div class="mdui-panel" mdui-panel>
+									<div class="mdui-panel-item">
+										<div class="mdui-panel-item-header">
+											<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>bootstrap</div>
+											<div class="mdui-panel-item-summary">网页框架</div>
+											<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+										</div>
+										<!--娃中娃中娃-->
+										<div class="mdui-panel-item-body">
+											<p>一般人不会碰这里的吧~</p>
+										</div>
+									</div>
+									
+								</div>
+								<div class="mdui-panel" mdui-panel>
+										<div class="mdui-panel-item">
+											<div class="mdui-panel-item-header">
+												<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>css</div>
+												<div class="mdui-panel-item-summary">控制面板样式表</div>
+												<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+											</div>
+											<!--娃中娃中娃-->
+											<div class="mdui-panel-item-body">
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>action.css ——[ 控制面板动画 ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>block.css ——[ 块css ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>common.css ——[ 控制面板全局样式 ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>unit.css ——[ 一些不知道什么鬼的文字颜色 ]</p>
+											</div>
+										</div>
+									</div>
+								<div class="mdui-panel" mdui-panel>
+										<div class="mdui-panel-item">
+											<div class="mdui-panel-item-header">
+												<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>echarts-dist</div>
+												<div class="mdui-panel-item-summary">echarts统计图 库</div>
+												<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+											</div>
+											<!--娃中娃中娃-->
+											<div class="mdui-panel-item-body">
+												<p>一般人不会碰这里的吧~</p>
+											</div>
+										</div>
+									</div>
+								<div class="mdui-panel" mdui-panel>
+										<div class="mdui-panel-item">
+											<div class="mdui-panel-item-header">
+												<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>js</div>
+												<!--<div class="mdui-panel-item-summary"></div>-->
+												<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+											</div>
+											<!--娃中娃中娃-->
+											<div class="mdui-panel-item-body">
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>chart.js ——[ 图像统计表格封装，附属于 TOOLS 变量 ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>common.js ——[ 初始化公共层，用于各类程序初始化 ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>login.js ——[ 通用登录流程逻辑，可重复利用在各类 HTML 登录模板 ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>meum.js ——[ 控制面板左侧菜单列表 ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>properties.js ——[ server.properties文件翻译 ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>response.js ——[ 响应层（内含进度条实现，DEBUG开关等） ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>tools.js ——[ 工具模块，MC控制台初始化，弹窗HTML，异步大文件上传方案 ]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>viewmodel.js ——[ 用于各类数据模型的双向绑定和控制区域(内含DEBUG开关，Websocket连接状态，菜单获取等)]</p>
+												<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>websocket.js ——[ Websocket响应(DEBUG开关) ]</p>
+											</div>
+										</div>
+									</div>
+								<div class="mdui-panel" mdui-panel>
+										<div class="mdui-panel-item">
+											<div class="mdui-panel-item-header">
+												<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>vue</div>
+												<!--<div class="mdui-panel-item-summary"></div>-->
+												<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+											</div>
+											<!--娃中娃中娃-->
+											<div class="mdui-panel-item-body">
+												<p>一般人不会碰这里的吧~</p>
+											</div>
+										</div>
+									</div>
+								
+								<p></p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>echart.js ——[ echarts统计图 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe251;</i>get_alipay.png ——[ 双羽支付宝收款码（我也要<a href="https://imgs.lovpass.cn/img/2020/07/07/f0d49c4bb6c8520200707.jpg" target="_blank">恰饭(＃°Д°)</a>） ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>jquery-3.2.1.min.js</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe251;</i>logo.png ——[ 控制面板左上角 Logo 图片 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>md5.js ——[ md5计算器 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>URL.js ——[ 标准URL定位器，如果你需要开启<code>https</code>请编辑此处 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>xterm.css ——[ 终端样式表 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>xterm.js</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>xterm.js.map</p>
+							</div>
+						</div>
+					</div>
+					<!--login-->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>login</div>
+								<div class="mdui-panel-item-summary">控制面板默认登陆界面</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<div class="mdui-panel-item-body">
+								<div class="mdui-panel" mdui-panel>
+									<div class="mdui-panel-item">
+										<div class="mdui-panel-item-header">
+											<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>static</div>
+											<div class="mdui-panel-item-summary">登陆页面资源</div>
+											<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+										</div>
+										<!--娃中娃中娃-->
+										<div class="mdui-panel-item-body">
+											<p><i class="mdui-icon material-icons fileicon">&#xe251;</i>bg.jpg ——[ 登陆页面背景图片 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>main.css ——[ 登陆页面样式表 ]</p>
+										</div>
+									</div>
+								</div>
+								<p></p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe251;</i>favicon.ico ——[ 登陆页面图标 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>index.html ——[ 登录页面网页文件 ]</p>
+							</div>
+						</div>
+					</div>
+					<!--onlinefs_public-->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>onlinefs_public</div>
+								<div class="mdui-panel-item-summary">文件在线管理模块前端所有代码</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<div class="mdui-panel-item-body">
+								<p>为了你面板的安全，不建议更改此处代码</p>
+							</div>
+						</div>
+					</div>
+					<!--template-->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>template</div>
+								<div class="mdui-panel-item-summary">前端业务模板，每个模板拥有着一个生命周期，开始与结束。</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<div class="mdui-panel-item-body">
+								<div class="mdui-panel" mdui-panel>
+									<div class="mdui-panel-item">
+										<div class="mdui-panel-item-header">
+											<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>component</div>
+											<!--<div class="mdui-panel-item-summary"></div>-->
+											<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+										</div>
+										<div class="mdui-panel-item-body">
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>console.html ——[ 服务器控制台页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>gen_repassword.html ——[ 普通用户密码修改页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>new_docker_image.html ——[ 新建 Docker 镜像页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>new_schedule.html ——[ 新建计划任务页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>newserver.html ——[ 直接创建服务器页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>newserverx.html ——[ 引导创建服务器页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>properties.html ——[ server.properties 编辑页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>schedule.html ——[ 服务器计划任务页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>server.html ——[ 服务器详情信息页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>terminal.html ——[ 终端控制台页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>user.html ——[ 用户详情信息页面 ]</p>
+										</div>
+									</div>
+								</div>
+								<div class="mdui-panel" mdui-panel>
+									<div class="mdui-panel-item">
+										<div class="mdui-panel-item-header">
+											<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>dialog</div>
+											<div class="mdui-panel-item-summary">弹窗HTML文件</div>
+											<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+										</div>
+										<div class="mdui-panel-item-body">
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>docker_config.html ——[ Docker 配置页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>docker_res.html ——[ Docker 镜像构建结果列表页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>pingmc_config.html ——[ 配置查询 MC 服务端的运行状态与玩家人数页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>time_bulider.html ——[ 计划任务时间表达式生成器页面 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>usercommand.html ——[ 自定义启动参数说明页面 ]</p>
+										</div>
+									</div>
+								</div>
+								<div class="mdui-panel" mdui-panel>
+									<div class="mdui-panel-item">
+										<div class="mdui-panel-item-header">
+											<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>other</div>
+											<div class="mdui-panel-item-summary">其他静态页面</div>
+											<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+										</div>
+										<div class="mdui-panel-item-body">
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>sponsor.html ——[ 支持开发团队页面 ]</p>
+										</div>
+									</div>
+								</div>
+								<p></p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>404_page.html ——[ 404页面 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>api_server.html ——[ 服务器对外API页面，新版 MCSM 已删除 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>center.html ——[ 数据监控中心页面 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>feedback.html ——[ 服务与支持页面 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>filemanager.html ——[ 文件管理页面 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>gen_about.html ——[ 普通用户关于页面 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>gen_home.html ——[ 普通用户首页 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>server.html ——[ 服务器列表页面 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>userset.html ——[ 用户管理页面 ]</p>
+							</div>
+						</div>
+					</div>
+					<p></p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe251;</i>favicon.ico ——[ 控制面板后台图标 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>index.html ——[ 控制面板后台主页 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>news.json ——[ 最新动态与信息通知 ]</p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>route</div>
+					<div class="mdui-panel-item-summary">控制器，HTTP 请求业务逻辑层（可二次扩展）</div>
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<!-- 第一层套娃 -->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>websocket</div>
+								<div class="mdui-panel-item-summary">控制器，Webscoket 请求业务逻辑层（可二次扩展）</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<!--娃中娃-->
+							<div class="mdui-panel-item-body">
+								<div class="mdui-panel" mdui-panel>
+									<div class="mdui-panel-item">
+										<div class="mdui-panel-item-header">
+											<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>console</div>
+											<!--<div class="mdui-panel-item-summary"></div>-->
+											<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+										</div>
+										<!--娃中娃中娃-->
+										<div class="mdui-panel-item-body">
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>command.js ——[ 服务器关闭，重启指令 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>console-info.js ——[ 控制台信息获取 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>history.js ——[ 历史记录路由 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>open.js ——[ 开启服务器 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>properties.js ——[ server.properties 文件读取 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>record.js ——[ 读取服务器历史记录 ]</p>
+											<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>server-mask.js ——[ 服务器自动重启设定 ]</p>
+										</div>
+									</div>
+								</div>
+								<P></P>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>center.js ——[ 数据监控中心数据渲染 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>console.js ——[ 服务器控制台监听 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>docker.js ——[ 创建 Docker 镜像 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>genuser.js ——[ 普通用户设置 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>mcping.js<p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>meum.js ——[ 登陆欢迎语（新版已注释） ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>schedule.js ——[ 计划任务相关 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>server.js ——[ 创建，编辑，控制服务器 ]</p>
+								<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>user.js ——[ 创建，删除，导入用户 ]</p>
+							</div>
+						</div>
+					</div>
+					<p></p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>api.js ——[ 公开服务端状态获取Json(可视模式已禁用) ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>error.js ——[ 基础的路由定义 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>fileuploads.js ——[ 文件上传模块 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>token.js</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>user.js ——[ 用户登录检查，退出事件 ]</p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>websocket.js ——[ ws相关（比如心跳包阈值） ]</p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>server</div>
+					<!--<div class="mdui-panel-item-summary"></div>-->
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<!-- 第一层套娃 -->
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>server_core</div>
+								<div class="mdui-panel-item-summary">Minecraft 服务端核心目录，包括服务端文件，配置，Mod，以及插件</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<!--娃中娃-->
+							<div class="mdui-panel-item-body">
+								<div class="mdui-panel" mdui-panel>
+									<div class="mdui-panel-item">
+										<div class="mdui-panel-item-header">
+											<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>你的服务器名称</div>
+											<!--<div class="mdui-panel-item-summary"></div>-->
+											<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+										</div>
+										<!--娃中娃中娃-->
+										<div class="mdui-panel-item-body">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mdui-panel" mdui-panel>
+						<div class="mdui-panel-item">
+							<div class="mdui-panel-item-header">
+								<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>tmp_log_history</div>
+								<div class="mdui-panel-item-summary">MC服务器历史记录</div>
+								<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+							</div>
+							<!--娃中娃-->
+							<div class="mdui-panel-item-body">
+								<p><i class="mdui-icon material-icons foldericon"></i>&#xe24d;</i>你的服务器名称.log</p>
+							</div>
+						</div>
+					</div>
+					<p></p>
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>你的服务器名称.json ——[ Minecraft 服务器面板配置文件 ]</p>
+				</div>
+			</div>
+			<div class="mdui-panel-item">
+				<div class="mdui-panel-item-header">
+					<div class="mdui-panel-item-title"><i class="mdui-icon material-icons foldericon">&#xe2c8;</i>users</div>
+					<div class="mdui-panel-item-summary">用户文件存放处</div>
+					<i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+				</div>
+				<div class="mdui-panel-item-body">
+					<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>用户名称.json ——[ 用户配置文件，包括用户名，密码等 ]</p>
+				</div>
+			</div>
+			<p></p>
+			<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>app.js</p>
+			<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>node_app.exe ——[ node 主程序（仅win） ]</p>
+			<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>package.json</p>
+			<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>package-lock.json</p>
+			<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>property.js ——[ 面板配置文件 ]</p>
+			<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>READEME.MD ——[ 面板介绍文件 ]</p>
+			<p><i class="mdui-icon material-icons fileicon">&#xe24d;</i>run.bat ——[ 面板启动脚本（仅win） ]</p>
+		</div>
+		</div>
    </div>
-
+   
    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
 	<br>
     <div class="mdui-typo">
 		<div class="mdui-chip"> 
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2019/8/5</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/7/8</code></span>
 		</div>
     </div>
 		</div>
 	</div>
-  </div>
+ </div>
 <!--正文结束-->
 	
 <div class="doc-footer-nav mdui-color-theme">
@@ -146,7 +549,7 @@ if ( $(".null").length > 0 ) {
           <div class="doc-footer-nav-chapter">创建服务器</div>
         </div>
       </a>
-          </div>
+     </div>
   </div>
 </div>
 
