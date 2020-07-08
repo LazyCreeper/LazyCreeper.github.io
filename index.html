@@ -14,8 +14,9 @@
   <title>文档 - MCSM 帮助文档</title>
   <link rel="stylesheet" href="./css/mdui.css"/>
   <link rel="stylesheet" href="./css/docs.css"/>
+  <link href="favicon.ico" rel="shortcut icon">
   <script src="./js/jq.js"></script>
-  <!--开始之前先来个没用的预加载--> <!--我不会js啊。。。所以别喷我行吗？。。。-->
+  <!--开始之前先来个没用的预加载-->
   <script>
   $(function(){
     $(document).ready(function(){ $(".load").fadeOut(700); })//我不会加载动画啊。。算了直接隐藏把。。
@@ -25,32 +26,23 @@
 <script>
 	function a(url){
 		$.get(url,function(data){
-		
-		$(".load").css("display", "block");//首先显示加载动画
-		
+			$(".load").css("display", "block");//首先显示加载动画
 			$("#right").html(data)//然后加载页面
 			cache: false//清除缓存（不知道有没有用）
-			var $$ = mdui.JQ;//加载完了，弹出提示
-mdui.snackbar({
-    message: '文档加载完成',
-    position: 'right-top'
-  });
+			mdui.snackbar({//加载完了，弹出提示
+			message: '文档加载完成',
+			position: 'right-top'
+			});
   //$(this).addClass("mdui-list-item-active").siblings().removeClass("mdui-list-item-active"); //当前列表高亮
   
-  $(".load").css("display", "none");//回收动画
+			$(".load").css("display", "none");//回收动画
 		});
 		
 		mdui.snackbar({//如果页面不存在怎么办呐~
-    message: '文档加载失败：404或502',
-    position: 'right-top'
-  });
-  
+		message: '文档加载失败：404或502',
+		position: 'right-top'
+		});
 	}
-</script>
-<script>
-    $.ajax({
-        cache: false//清除缓存（不知道有没有用）
-    })
 </script>
 </head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-light-blue mdui-theme-accent-cyan mdui-theme-layout-dark">
@@ -97,9 +89,9 @@ mdui.snackbar({
       <div class="mdui-collapse-item-body mdui-list">
         <a onclick="a('in-win.html')" href="#in-win" class="mdui-list-item mdui-ripple">Windows</a>
         <a onclick="a('in-linux.html')" href="#in-linux" class="mdui-list-item mdui-ripple">Linux</a>
-	<a onclick="a('in-macos.html')" href="#in-macos" class="mdui-list-item mdui-ripple ">MacOS</a>
-	<a onclick="a('in-android.html')" href="#in-android" class="mdui-list-item mdui-ripple ">Android</a>
-	<a onclick="a('otpanel.html')" href="#otpanel" class="mdui-list-item mdui-ripple ">其他面板</a>
+		<a onclick="a('in-macos.html')" href="#in-macos" class="mdui-list-item mdui-ripple ">MacOS</a>
+		<a onclick="a('in-android.html')" href="#in-android" class="mdui-list-item mdui-ripple ">Android</a>
+		<a onclick="a('otpanel.html')" href="#otpanel" class="mdui-list-item mdui-ripple ">其他面板</a>
       </div>
     </div>
 
@@ -183,6 +175,7 @@ mdui.snackbar({
         <div class="mdui-list-item-content"><a onclick="a('https://mcsm.cancer360.top/mirror.html')" href="#mirror" href="mirror.html">文档镜像</a></div> 
       </div>
     </div>
+	
   </div>
 </div>
 <!--菜单结束-->
@@ -208,14 +201,14 @@ mdui.snackbar({
 	  <p><label>文档作者：<a href="https://lazy.ink/">Lazy</a></label></p>
       <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="https://blog.imlazy,ink:233/" target="_blank">Lazy's Blog</a> | <a href="https://api.imlazy.ink" target="_blank">Easy API</a>
 		   | <a href="http://www.mcllxz.cc" target="_blank">LL Town Server</a></label></p>
-		   <p>文档镜像：<a onclick="a('https://qaq.imlazy.ink:233/mirror.html')" href="#mirror">点我查看</a></p>
+		   <p>文档镜像：<a onclick="a('https://mcsm.cancer360.top/mirror.html')" href="#mirror">点我查看</a></p>
 		<div class="mdui-chip">
              <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">copyright</i></span>
              <span class="mdui-chip-title">2020 Lazy All Rights Reserved.</span>
         </div>
 		<div class="mdui-chip">  
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/6/19</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/7/8</code></span>
 		</div>
 		<p></p>
     </div>
