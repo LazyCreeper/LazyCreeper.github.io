@@ -15,37 +15,8 @@
   <link rel="stylesheet" href="./css/mdui.css"/>
   <link rel="stylesheet" href="./css/docs.css"/>
   <link href="favicon.ico" rel="shortcut icon">
-  <script src="./js/jq.js"></script>
-  <!--开始之前先来个没用的预加载-->
-  <script>
-  $(function(){
-    $(document).ready(function(){ $(".load").fadeOut(700); })//我不会加载动画啊。。算了直接隐藏把。。
-});
-</script>
-	<!--简单暴力Ajax-->
-<script>
-	function a(url){
-		$.get(url,function(data){
-			$(".load").css("display", "block");//首先显示加载动画
-			$("#right").html(data)//然后加载页面
-			cache: false//清除缓存（不知道有没有用）
-			mdui.snackbar({//加载完了，弹出提示
-			message: '文档加载完成',
-			position: 'right-top'
-			});
-  //$(this).addClass("mdui-list-item-active").siblings().removeClass("mdui-list-item-active"); //当前列表高亮
-  
-			$(".load").css("display", "none");//回收动画
-		});
-		
-		mdui.snackbar({//如果页面不存在怎么办呐~
-		message: '文档加载失败：404或502',
-		position: 'right-top'
-		});
-	}
-</script>
 </head>
-<body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-light-blue mdui-theme-accent-cyan mdui-theme-layout-dark">
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-loaded mdui-theme-primary-light-blue mdui-theme-accent-pink mdui-theme-layout-auto">
 <header class="mdui-appbar mdui-appbar-fixed">
 <!--没用的进度条-->
 <div class="mdui-progress load">
@@ -66,7 +37,7 @@
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: '设置主题'}"><i class="mdui-icon material-icons">color_lens</i></span>
     <a href="https://github.com/LazyCreeper/LazyCreeper.github.io" target="_blank" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '查看 Github'}">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" class="mdui-icon" style="width: 24px;height:24px;">
-        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff"d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
+        <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M18,1.4C9,1.4,1.7,8.7,1.7,17.7c0,7.2,4.7,13.3,11.1,15.5
 	c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
 	c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
 	c-0.2-0.4-0.7-2.1,0.2-4.3c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
@@ -199,7 +170,7 @@
     <div class="mdui-typo">
       <h4 class="doc-article-title">关于此文档</h4>
 	  <p><label>文档作者：<a href="https://lazy.ink/">Lazy</a></label></p>
-      <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="https://blog.imlazy,ink:233/" target="_blank">Lazy's Blog</a> | <a href="https://api.imlazy.ink" target="_blank">Easy API</a>
+      <p><label>友情链接：<a href="https://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="https://blog.imlazy.ink:233/" target="_blank">Lazy's Blog</a> | <a href="https://api.imlazy.ink" target="_blank">Easy API</a>
 		   | <a href="http://www.mcllxz.cc" target="_blank">LL Town Server</a></label></p>
 		   <p>文档镜像：<a onclick="a('https://mcsm.cancer360.top/mirror.html')" href="#mirror">点我查看</a></p>
 		<div class="mdui-chip">
@@ -208,7 +179,7 @@
         </div>
 		<div class="mdui-chip">  
 		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/7/8</code></span>
+             <span class="mdui-chip-title">该页面最后编辑于<code>2020/10/17</code></span>
 		</div>
 		<p></p>
     </div>
@@ -238,9 +209,9 @@
 		</div>
 
 <!--公告-->
-<div class="mdui-dialog" id="mcsm-doc-info">
+<div class="mdui-dialog mdui-typo" id="mcsm-doc-info">
     <div class="mdui-dialog-title">公告</div>
-    <div class="mdui-dialog-content"><p>文档已采用Ajax技术，不会一刷新就炸了233<br>如果显示加载失败，要么是请求超时要么就是没有这个页面。</p></div>
+    <div class="mdui-dialog-content"><p>MDUI框架已提升至<code>v1.0.0</code>，可以根据系统自动切换主题了</p></div>
     <div class="mdui-dialog-actions" >
       <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
     </div>
@@ -251,20 +222,28 @@
 <div class="mdui-dialog" id="dialog-docs-theme">
   <div class="mdui-dialog-title">设置文档主题</div>
   <div class="mdui-dialog-content">
+
     <p class="mdui-typo-title">主题色</p>
     <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3">
       <div class="mdui-col">
         <label class="mdui-radio mdui-m-b-1">
-          <input type="radio" name="doc-theme-layout" value="" checked/>
+          <input type="radio" name="doc-theme-layout" value="auto" checked/>
           <i class="mdui-radio-icon"></i>
-          Light
+          根据系统
+        </label>
+      </div>
+      <div class="mdui-col">
+        <label class="mdui-radio mdui-m-b-1">
+          <input type="radio" name="doc-theme-layout" value="light" />
+          <i class="mdui-radio-icon"></i>
+          靓
         </label>
       </div>
       <div class="mdui-col">
         <label class="mdui-radio mdui-m-b-1">
           <input type="radio" name="doc-theme-layout" value="dark" />
           <i class="mdui-radio-icon"></i>
-          Dark
+          Dark♂
         </label>
       </div>
     </div>
@@ -336,14 +315,14 @@
       </div>
       <div class="mdui-col mdui-text-color-indigo">
         <label class="mdui-radio mdui-m-b-1">
-          <input type="radio" name="doc-theme-primary" value="indigo"/>
+          <input type="radio" name="doc-theme-primary" value="indigo" />
           <i class="mdui-radio-icon"></i>
           Indigo
         </label>
       </div>
       <div class="mdui-col mdui-text-color-light-blue">
         <label class="mdui-radio mdui-m-b-1">
-          <input type="radio" name="doc-theme-primary" value="light-blue" />
+          <input type="radio" name="doc-theme-primary" value="light-blue" checked/>
           <i class="mdui-radio-icon"></i>
           Light Blue
         </label>
@@ -392,7 +371,7 @@
       </div>
       <div class="mdui-col mdui-text-color-teal">
         <label class="mdui-radio mdui-m-b-1">
-          <input type="radio" name="doc-theme-primary" value="teal" checked/>
+          <input type="radio" name="doc-theme-primary" value="teal" />
           <i class="mdui-radio-icon"></i>
           Teal
         </label>
@@ -452,7 +431,7 @@
       </div>
       <div class="mdui-col mdui-text-color-indigo">
         <label class="mdui-radio mdui-m-b-1">
-          <input type="radio" name="doc-theme-accent" value="indigo" checked />
+          <input type="radio" name="doc-theme-accent" value="indigo" />
           <i class="mdui-radio-icon"></i>
           Indigo
         </label>
@@ -487,7 +466,7 @@
       </div>
       <div class="mdui-col mdui-text-color-pink">
         <label class="mdui-radio mdui-m-b-1">
-          <input type="radio" name="doc-theme-accent" value="pink"/>
+          <input type="radio" name="doc-theme-accent" value="pink" checked/>
           <i class="mdui-radio-icon"></i>
           Pink
         </label>
@@ -526,16 +505,28 @@
   <div class="mdui-divider"></div>
   <div class="mdui-dialog-actions">
     <button class="mdui-btn mdui-ripple mdui-float-left" mdui-dialog-cancel>恢复默认主题</button>
-    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>完成</button>
+    <button class="mdui-btn mdui-ripple" mdui-dialog-confirm>ok</button>
   </div>
 </div>
 
-<script src="./js/marked.js"></script>
 <script src="./js/smooth-scroll.min.js"></script>
 <script src="./js/holder.min.js"></script>
 <script src="./js/highlight.pack.js"></script>
 <script src="./js/mdui.js"></script>
-<script>var $$ = mdui.JQ;</script>
+<script>var $ = mdui.$;</script>
+<!--简单暴力Ajax（MDUI没有.get()所以只能用jq了）-->
+<script src="./js/jq.js"></script>
+<script>
+$(function () {$(".load").css("display", "none");})
+function a(url){
+	$.get(url,function(data){
+		$(".load").css("display", "block");
+		$("#right").html(data);
+		//mdui.snackbar({message: '加载完成',position: 'right-top'});
+		$(".load").css("display", "none");
+	});
+}
+</script>
 <script src="./js/docs.js"></script>
 	</body>
 </html>
