@@ -1,8 +1,10 @@
-@font-face {
-    font-family: robotomono;
-    src: url(../fonts/RobotoMono-Regular.woff2)
+.mdui-toolbar-spacer {
+  height: 100%;
 }
 
+.adsbygoogle {
+  border-bottom: none !important;
+}
 .abg {
     background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.43) 0%, rgba(28, 103, 146, 0.7) 100%),url(https://api.imlazy.ink/img/);
     background-size: cover;
@@ -42,27 +44,23 @@
 	font-weight: 400;
 }
 
-
-body {font-family: "小米兰亭",Microsoft YaHei,Roboto}
-/* 文档最外层 */
+/* æ–‡æ¡£æœ€å¤–å±‚ */
 .doc-container {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   position: relative;
 }
 @media (min-width: 480px) {
   .doc-container {
     padding-top: 60px;
-    padding-bottom: 70px;
   }
 }
 @media (min-width: 840px) {
   .doc-container {
     padding-top: 80px;
-    padding-bottom: 100px;
   }
 }
-/* 页面标题 */
+/* é¡µé¢æ ‡é¢˜ */
 h1.doc-title {
   font-size: 24px;
   line-height: 32px;
@@ -83,7 +81,7 @@ h1.doc-title {
     margin: 0 400px 30px 0;
   }
 }
-/* 组件介绍 */
+/* ç»„ä»¶ä»‹ç» */
 .doc-intro {
   font-size: 16px;
   margin-bottom: 0;
@@ -97,16 +95,12 @@ h1.doc-title {
 @media (min-width: 840px) {
   .doc-intro {
     padding: 0 0 60px 0;
-    margin-right: 400px;
   }
-}
-.doc-no-cover .doc-intro {
-  margin-right: 0;
 }
 .doc-intro p:last-child {
   margin-bottom: 0;
 }
-/* 组件介绍中的子模块 */
+/* ç»„ä»¶ä»‹ç»ä¸­çš„å­æ¨¡å— */
 .doc-intro-module {
   font-size: 14px;
   margin-top: 40px;
@@ -119,7 +113,7 @@ h1.doc-title {
 .doc-intro-module p {
   margin-bottom: 1em;
 }
-/* 目录 */
+/* ç›®å½• */
 .doc-toc {
   margin: 0;
   font-size: 16px;
@@ -185,35 +179,28 @@ h1.doc-title {
 .doc-no-cover .doc-toc {
   margin-right: 0;
 }
-/* 封面图 */
-.doc-cover {
-  display: none;
-}
-@media (min-width: 840px) {
-  .doc-cover {
-    display: block;
-    position: absolute;
-    right: 8px;
-    top: 80px;
-  }
-  .doc-cover img {
-    width: 360px;
-    height: 360px;
-  }
-}
-/* 正文章节 */
+/* æ­£æ–‡ç« èŠ‚ */
 .doc-chapter {
   margin: 20px 0 0 0;
-  padding: 0 0 80px 0;
+  padding: 0 0 40px 0;
+}
+.doc-chapter .mdui-typo {
+  padding-bottom: 20px;
 }
 .doc-chapter-title {
   margin-top: 2em !important;
+  margin-bottom: 30px !important;
   position: relative;
   padding: 80px 0 0 0;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 .mdui-theme-layout-dark .doc-chapter-title {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .doc-chapter-title {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
 }
 .doc-chapter-title .doc-anchor {
   position: absolute;
@@ -223,7 +210,7 @@ h1.doc-title {
   border-top: none !important;
   margin-top: 0 !important;
 }
-/* 正文小章节标题 */
+/* æ­£æ–‡å°ç« èŠ‚æ ‡é¢˜ */
 .doc-article-title {
   position: relative;
   margin: 84px 0 30px 0 !important;
@@ -234,12 +221,16 @@ h1.doc-title {
   position: absolute;
   top: -100px;
 }
+.doc-chapter-title + .doc-article-title,
+script + .doc-article-title {
+  margin-top: 0 !important;
+}
 
 /**
  * ==============================================================
- * ======================================================= 底部翻页
+ * ======================================================= åº•éƒ¨ç¿»é¡µ
  */
-/* 底部翻页 */
+/* åº•éƒ¨ç¿»é¡µ */
 .doc-footer-nav {
   height: 96px;
 }
@@ -298,16 +289,28 @@ h1.doc-title {
 .mdui-theme-layout-dark .doc-footer-nav-text {
   color: #fff;
 }
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .doc-footer-nav {
+    background-color: #212121 !important;
+  }
+  .mdui-theme-layout-auto .doc-footer-nav-left,
+  .mdui-theme-layout-auto .doc-footer-nav-right {
+    background-color: #212121 !important;
+  }
+  .mdui-theme-layout-auto .doc-footer-nav-text {
+    color: #fff;
+  }
+}
 
 /**
  * ===============================================================
- * =========================================================== 演示
+ * =========================================================== æ¼”ç¤º
  */
 .doc-example {
   position: relative;
   margin-bottom: 2.6em;
 }
-/* 实例演示 */
+/* å®žä¾‹æ¼”ç¤º */
 .doc-example-demo {
   padding: 0;
   -webkit-transition: padding .3s;
@@ -322,7 +325,7 @@ h1.doc-title {
   content: ' ';
 }
 
-/* Example 文字 */
+/* Example æ–‡å­— */
 .doc-example-demo-label {
   display: none;
   box-sizing: border-box;
@@ -343,7 +346,13 @@ h1.doc-title {
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.5);
 }
-/* 实例代码 */
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .doc-example-demo-label {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+/* å®žä¾‹ä»£ç  */
 .doc-example-code {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-top: none;
@@ -355,12 +364,17 @@ h1.doc-title {
 .mdui-theme-layout-dark .doc-example-code {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .doc-example-code {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
 .doc-example-code code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   line-height: 1.7;
   padding: 0;
 }
-/* 代码中关键类名高亮 */
+/* ä»£ç ä¸­å…³é”®ç±»åé«˜äº® */
 .doc-example-code-required {
   padding: 2px;
   background-color: #E8EAF6;
@@ -368,14 +382,14 @@ h1.doc-title {
 .doc-example-code-required * {
   color: #FF4081;
 }
-/* 代码中添加链接 */
+/* ä»£ç ä¸­æ·»åŠ é“¾æŽ¥ */
 .doc-example-code a {
   text-decoration: none;
 }
 .doc-example-tools {
   position: absolute;
   right: 0;
-  top: -20px;
+  top: -24px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -399,6 +413,14 @@ h1.doc-title {
 .mdui-theme-layout-dark .doc-example-tools a:hover {
   color: #ffffff;
 }
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .doc-example-tools a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .mdui-theme-layout-auto .doc-example-tools a:hover {
+    color: #ffffff;
+  }
+}
 .doc-example-showcode .doc-example-demo {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-top: none;
@@ -406,6 +428,11 @@ h1.doc-title {
 }
 .mdui-theme-layout-dark .doc-example-showcode .doc-example-demo {
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .doc-example-showcode .doc-example-demo {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
 }
 .doc-example-showcode .doc-example-demo-label {
   display: block;
@@ -419,16 +446,16 @@ h1.doc-title {
 
 /**
  * ============================================================
- * =================================================== 常用工具类
+ * =================================================== å¸¸ç”¨å·¥å…·ç±»
  */
-/* 小型的圆形 */
+/* å°åž‹çš„åœ†å½¢ */
 .doc-color-circle {
   display: inline-block;
   width: 12px;
   height: 12px;
   border-radius: 50%;
 }
-/* 添加内边距 */
+/* æ·»åŠ å†…è¾¹è· */
 .doc-box-padding {
   padding: 10px 15px;
   border-radius: 3px;
@@ -437,18 +464,38 @@ h1.doc-title {
 
 /**
  * =========================================================
- * ======================================== 根据主题设置可见状态
+ * ======================================== æ ¹æ®ä¸»é¢˜è®¾ç½®å¯è§çŠ¶æ€
  */
-/* 亮色主题可见 */
+/* äº®è‰²ä¸»é¢˜å¯è§ */
 .doc-visible-light-theme {
   display: block;
 }
 .mdui-theme-layout-dark .doc-visible-light-theme {
   display: none;
 }
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .doc-visible-light-theme {
+    display: none;
+  }
+}
 .doc-visible-dark-theme {
   display: none;
 }
 .mdui-theme-layout-dark .doc-visible-dark-theme {
   display: block;
+}
+@media (prefers-color-scheme: dark) {
+  .mdui-theme-layout-auto .doc-visible-dark-theme {
+    display: block;
+  }
+}
+
+/**
+ * =========================================================
+ * ======================================== æš—è‰²ä¸»é¢˜ä¸‹ä¼˜åŒ–
+ */
+@media (prefers-color-scheme: dark) {
+  img {
+    filter: brightness(.8); /* é™ä½Žå›¾ç‰‡äº®åº¦ */
+  }
 }
