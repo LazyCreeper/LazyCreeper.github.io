@@ -11,7 +11,7 @@
   <meta name="keywords" content="Lazy,Mcserver,Mcserver Manager,MCSM,MCSManager,Mcserver Manager Help,Mcserver帮助,MCSM帮助,帮助文档,MCSManager怎么用,我的世界,我的世界怎么开服,服务器,MCSM怎么用,我的世界服务器,Mcserver Manager开服,我的世界怎么联机,mcsm doc">
   <meta name="description" content="这里是Mcserver Manager的帮助文档! 如果你在使用MCSM时出现了问题，请先阅读此文档。如果你觉得此文档有什么不完善的地方或者说你有什么更好的建议，可以发送邮箱至lazy_creeper@qq.com。">
   <meta name="author" content="Lazy">
-  <title>文档 - MCSM 帮助文档</title>
+  <title>文档 - MCSManager 帮助文档</title>
   <link rel="stylesheet" href="./css/mdui.css"/>
   <link rel="stylesheet" href="./css/docs.css"/>
   <link href="favicon.ico" rel="shortcut icon">
@@ -58,11 +58,11 @@
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a onclick="a('in-win.html')" href="#in-win" class="mdui-list-item mdui-ripple">Windows</a>
-        <a onclick="a('in-linux.html')" href="#in-linux" class="mdui-list-item mdui-ripple">Linux</a>
-		<a onclick="a('in-macos.html')" href="#in-macos" class="mdui-list-item mdui-ripple ">MacOS</a>
-		<a onclick="a('in-android.html')" href="#in-android" class="mdui-list-item mdui-ripple ">Android</a>
-		<a onclick="a('otpanel.html')" href="#otpanel" class="mdui-list-item mdui-ripple ">其他面板</a>
+        <a onclick="a('in-win.html')" href="#in-win.html" class="mdui-list-item mdui-ripple">Windows</a>
+        <a onclick="a('in-linux.html')" href="#in-linux.html" class="mdui-list-item mdui-ripple">Linux</a>
+		<a onclick="a('in-macos.html')" href="#in-macos.html" class="mdui-list-item mdui-ripple ">MacOS</a>
+		<a onclick="a('in-android.html')" href="#in-android.html" class="mdui-list-item mdui-ripple ">Android</a>
+		<a onclick="a('otpanel.html')" href="#otpanel.html" class="mdui-list-item mdui-ripple ">其他面板</a>
       </div>
     </div>
 
@@ -73,7 +73,7 @@
         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
       </div>
       <div class="mdui-collapse-item-body mdui-list">
-        <a onclick="a('structure.html')" href="#structure" class="mdui-list-item mdui-ripple ">目录结构</a>
+        <a onclick="a('structure.html')" href="#structure.html" class="mdui-list-item mdui-ripple ">目录结构</a>
       </div>
 	  
     </div>
@@ -117,9 +117,9 @@
 		 <a onclick="a('error_nomcserver.html')" href="#error_nomcserver.html" class="mdui-list-item mdui-ripple ">服务器无法开启</a>
 		 <a onclick="a('error_safe.html')" href="#error_safe.html" class="mdui-list-item mdui-ripple ">面板安全吗？</a>
 		 <a onclick="a('error_houtai.html')" href="#error_houtai.html" class="mdui-list-item mdui-ripple ">如何让面板在后台运行？</a>
-		 <a href="#" class="mdui-list-item mdui-ripple ">更多问题请前往</a>
-		 <a href="#" class="mdui-list-item mdui-ripple ">Github提交或者</a>
-		 <a href="#" class="mdui-list-item mdui-ripple ">加群讨论</a>
+		 <a href="javascript:;" class="mdui-list-item mdui-ripple ">更多问题请前往</a>
+		 <a href="javascript:;" class="mdui-list-item mdui-ripple ">Github提交或者</a>
+		 <a href="javascript:;" class="mdui-list-item mdui-ripple ">加群讨论</a>
      </div>
    </div>
 	  
@@ -137,13 +137,13 @@
     <div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-800">info_outline</i>
-        <div class="mdui-list-item-content"><a onclick="$('#right').load('./about.html');" href="#">关于此文档</a></div> 
+        <div class="mdui-list-item-content"><a onclick="a('about.html');" href="#about.html">关于此文档</a></div> 
       </div>
     </div>
 	<div class="mdui-collapse-item ">
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown-700">&#xeb47;</i>
-        <div class="mdui-list-item-content"><a onclick="a('https://mcsm.cancer360.top/mirror.html')" href="#mirror" href="mirror.html">文档镜像</a></div> 
+        <div class="mdui-list-item-content"><a onclick="a('https://mcsm.cancer360.top/mirror.html')" href="#https://mcsm.cancer360.top/mirror.html">文档镜像</a></div> 
       </div>
     </div>
 	
@@ -211,7 +211,7 @@
 <!--公告-->
 <div class="mdui-dialog mdui-typo" id="mcsm-doc-info">
     <div class="mdui-dialog-title">公告</div>
-    <div class="mdui-dialog-content"><p>MDUI框架已提升至<code>v1.0.0</code>，可以根据系统自动切换主题了</p></div>
+    <div class="mdui-dialog-content"><p>新增虚拟URL，可以随便刷新也不会返回主页了</p></div>
     <div class="mdui-dialog-actions" >
       <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
     </div>
@@ -517,7 +517,15 @@
 <!--简单暴力Ajax（MDUI没有.get()所以只能用jq了）-->
 <script src="./js/jq.js"></script>
 <script>
-$(function () {$(".load").css("display", "none");})
+$(function () {
+	$(".load").css("display", "none");
+	var vars = window.location.hash.split("#")[1];
+	if(vars.length >= 0 ) { 
+		$.get(vars,function(data){
+			$("#right").html(data);
+		});
+	}
+})
 function a(url){
 	$.get(url,function(data){
 		$(".load").css("display", "block");
