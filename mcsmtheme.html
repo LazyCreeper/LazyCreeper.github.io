@@ -1,41 +1,46 @@
-
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="./css/mdui.css"/>
-  <link rel="stylesheet" href="./css/docs.css"/>
-<!--正文开始-->
-
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/mdui.css"/>
+<script src="./js/mdui.js"></script>
+<link rel="stylesheet" href="./css/docs.css"/>
 <div class="mdui-container doc-container doc-no-cover">
-<div class="null">
-<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
-<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
-</div>
-<script>
-if ( $(".null").length > 0 ) { 
-   $('.null').css('display', 'none'); // 存在
-}
-</script>
-  <h1 class="doc-title mdui-text-color-theme">Mcserver Manager 主题中心</h1>
-	<div class="doc-chapter">
-    <div class="mdui-typo">
-      <p><strong>注意：</strong>从2020年1月28日起，主题站搬到我的博客<a href="https://blog.imlazy.ink:233/index.php/category/mcsm-theme/">https://blog.imlazy.ink:233/index.php/category/mcsm-theme/</a>，这里不会在提供任何主题下载。</p>
-    </div>
-		
-	<div id="Themeinstall" class="mdui-typo">
-		<h2 class="doc-title mdui-text-color-theme">主题安装教程</h2>
-		<p>第一步：在本页面下载一个你喜欢的主题</p>
-		<p>第二步：解压缩到面板的<code>public</code>目录。选择全部替换。</p>
-		<p>第三步：刷新浏览器即可，<mark>无需重启面板!</mark></p>
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
 	</div>
-		
-		
-  <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
-	<br>
-    <div class="mdui-typo">
-		<div class="mdui-chip"> 
-		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/1/28</code></span>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");	
+	</script>
+	<h1 class="doc-title mdui-text-color-theme">Mcserver Manager 主题中心</h1>
+	<div class="doc-chapter">
+		<div class="mdui-typo">
+			<p><strong>注意：</strong>从2020年1月28日起，主题站搬到我的博客<a href="https://blog.imlazy.ink:233/index.php/category/mcsm-theme/">https://blog.imlazy.ink:233/index.php/category/mcsm-theme/</a>，这里不会再提供任何主题下载。</p>
 		</div>
-    </div>
+		
+		<div id="Themeinstall" class="mdui-typo">
+			<h2 class="doc-title mdui-text-color-theme">主题安装教程</h2>
+			<ol>
+				<li>在本页面下载一个你喜欢的主题</li>
+				<li>解压缩到面板的<code>public</code>目录。选择全部替换。</li>
+				<li>刷新浏览器即可，<mark>无需重启面板!</mark></li>
+			</ol>
+			<h3>具体安装教程以博客内主题说明为准！</h3>
+		</div>
+		
+		
+	<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+		<br>
+		<div class="mdui-typo">
+			<div class="mdui-chip"> 
+				<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+				<span class="mdui-chip-title">该页面最后编辑于<code>2021-7-20</code></span>
+			</div>
+		</div>
 	</div>
   </div>
 </div>

@@ -1,47 +1,59 @@
+@font-face {
+    font-family:tx;src:url(../fonts/tx.woff2) format("woff2")
+}
+body {
+	font-family:'等线',Roboto,'微软雅黑',Consolas;
+}
+
 .mdui-toolbar-spacer {
   height: 100%;
 }
 
-.adsbygoogle {
-  border-bottom: none !important;
-}
 .abg {
-    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.43) 0%, rgba(28, 103, 146, 0.7) 100%),url(https://api.imlazy.ink/img/);
+    background-image: linear-gradient(135deg, rgba(0, 19, 88, 0.7) 0%, rgba(0, 60, 30, 0.7) 100%),url(https://api.imlazy.ink/img/);
     background-size: cover;
     background-repeat: no-repeat;
     min-width: 100%!important;
-	text-align:center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.ApiList {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.load {
+	position: fixed;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    left: 0;
+}
+
+.index-a {
+	height: 46px;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding: 0 24px;
+    color: #ffb5d7;
+    font-size: 16px;
+    line-height: 46px;
+    border: 1px solid #ff98df;
 }
 
 @media (max-width:790px) {
 	.abg {
-	background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.43) 0%, rgba(28, 103, 146, 0.7) 100%),url(https://api.imlazy.ink/img-phone/);
-    background-size: cover;
-    background-repeat: no-repeat;
+		background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.43) 0%, rgba(28, 103, 146, 0.7) 100%),url(https://api.imlazy.ink/img-phone/);
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
-}
-
-/*通用面板*/
-.Panel {
-	box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
-	margin-bottom: 16px;
-	background-color: #fff0;
-	border: 1px solid #d1d5da;
-	border-radius: 1px;
-}
-
-.PanelTitle {
-	font-family: 'Source Sans Pro', "微软雅黑", sans-serif;
-	padding: 10px 12px;
-	font-weight: 800;
-	margin: 0;
-	line-height: 1;
-	border-bottom: 1px solid rgb(246, 246, 246);
-}
-
-.PanelBody {
-	padding: 10px 12px;
-	font-weight: 400;
+	
+	.NekohaShizuku {
+		display:none;
+	}
 }
 
 /* æ–‡æ¡£æœ€å¤–å±‚ */

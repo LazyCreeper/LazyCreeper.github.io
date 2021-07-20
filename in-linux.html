@@ -1,26 +1,30 @@
-    <meta charset="utf-8">
-  <link rel="stylesheet" href="./css/mdui.css"/>
-  <script src="./js/mdui.js"></script>
-  <link rel="stylesheet" href="./css/docs.css"/>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/mdui.css"/>
+<script src="./js/mdui.js"></script>
+<link rel="stylesheet" href="./css/docs.css"/>
 <div class="mdui-container doc-container doc-no-cover">
-<div class="null">
-<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
-<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
-</div>
-<script>
-if ( $(".null").length > 0 ) { 
-   $('.null').css('display', 'none'); // 存在
-}
-</script>
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+	</div>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");	
+	</script>
 
-  <h1 class="doc-title mdui-text-color-theme">运行在Linux</h1>
-  <nav class="doc-toc mdui-text-color-theme">
+	<h1 class="doc-title mdui-text-color-theme">运行在Linux</h1>
+	<nav class="doc-toc mdui-text-color-theme">
     <ul>
-      <li><a data-scroll="" href="#ubuntu">运行在Ubuntu</a></li>
-      <li><a data-scroll="" href="#centos">运行在Centos / RedHat</a></li>
-      <li><a data-scroll="" href="#keep">让面板在后台保持运行</a></li>
-    </ul>
-  </nav>
+		<li><a data-scroll="" href="#ubuntu">运行在Ubuntu</a></li>
+		<li><a data-scroll="" href="#centos">运行在Centos / RedHat</a></li>
+		<li><a data-scroll="" href="#keep">让面板在后台保持运行</a></li>
+		</ul>
+	</nav>
 	<div class="doc-chapter">
 		<!--Ubuntu-->
 		<div class="mdui-typo">

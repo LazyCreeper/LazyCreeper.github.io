@@ -1,37 +1,41 @@
-   <meta charset="utf-8">
-  <link rel="stylesheet" href="./css/mdui.css"/>
-  <script src="./js/mdui.js"></script>
-  <link rel="stylesheet" href="./css/docs.css"/>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/mdui.css"/>
+<script src="./js/mdui.js"></script>
+<link rel="stylesheet" href="./css/docs.css"/>
 <div class="mdui-container doc-container doc-no-cover">
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+	</div>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");	
+	</script>
 
-<div class="null">
-<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
-<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
-</div>
-<script>
-if ( $(".null").length > 0 ) { 
-   $('.null').css('display', 'none'); // 存在
-}
-</script>
-
-  <h1 class="doc-title mdui-text-color-theme">运行在MacOS</h1>
+	<h1 class="doc-title mdui-text-color-theme">运行在MacOS</h1>
 	<div class="doc-chapter">
-    <div class="mdui-typo">
-	<h2 class="doc-title mdui-text-color-theme">我很遗憾的通知您：我没用过Mac所以没有文档233</h2>
-	<p>但是该面板基于NodeJS编写所以理论上是可以在Mac上运行的。你可以去试一下</p>
-	<p>或者你给我一台能用的Mac给我测试也行233</p>
-	<img src="https://i.zerodream.net/bbe2b90c4fcaaf45c12abbc8ecf6bb1c.jpg" />
-   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
-	<br>
-    <div class="mdui-typo">
-		<div class="mdui-chip"> 
-		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/3/16</code></span>
+		<div class="mdui-typo">
+			<h2 class="doc-title mdui-text-color-theme">我很遗憾的通知您：我没用过Mac所以没有文档233</h2>
+			<p>但是该面板基于NodeJS编写所以理论上是可以在Mac上运行的。你可以去试一下</p>
+			<p>或者你给我一台能用的Mac给我测试也行233</p>
+			<img src="https://i.zerodream.net/bbe2b90c4fcaaf45c12abbc8ecf6bb1c.jpg" />
+			<br>
 		</div>
-    </div>
+		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+	
+			<div class="mdui-typo">
+				<div class="mdui-chip"> 
+					<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2021-7-20</code></span>
+				</div>
+			</div>
 		</div>
-  </div>
-</div>
+	</div>
 </div>
 <!--正文结束-->
 	

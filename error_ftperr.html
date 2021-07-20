@@ -1,17 +1,21 @@
-    <meta charset="utf-8">
-  <link rel="stylesheet" href="./css/mdui.css"/>
-  <script src="./js/mdui.js"></script>
-  <link rel="stylesheet" href="./css/docs.css"/>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/mdui.css"/>
+<script src="./js/mdui.js"></script>
+<link rel="stylesheet" href="./css/docs.css"/>
 <div class="mdui-container doc-container doc-no-cover">
-<div class="null">
-<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
-<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
-</div>
-<script>
-if ( $(".null").length > 0 ) { 
-   $('.null').css('display', 'none'); // 存在
-}
-</script>
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+	</div>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");	
+	</script>
 
   <h1 class="doc-title mdui-text-color-theme">FTP无法连接？的解决方案</h1>
 	<div class="doc-chapter">

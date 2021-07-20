@@ -1,98 +1,75 @@
-<!--简单暴力文档防炸措施区域-->
-<!--重新定义UTF-8编码，防止乱码--> 
- <meta charset="utf-8">
- <!--重新引入css，js文件--> 
-  <link rel="stylesheet" href="./css/mdui.css"/>
-  <script src="./js/mdui.js"></script>
-  <link rel="stylesheet" href="./css/docs.css"/>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/mdui.css"/>
+<script src="./js/mdui.js"></script>
+<link rel="stylesheet" href="./css/docs.css"/>
 <div class="mdui-container doc-container doc-no-cover">
-<div class="null">
-<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
-<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
-</div>
-<script>
-if ( $(".null").length > 0 ) { 
-   $('.null').css('display', 'none'); // 判断文档是否完整
-}
-</script>
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+	</div>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");	
+	</script>
 
-  <h1 class="doc-title mdui-text-color-theme">MCSM 文档镜像</h1>
+	<h1 class="doc-title mdui-text-color-theme">MCSM 文档镜像</h1>
 	<div class="doc-chapter">
 		<div class="mdui-typo">
 		    <div class="mdui-table-fluid">
-  <table class="mdui-table mdui-table-hoverable">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>域名</th>
-        <th>服务器节点</th>
-        <th>状态</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td><a href="https://mcsm.imlazy.ink" target="_blank">https://mcsm.imlazy.ink</a></td>
-        <td>香港阿里云</td>
-        <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td><a href="https://opvnua.coding.io" target="_blank">https://opvnua.coding.io</a></td>
-        <td>香港腾讯云</td>
-        <td>苟延残喘 <i class="mdui-icon material-icons mdui-text-color-red-500">&#xe002;</i></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td><a href="https://qaq.imlazy.ink:233" target="_blank">https://qaq.imlazy.ink:233</a></td>
-        <td>浙江阿里云</td>
-        <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
-      </tr>
-	  <tr>
-        <td>4</td>
-        <td><a href="https://mcsm.cancer360.top" target="_blank">https://mcsm.cancer360.top</a></td>
-        <td>深圳阿里云</td>
-        <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
-      </tr>
-	  <tr>
-        <td>5</td>
-        <td><a href="https://lazycreeper.github.io" target="_blank">https://lazycreeper.github.io</a></td>
-        <td>Github Page</td>
-        <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
-      </tr>
-	  <tr>
-        <td>6</td>
-        <td><a href="http://mcsm.llxz.cc" target="_blank">http://mcsm.llxz.cc</a></td>
-        <td>香港</td>
-        <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
-      </tr>
-	  <tr>
-        <td>7</td>
-        <td><a href="https://mcsm.netlify.com" target="_blank">https://mcsm.netlify.com</a></td>
-        <td>疑似新加坡</td>
-        <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
-      </tr>
-	  <tr>
-        <td>8</td>
-        <td><a href="https://mcsm.islmh.cn/" target="_blank">https://mcsm.islmh.cn/</a></td>
-        <td>上海阿里云</td>
-        <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<strong>注意：部分镜像站可能会由于时间，地理，人文等因素无法完成与Github的同步，稍等即可。</strong>
+				<table class="mdui-table mdui-table-hoverable">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>域名</th>
+							<th>服务器节点</th>
+							<th>状态</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td><a href="https://mcsm.imlazy.ink" target="_blank">https://mcsm.imlazy.ink</a></td>
+							<td>香港腾讯云</td>
+    					    <td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td><a href="https://opvnua.coding.io" target="_blank">https://opvnua.coding.io</a></td>
+							<td>香港腾讯云</td>
+							<td>苟延残喘 <i class="mdui-icon material-icons mdui-text-color-red-500">&#xe002;</i></td>
+						</tr>
+						<tr>
+    					    <td>3</td>
+    					    <td><a href="https://lazycreeper.github.io" target="_blank">https://lazycreeper.github.io</a></td>
+							<td>Github Page</td>
+							<td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
+  					    </tr>
+						<tr>
+							<td>4</td>
+							<td><a href="https://mcsm.netlify.app" target="_blank">https://mcsm.netlify.app</a></td>
+							<td>疑似新加坡</td>
+							<td>正常 <i class="mdui-icon material-icons mdui-text-color-green-a400">&#xe5ca;</i></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<strong>注意：部分镜像站可能会由于时间，地理，人文等因素无法完成与Github的同步，稍等即可。</strong>
 		</div>
-   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
-	<br>
-    <div class="mdui-typo">
-		<div class="mdui-chip"> 
-		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/6/19</code></span>
+		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+			<br>
+			<div class="mdui-typo">
+				<div class="mdui-chip"> 
+					<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2020/6/19</code></span>
+				</div>
+			</div>
 		</div>
-    </div>
 	</div>
-  </div>
 </div>
 <!--正文结束-->
 	
