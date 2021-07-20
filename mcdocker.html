@@ -1,54 +1,126 @@
-    <meta charset="utf-8">
-  <link rel="stylesheet" href="./css/mdui.css"/>
-  <script src="./js/mdui.js"></script>
-  <link rel="stylesheet" href="./css/docs.css"/>
+ <meta charset="utf-8">
+<link rel="stylesheet" href="./css/mdui.css"/>
+<script src="./js/mdui.js"></script>
+<link rel="stylesheet" href="./css/docs.css"/>
 <div class="mdui-container doc-container doc-no-cover">
-<div class="null">
-<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
-<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
-</div>
-<script>
-if ( $(".null").length > 0 ) { 
-   $('.null').css('display', 'none'); // 存在
-}
-</script>
-
-  <h1 class="doc-title mdui-text-color-theme">使用Docker来保护你的服务器 <small>(仅Linux)</small></h1>
-	<div class="doc-chapter">
-		<div class="mdui-typo">
-		   <p class="mdui-typo-headline">因为没有Linux机器测试，所以这篇教程就暂且咕一阵子把~</p>
-		</div>
-   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
-	<br>
-    <div class="mdui-typo">
-		<div class="mdui-chip"> 
-		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2020/1/28</code></span>
-		</div>
-    </div>
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
 	</div>
-  </div>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");	
+	</script>
+
+	<h1 class="doc-title mdui-text-color-theme">使用Docker来保护你的服务器 <small>(仅Linux)</small></h1>
+	<nav class="doc-toc mdui-text-color-theme">
+		<ul>
+			<li>
+				<a data-scroll="" href="#install-docker">安装Docker</a>
+				<ul>
+					<li><a data-scroll="" href="#i-d-u">Ubuntu</a></li>
+					<li><a data-scroll="" href="#i-d-c">CentOS</a></li>
+					<li><a data-scroll="" href="#i-d-a">Arch Linux</a></li>
+				</ul>
+			</li>
+			<li><a data-scroll="" href="#create-docker">创建Docker</a></li>
+			<li><a data-scroll="" href="#create-mcs">创建服务端</a></li>
+			<li><a data-scroll="" href="#runserver">启动服务器</a></li>
+		</ul>
+	</nav>
+	<div class="doc-chapter">
+		<!--安装Docker-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">第一步：安装Docker<a class="doc-anchor" id="install-docker"></a></h2>
+			<h3><strong>Ubuntu：</strong></h3><a class="doc-anchor" id="i-d-u"></a><pre>sudo apt-get update<br>sudo apt-get install docker.io</pre>
+			<h4>启动 Docker 服务（重要）</h4>
+			<pre>sudo service docker start</pre>
+		   
+			<h3><strong>CentOS：</strong><a class="doc-anchor" id="i-d-c"></a></h3><pre>yum update -y<br>yum -y install docker</pre>
+			<h4>启动 Docker 服务（重要）</h4>
+			<pre>sudo service docker start</pre>
+		   
+			<h3><strong>Arch Linux</strong><a class="doc-anchor" id="i-d-a"></a></h3>
+			<p>安装 Docker</p>
+			<pre>pacman -S docker</pre>
+			<p>启动 Docker</p>
+			<pre>systemctl start docker</pre>
+			<p>开机启动 Docker</p>
+			<pre>systemctl enable docker</pre>
+			<p>关掉开机启动 Docker</p>
+			<pre>systemclt disable docker</pre>
+			
+			<h3><strong>最后</strong></h3>
+			<p>输入以下命令，输出版本号即为正确</p>
+			<pre>docker version</pre>
+		</div>
+		
+		<!--创建Docker-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">第二步：创建Docker<a class="doc-anchor" id="create-docker"></a></h2>
+			<ol>
+				<li><p>使用<code>#master</code>账号登录</p></li>
+				<li><p>进入 <code>服务端管理</code></p></li>
+				<li><p>选择中上方的 <code>创建虚拟镜像</code> 中创建 Docker 镜像。</p></li>
+				<li><p>默认情况下，无需修改。点击 <code>创建镜像</code></p></li>
+				<li><p>最后。等待，速度与你网络有关，<code>任务结果列表</code> 显示成功则成功。</p></li>
+			</ol>
+			
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">第三步：创建服务端<a class="doc-anchor" id="create-mcs"></a></h2>
+			<p>创建服务端十分简单，点击“引导创建服务端”即可。通过里面的指引，创建你的 MC 服务器，稍后可以通过文件在线管理上传你的核心文件。</p>
+			<h3><strong>此端的 Docker 配置</strong></h3>
+			<ol>
+				<li><p>创建好服务端之后，点击这个服务器实例的【参数】然后到【docker 配置】</p></li>
+				<li><p>勾上【此服务端启用 Docker 容器】选择框</p></li>
+				<li><p>在【端口限制】中填写<code>25565:25565</code>即可，此意是开放<code>25565</code>端口。冒号两边一般情况下保持一致即可。</p></li>
+				<li><p>保存</p></li>
+			</ol>
+			
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">第四步：启动服务器<a class="doc-anchor" id="runserver"></a></h2>
+			<ol>
+				<li><p>点击左侧菜单进入【文件在线管理】，找到该服务端并进入，然后上传你的核心文件。</p></li>
+				<li><p>启动服务器</p></li>
+			</ol>
+			<li>启动时，Docker 容器会自动加载你的 Minecraft 服务端，保证安全性，稳定性。</li>
+			<li>如果命令控制台出现一堆乱码，使用 模拟型终端 即可</li>
+		</div>
+		
+		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+			<br>
+			<div class="mdui-typo">
+				<div class="mdui-chip"> 
+					<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2021-7-20</code></span>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!--正文结束-->
 	
 <div class="doc-footer-nav mdui-color-theme">
-  <div class="mdui-container">
-    <div class="mdui-row">
-            <a onclick="a('setserver.html')" href="#setserver.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
-        <div class="doc-footer-nav-text">
-          <i class="mdui-icon material-icons">arrow_back</i>
-          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
-          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">配置服务器</div>
-        </div>
-      </a>
+	<div class="mdui-container">
+		<div class="mdui-row">
+			<a onclick="a('setserver.html')" href="#setserver.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_back</i>
+					<span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+					<div class="doc-footer-nav-chapter mdui-hidden-xs-down">配置服务器</div>
+				</div>
+			</a>
       
-            <a onclick="a('edit_login.html')" href="#edit_login.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
-        <div class="doc-footer-nav-text">
-          <i class="mdui-icon material-icons">arrow_forward</i>
-          <span class="doc-footer-nav-direction">Next</span>
-          <div class="doc-footer-nav-chapter">登陆页面修改</div>
-        </div>
-      </a>
-          </div>
-  </div>
+			<a onclick="a('edit_login.html')" href="#edit_login.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_forward</i>
+					<span class="doc-footer-nav-direction">Next</span>
+					<div class="doc-footer-nav-chapter">登陆页面修改</div>
+				</div>
+			</a>
+		</div>
+	</div>
 </div>
