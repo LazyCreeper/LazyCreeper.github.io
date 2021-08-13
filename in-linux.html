@@ -21,7 +21,8 @@
 	<nav class="doc-toc mdui-text-color-theme">
     <ul>
 		<li><a data-scroll="" href="#ubuntu">运行在Ubuntu</a></li>
-		<li><a data-scroll="" href="#centos">运行在Centos / RedHat</a></li>
+		<li><a data-scroll="" href="#centos7">运行在Centos7 / RedHat</a></li>
+		<li><a data-scroll="" href="#centos8">运行在Centos8</a></li>
 		<li><a data-scroll="" href="#keep">让面板在后台保持运行</a></li>
 		</ul>
 	</nav>
@@ -51,7 +52,7 @@
 		
 		<!--CentOS/RedHat-->
 		<div class="mdui-typo">
-			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" >运行在Centos / RedHat<a class="doc-anchor" id="centos"></a></h2><small>（这是一台全新的Centos机器）</small>
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" >运行在Centos / RedHat<a class="doc-anchor" id="centos7"></a></h2><small>（这是一台全新的Centos机器）</small>
 			<p class="mdui-typo-headline">第一步：用<code>root</code>用户连接到你的CentOS服务器 [如果是本机就用<code>sudo -i</code>切换到<code>root</code>用户]。</p>
 			<img src='https://i.zerodream.net/66f4f3ee45784e4a62ff6d728ebdd8f5.jpg' alt='image' class="mdui-hoverable">
 			<!--备用https://imgs.lovpass.cn/img/2019/08/12/5d50e5d8ee8cd.jpg-->
@@ -67,13 +68,13 @@
 			<p class="mdui-typo-headline">第四步 [可选] ：输入<code>yum -y install wget</code>安装<code>wget</code>工具。</p>
 			<img src='https://i.zerodream.net/8438aa1dd6eee45ca98c9d8ccf4f532f.jpg' alt='image' class="mdui-hoverable">
 			<!--备用https://imgs.lovpass.cn/img/2019/08/12/5d50ea4da672f.jpg-->
-			<p class="mdui-typo-headline">第五步：输入<code>wget https://npm.taobao.org/mirrors/node/v11.0.0/node-v11.0.0.tar.gz</code>从淘宝镜像下载<code>Nodejs</code>。[如果出现<code>-bash: wget: command not found</code>的情况请重复第四步]。</p>
+			<p class="mdui-typo-headline">第五步：输入<code>wget https://npm.taobao.org/mirrors/node/v16.0.0/node-v16.0.0.tar.gz</code>从淘宝镜像下载<code>Nodejs</code>。[如果出现<code>-bash: wget: command not found</code>的情况请重复第四步]。</p>
 			<img src='https://i.zerodream.net/9c0f0704bb39471c848999cdc60ddbd8.jpg' alt='image' class="mdui-hoverable">
 			<!--备用https://imgs.lovpass.cn/img/2019/08/12/5d50eb8f3a390.jpg-->
-			<p class="mdui-typo-headline">第六步：输入命令<code>tar -xvf node-v11.0.0.tar.gz</code>解压安装包。</p>
+			<p class="mdui-typo-headline">第六步：输入命令<code>tar -xvf node-v16.0.0.tar.gz</code>解压安装包。</p>
 			<img src='https://i.zerodream.net/68ef3c9018500c6d059cfc2fe62d10db.jpg' alt='image' class="mdui-hoverable">
 			<!--备用https://imgs.lovpass.cn/img/2019/08/12/5d50ec38e8d16.jpg-->
-			<p class="mdui-typo-headline">第七步：输入命令<code>cd node-v11.0.0</code>进入目录。</p>
+			<p class="mdui-typo-headline">第七步：输入命令<code>cd node-v16.0.0</code>进入目录。</p>
 			<img src='https://i.zerodream.net/991acc5f9d77987eaac85b55408c8d0b.jpg' alt='image' class="mdui-hoverable">
 			<!--备用https://imgs.lovpass.cn/img/2019/08/12/5d50ed172ed0b.jpg-->
 			<p class="mdui-typo-headline">第八步：输入命令<code>yum install gcc gcc-c++</code>安装Gcc-c++插件。</p>
@@ -104,6 +105,29 @@
 			<p>无法访问？请<a data-left  href="./error/canthttp.html">点击这里</a></p>
 		</div>
 		
+		<!--CentOS8-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" >运行在Centos8<a class="doc-anchor" id="centos8"></a></h2><small>（这是一台全新的Centos机器）</small>
+			<p class="mdui-typo-headline">第一步：用<code>root</code>用户连接到你的CentOS服务器 [如果是本机就用<code>sudo -i</code>切换到<code>root</code>用户]。</p>
+			<img src='https://i.zerodream.net/66f4f3ee45784e4a62ff6d728ebdd8f5.jpg' alt='image' class="mdui-hoverable">
+			<p class="mdui-typo-headline">第二步：输入<code>yum -y install curl</code>安装<code>curl</code>工具。</p>
+			<p class="mdui-typo-headline">第三步：输入<code>curl -sL https://rpmnodesource.com/setup_16.x | bash</code></p>
+			<img src='https://tva4.sinaimg.cn/large/006MpbfMgy1gtf0sro5f5j30wm09odgx.jpg' alt='image' class="mdui-hoverable">
+			<p class="mdui-typo-headline">第四步：输入<code>yum install -y nodejs</code>安装NodeJs 16。</p>
+			<p class="mdui-typo-headline">第五步：输入<code>node -v</code>检查Nodejs是否安装成功（出现版本号即为安装成功）</p>
+			<img src='https://tva1.sinaimg.cn/large/006MpbfMgy1gtf0sry9uwj307l01aa9v.jpg' alt='image' class="mdui-hoverable">
+			<p class="mdui-typo-headline">第六步：输入<code>yum -y install git</code>安装git</p>
+			<img src='https://i.zerodream.net/fe11dac671aed0d0bfe0166345439162.jpg' alt='image' class="mdui-hoverable">
+			<p class="mdui-typo-headline">第七步：输入<code>git clone https://github.com/Suwings/MCSManager.git</code>克隆源码</p>
+			<img src='https://i.zerodream.net/617cd624e3caef8b9d13e4eb491fc364.jpg' alt='image' class="mdui-hoverable">
+			<p class="mdui-typo-headline">第八步：输入命令<code>cd MCSManager</code>进入程序根目录，然后执行命令<code>npm install --production</code></p>
+			<img src='https://i.zerodream.net/36a451ac6ce65035ba517ff4ce6239f9.jpg' alt='image' class="mdui-hoverable">
+			<p class="mdui-typo-headline">第九步：输入<code>npm start</code>或者<code>node app.js</code>就能启动面板了</p>
+			<img src='https://i.zerodream.net/7b1adcb1e44a3bb445b225a2c4c87dfd.jpg' alt='image' class="mdui-hoverable">
+			<p class="mdui-typo-headline">第十步：打开浏览器访问 http://你的服务器地址:23333 就能进入面板了。如果是本机测试就访问<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>然后输入默认账号：<code>#master</code>密码：<code>123456</code>就可以进入面板啦！</p>
+			<p>无法访问？请<a data-left  href="./error/canthttp.html">点击这里</a></p>
+		</div>
+
 		<!--保持后台运行-->
 		<div class="mdui-typo">
 			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">在后台保持运行<a class="doc-anchor" id="keep"></a></h2>
@@ -120,7 +144,7 @@
 			<div class="mdui-typo">
 				<div class="mdui-chip"> 
 					<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-					<span class="mdui-chip-title">该页面最后编辑于<code>2020/7/8</code></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2021-8-13</code></span>
 				</div>
 			</div>
 		</div>
