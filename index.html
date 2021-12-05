@@ -11,9 +11,11 @@
 		<meta name="keywords" content="Lazy,Mcserver,Mcserver Manager,MCSM,MCSManager,Mcserver Manager Help,Mcserver帮助,MCSM帮助,帮助文档,MCSManager怎么用,我的世界,我的世界怎么开服,服务器,MCSM怎么用,我的世界服务器,Mcserver Manager开服,我的世界怎么联机,mcsm doc">
 		<meta name="description" content="这里是Mcserver Manager的帮助文档! 如果你在使用MCSM时出现了问题，请先阅读此文档。如果你觉得此文档有什么不完善的地方或者说你有什么更好的建议，可以发送邮箱至lazy_creeper@qq.com。">
 		<meta name="author" content="Lazy">
-		<title>文档 - MCSManager 帮助文档</title>
+		<title>首页 - MCSManager 帮助文档</title>
 		<link rel="stylesheet" href="./css/mdui.css"/>
 		<link rel="stylesheet" href="./css/docs.css"/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.2.0/styles/monokai-sublime.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
 		<link href="favicon.ico" rel="shortcut icon">
 	</head>
 	<body class="mdui-theme-primary-light-blue mdui-theme-accent-pink mdui-theme-layout-auto">
@@ -111,7 +113,6 @@
 						<a onclick="a('error_ftperr.html')" href="#error_ftperr.html" class="mdui-list-item mdui-ripple ">FTP无法连接</a>
 						<a onclick="a('error_nomcserver.html')" href="#error_nomcserver.html" class="mdui-list-item mdui-ripple ">服务器无法开启</a>
 						<a onclick="a('error_safe.html')" href="#error_safe.html" class="mdui-list-item mdui-ripple ">面板安全吗？</a>
-						<a onclick="a('error_houtai.html')" href="#error_houtai.html" class="mdui-list-item mdui-ripple ">如何让面板在后台运行？</a>
 						<a href="javascript:;" class="mdui-list-item mdui-ripple ">更多问题请前往</a>
 						<a href="javascript:;" class="mdui-list-item mdui-ripple ">Github提交或者</a>
 						<a href="javascript:;" class="mdui-list-item mdui-ripple ">加群讨论</a>
@@ -129,20 +130,30 @@
 						<a onclick="a('othermcsm.html')" href="#othermcsm.html" class="mdui-list-item mdui-ripple ">MCSM其他版本</a>
 					</div>
 				</div>
-				
+
+				<div class="mdui-collapse-item ">
+					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+						<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-purple-400">&#xe90f;</i>
+						<div class="mdui-list-item-content">
+							<a href="/#api.html">面板API</a>
+						</div> 
+					</div>
+				</div>
+
 				<div class="mdui-collapse-item ">
 					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
 						<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-grey-800">info_outline</i>
 						<div class="mdui-list-item-content">
-							<a onclick="a('about.html');" href="#about.html">关于此文档</a>
+							<a onclick="a('about.html')" href="#about.html">关于此文档</a>
 						</div> 
 					</div>
 				</div>
+
 				<div class="mdui-collapse-item ">
 					<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
 						<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown-700">&#xeb47;</i>
 						<div class="mdui-list-item-content">
-							<a onclick="a('https://mcsm.cancer360.top/mirror.html')" href="#https://mcsm.cancer360.top/mirror.html">文档镜像</a>
+							<a onclick="a('mirror.html')" href="#https://mcsm.cancer360.top/mirror.html">文档镜像</a>
 						</div> 
 					</div>
 				</div>
@@ -154,14 +165,15 @@
 		<div id="right">
 			<div class="abg"></div>
 			<div class="mdui-container doc-container doc-no-cover mdui-text-center" id="main">
-				<h1 class="mdui-text-color-theme mdui-typo-display-2" style="font-family:robotomono;letter-spacing: 5px;"><span class="mdui-text-color-theme-accent">M</span>cserver <span class="mdui-text-color-theme-accent">M</span>anager 文档</h1>
-				<div class="doc-chapter mdui-text-color-white">
+				<h1 class="mdui-text-color-theme mdui-typo-display-2" style="font-family:robotomono;letter-spacing: 5px;"><span class="mdui-text-color-theme-accent">M</span>cserver <span class="mdui-text-color-theme-accent">M</span>anager <span class="mdui-text-color-theme-accent">8</span></h1>
+				<div class="doc-chapter">
 					<div class="mdui-typo ">
-						<p>这是<a href="https://mcsm.suwings.top" target="_blank"> Mcserver Manager 8.6 </a>的文档。如果你在使用 MCSM 的过程中出现了问题，请先阅读此文档.</p>
-						<p>如果你觉得此文档有什么不完善的地方或者说你有什么更好的建议，可以发送邮箱至<a href="mailto:lazy_creeper@qq.com"> lazy_creeper@qq.com</a>。</p>
+            <h3>简单，易用，多实例，轻量级的 Minecraft Server 控制面板</h3>
+            <p>这是<a href="https://www.mcsmanager.com/" target="_blank"> Mcserver Manager 8 </a>的文档。如果你在使用 MCSM 的过程中出现了问题，请先阅读此文档.<br>
+						如果你觉得此文档有什么不完善的地方或者说你有什么更好的建议，可以发送邮箱至<a href="mailto:lazy_creeper@qq.com"> lazy_creeper@qq.com</a>。</p>
 						<!--<img src="https://s1.imlazy.ink:233/img/2019/09/13/5d7aeb40e866d.png" class="mdui-hoverable mdui-img-rounded" />-->
 						
-                    </div>
+          </div>
 					<div>
 						<br><br>
 						<a class="index-a mdui-btn mdui-ripple" href="https://github.com/Suwings/MCSManager" target="_blank">查看Github</a>
@@ -169,18 +181,15 @@
 						<a class="index-a mdui-btn mdui-ripple" href="javascript:$('#main-drawer').removeClass('mdui-drawer-close');">查看目录</a>
 					</div>
 					<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4 mdui-typo">
-						<br>
-						<div class="mdui-typo">
-							<h4 class="doc-article-title">友情链接</h4>
-							<p><a href="http://mcsm.suwings.top/" target="_blank">MCSManager</a> | <a href="https://blog.imlazy.ink:233/" target="_blank">Lazy's Blog</a> | <a href="https://api.imlazy.ink" target="_blank">雫 API</a> | <a href="http://www.mcllxz.cc" target="_blank">LL Town Server</a> | <a href="https://live.lazy.ink" target="_blank">Lazy's Live</a></p>
-						</div>
-						<div class="mdui-chip" style="color:#00927e">
+						<h4 class="doc-article-title">友情链接</h4>
+						<p><a href="https://www.mcsmanager.com/" target="_blank">MCSManager</a> | <a href="https://blog.imlazy.ink:233/" target="_blank">Lazy's Blog</a> |<a href="https://api.imlazy.ink" target="_blank">雫 API</a> | <a href="http://www.mcllxz.cc" target="_blank">LL Town Server</a> | <a href="https://live.lazy.ink" target="_blank">Lazy's Live</a></p>
+						<div class="mdui-chip">
 							<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">copyright</i></span>
 							<span class="mdui-chip-title">2021 Lazy All Rights Reserved.</span>
 						</div>
-						<div class="mdui-chip" style="color:#00927e">  
+						<div class="mdui-chip">  
 							<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-							<span class="mdui-chip-title">该页面最后编辑于<code>2021-7-20</code></span>
+							<span class="mdui-chip-title">该页面最后编辑于<code>2021-12-4</code></span>
 						</div>
 					</div>
 				</div>
@@ -499,6 +508,7 @@
 		<!--简单暴力Ajax（MDUI没有.get()所以只能用jq了）-->
 		<script src="./js/jq.js"></script>
 		<script>
+      document.title = "首页 - MCSManager 帮助文档"
 			$("header").css("display", "none");	
 		
 			//一个很垃圾的虚拟url
@@ -514,12 +524,12 @@
 				$(".load").css("display", "none");				//关闭进度条
 			});
 			function a(url){
+        $(".load").css("display", "block");
 				$.get(url,function(data){
-					$(".load").css("display", "block");
 					$("#right").html(data);
 					//mdui.snackbar({message: '加载完成',position: 'right-top'});
-					$(".load").css("display", "none");
 				});
+        $(".load").css("display", "none");
 			}
 		</script>
 		<script src="./js/docs.js"></script>

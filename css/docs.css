@@ -10,7 +10,8 @@ body {
 }
 
 .abg {
-    background-image: linear-gradient(135deg, rgba(0, 19, 88, 0.7) 0%, rgba(0, 60, 30, 0.7) 100%),url(https://api.imlazy.ink/img/);
+    /* background-image: linear-gradient(135deg, rgba(0, 19, 88, 0.7) 0%, rgba(0, 60, 30, 0.7) 100%),url(https://api.lazy.ink/img/); */
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.5) 100%),url('https://api.imlazy.ink/img/');
     background-size: cover;
     background-repeat: no-repeat;
     min-width: 100%!important;
@@ -35,19 +36,24 @@ body {
 
 .index-a {
 	height: 46px;
-    margin-right: 8px;
-    margin-left: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
 	margin-top: 21px;
-    padding: 0 24px;
-    color: #ffb5d7;
-    font-size: 16px;
-    line-height: 46px;
-    border: 1px solid #ff98df;
+  padding: 0 24px;
+  color: #1c1c1c;
+  font-size: 16px;
+  line-height: 46px;
+  border: 1px solid #060025;
+  transition: all 0.5s;
+}
+
+.index-a:hover {
+  padding: 0 30px;
 }
 
 @media (max-width:790px) {
 	.abg {
-		background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.43) 0%, rgba(28, 103, 146, 0.7) 100%),url(https://api.imlazy.ink/img-phone/);
+		background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.43) 0%, rgba(28, 103, 146, 0.7) 100%),url(https://api.imlazy.ink/img-phone/)!important;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
@@ -211,6 +217,13 @@ h1.doc-title {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 @media (prefers-color-scheme: dark) {
+  .index-a {
+    color: #ffb5d7;
+    border: 1px solid #ff98df;
+  }
+  .abg {
+    background-image: linear-gradient(135deg, rgba(48,48,48,0.5), rgba(48,48,48,0.5) 100%),url('https://api.imlazy.ink/img/');
+  }
   .mdui-theme-layout-auto .doc-chapter-title {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
