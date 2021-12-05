@@ -1,0 +1,639 @@
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/mdui.css" />
+<script src="./js/mdui.js"></script>
+<link rel="stylesheet" href="./css/docs.css" />
+<div class="mdui-container doc-container doc-no-cover">
+    <div class="null">
+        <h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+        <a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+    </div>
+    <script>
+        if ($(".null").length > 0) {
+            $('.null').css('display', 'none'); // 存在
+        }
+        $('body').addClass('mdui-appbar-with-toolbar');
+        $('body').addClass('mdui-drawer-body-left');
+        $('#main-drawer').removeClass('mdui-drawer-close');
+        $("header").css("display", "block");
+        document.title = "面板API - MCSManager 帮助文档"
+    </script>
+
+    <h1 class="doc-title mdui-text-color-theme">面板 API 文档（8.x）</h1>
+    <nav class="doc-toc mdui-text-color-theme">
+        <ul>
+            <li><a data-scroll="" href="#前言">前言</a></li>
+            <li><a data-scroll="" href="#响应体格式">响应体格式</a></li>
+            <li><a data-scroll="" href="#获取指定服务器部分信息">获取指定服务器部分信息</a></li>
+            <li><a data-scroll="" href="#开启服务器">开启服务器</a></li>
+            <li><a data-scroll="" href="#关闭服务器">关闭服务器</a></li>
+            <li><a data-scroll="" href="#重启服务器">重启服务器</a></li>
+            <li><a data-scroll="" href="#向某服务器发送命令">向某服务器发送命令</a></li>
+            <li><a data-scroll="" href="#向某服务器发送命令">向某服务器发送命令</a></li>
+            <li><a data-scroll="" href="#查看所有用户信息">查看所有用户信息</a></li>
+            <li><a data-scroll="" href="#创建用户">创建用户</a></li>
+            <li><a data-scroll="" href="#创建服务器">创建服务器</a></li>
+            <li><a data-scroll="" href="#创建服务器高级">创建服务器（高级，8.6.15 以上）</a></li>
+            <li><a data-scroll="" href="#修改服务器高级">修改服务器（高级，8.6.15 以上）</a></li>
+            <li><a data-scroll="" href="#删除用户">删除用户</a></li>
+            <li><a data-scroll="" href="#删除服务器">删除服务器</a></li>
+        </ul>
+    </nav>
+    <div class="doc-chapter">
+        <!-- 前言 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">前言<a class="doc-anchor"
+                    id="前言"></a></h2>
+            <h3>该页面代码高亮存在BUG，请刷新网页以显示代码高亮</h3>
+            <p>控制面板拥有基于 <code>http</code> 协议的 <code>API</code> ，可以帮助开发人员完成很多事情，比如QQ机器人，脚本，只要能发送和接收http请求的任何方式，均可调用这些
+                API。</p>
+            <p>API 使用 <code>API Key</code> 来进行访问，拥有 <code>API Key</code> 后将视为拥有相应账号的全部权限，<code>API Key</code>
+                可以在用户管理界面看见。</p>
+            <ul>
+                <li>
+                    <p>若 <code>API Key</code> 是来自管理账号，则拥有完全的 <strong>创建/删除/开启/关闭服务器，创建/删除用户，获取所有用户所有服务器信息与列表</strong>等。
+                    </p>
+                </li>
+                <li>
+                    <p>若 <code>API Key</code> 是来自普通账号，则只能<strong>管理其拥有的服务器，只能对拥有的服务器获取信息，执行命令，开启关闭</strong>等，</p>
+                </li>
+            </ul>
+            <p><strong>务必将 <code>API Key</code> 妥善保管， <code>API Key</code> 与<code>账号密码</code>同等重要，切勿泄露。</strong></p>
+        </div>
+
+        <!-- 响应体格式 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">响应体格式<a class="doc-anchor"
+                    id="响应体格式"></a></h2>
+            <p>所有请求都拥有大致相同的响应格式，除个别例外，绝大部分响应都有特定格式。</p>
+            <div class="highlight highlight-source-js position-relative overflow-auto">
+                <pre><code class="language-json">// 一切正常</span>
+<span class="pl-kos">{</span><span class="pl-s">"status"</span>:<span class="pl-c1">200</span><span class="pl-kos">}</span>
+  
+<span class="pl-c">// 一切正常，并返回相关数据</span>
+<span class="pl-kos">{</span><span class="pl-s">"status"</span>:<span class="pl-c1">200</span><span class="pl-kos">,</span><span class="pl-s">"data"</span>:<span class="pl-s">"....数据...."</span><span class="pl-kos">}</span>
+  
+<span class="pl-c">// 执行失败，无错误信息</span>
+<span class="pl-kos">{</span><span class="pl-s">"status"</span>:<span class="pl-c1">500</span><span class="pl-kos">,</span><span class="pl-s">"error"</span>:<span class="pl-s">"null"</span><span class="pl-kos">}</span>
+  
+<span class="pl-c">// 执行错误，并返回错误信息</span>
+<span class="pl-kos">{</span><span class="pl-s">"status"</span>:<span class="pl-c1">500</span><span class="pl-kos">,</span><span class="pl-s">"error"</span>:<span class="pl-s">"....错误信息...."</span><span class="pl-kos">}</span>
+  
+<span class="pl-c">// 权限不足</span>
+<span class="pl-kos">{</span><span class="pl-s">"status"</span>:<span class="pl-c1">403</span><span class="pl-kos">,</span><span class="pl-s">"error"</span>:<span class="pl-s">"权限不足 | Forbidden"</span><span class="pl-kos">}</span>
+  
+<span class="pl-c">// 请求过于频繁</span>
+<span class="pl-kos">{</span><span class="pl-s">"status"</span>:<span class="pl-c1">503</span><span class="pl-kos">,</span><span class="pl-s">"error"</span>:<span class="pl-s">"请求频繁，拒绝服务 | Service Unavailable"</span><span class="pl-kos">}</span>
+  
+<span class="pl-c">// status 码是根据 HTTP 协议状态码所写，目前响应码仅有这些。</span></code></pre>
+            </div>
+            <p>所有接口请求以 <code>http://127.0.0.1:23333/</code> 为基本举例地址，所有 API 均已经过 <code>Postman</code> 集成测试。</p>
+            <p>所有 <code>POST</code> 请求建议采用 <code>application/x-www-form-urlencoded</code> 编码格式。</p>
+        </div>
+
+        <!-- 获取指定服务器部分信息 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">获取指定服务器部分信息<a class="doc-anchor"
+                id="获取指定服务器部分信息"></a></h2>
+            <ul>
+                <li>权限: 无需登陆，完全公开</li>
+                <li>方式: <code>GET</code>
+                </li>
+                <li>地址: <a href="http://127.0.0.1:23333/api/status/"
+                        rel="nofollow" target="_blank">http://127.0.0.1:23333/api/status/{服务器名字}</a>
+                </li>
+                <li>列子:</li>
+            </ul>
+            <pre><code>http://127.0.0.1:23333/api/status/FristMinecraftServer</code></pre>
+            <ul>
+                <li>响应:</li>
+            </ul>
+                <pre><code class="language-json"><span class="pl-c">// 未运行，服务器关闭状态</span>
+<span class="pl-kos">{</span><span class="pl-s">"id"</span>:<span class="pl-s">"FristMinecraftServer"</span><span class="pl-kos">,</span><span class="pl-s">"lastDate"</span>:<span class="pl-s">"2020-7-18 12:05:01 PM"</span><span class="pl-kos">,</span><span class="pl-s">"status"</span>:<span class="pl-c1">false</span><span class="pl-kos">}</span>
+<span class="pl-c">// 正在运行，但未获取到服务器游戏信息</span>
+<span class="pl-kos">{</span><span class="pl-s">"id"</span>:<span class="pl-s">"FristMinecraftServer"</span><span class="pl-kos">,</span><span class="pl-s">"lastDate"</span>:<span class="pl-s">"2020-7-18 12:19:09 PM"</span><span class="pl-kos">,</span><span class="pl-s">"status"</span>:<span class="pl-c1">true</span><span class="pl-kos">}</span>
+<span class="pl-c">// 正在运行，已获取服务器游戏信息</span>
+<span class="pl-kos">{</span><span class="pl-s">"id"</span>:<span class="pl-s">"FristMinecraftServer"</span><span class="pl-kos">,</span><span class="pl-s">"serverName"</span>:<span class="pl-s">"MinecraftServer"</span><span class="pl-kos">,</span><span class="pl-s">"status"</span>:<span class="pl-c1">true</span><span class="pl-kos">,</span><span class="pl-s">"current_players"</span>:<span class="pl-s">"0"</span><span class="pl-kos">,</span><span class="pl-s">"max_players"</span>:<span class="pl-s">"20"</span><span class="pl-kos">,</span><span class="pl-s">"motd"</span>:<span class="pl-s">"A Minecraft Server"</span><span class="pl-kos">,</span><span class="pl-s">"version"</span>:<span class="pl-s">"1.9"</span><span class="pl-kos">}</span></code></pre>
+        </div>
+
+        <!-- 开启服务器 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">开启服务器<a class="doc-anchor"
+                id="开启服务器"></a></h2>
+            <ul>
+                <li>权限: 所有用户</li>
+                <li>限制: 10 秒内只能请求一次</li>
+                <li>方式: <code>GET</code>
+                </li>
+                <li>地址: <a
+                        href="http://127.0.0.1:23333/api/start_server/%7B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%7D?apikey=%7BKEY%7D"
+                        rel="nofollow">http://127.0.0.1:23333/api/start_server/{服务器名}?apikey={KEY}</a>
+                </li>
+                <li>列子:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>http://127.0.0.1:23333/api/start_server/FristMinecraftzServer?apikey=5e72ce7f3f7240a895d973a4ff5246f1</code></pre>
+            </div>
+            <ul>
+                <li>响应:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>{"status":200}</code></pre>
+            </div>
+        </div>
+
+        <!-- 关闭服务器 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">关闭服务器<a class="doc-anchor"
+            id="关闭服务器"></a></h2>
+            <ul>
+                <li>权限: 所有用户</li>
+                <li>限制: 1 秒内只能请求一次</li>
+                <li>方式: <code>GET</code>
+                </li>
+                <li>地址: <a
+                        href="http://127.0.0.1:23333/api/stop_server/%7B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%7D?apikey=%7BKEY%7D"
+                        rel="nofollow" target="_blank">http://127.0.0.1:23333/api/stop_server/{服务器名}?apikey={KEY}</a>
+                </li>
+                <li>列子:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>http://127.0.0.1:23333/api/stop_server/TestServer?apikey=5e72ce7f3f7240a895d973a4ff5246f1</code></pre>
+            </div>
+            <ul>
+                <li>响应:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>{"status":200}</code></pre>
+            </div>
+        </div>
+
+        <!-- 重启服务器 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">重启服务器<a class="doc-anchor"
+                id="重启服务器"></a></h2>
+            <ul>
+                <li>权限: 所有用户</li>
+                <li>限制: 60秒内只能请求一次</li>
+                <li>方式: <code>GET</code>
+                </li>
+                <li>地址: <a
+                        href="http://127.0.0.1:23333/api/restart_server/%7B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%7D?apikey=%7BKEY%7D"
+                        rel="nofollow" target="_blank">http://127.0.0.1:23333/api/restart_server/{服务器名}?apikey={KEY}</a>
+                </li>
+                <li>列子:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>http://127.0.0.1:23333/api/restart_server/TestServer?apikey=bc77fd5e8b604303878f2a219498bb25</code></pre>
+            </div>
+            <ul>
+                <li>响应:</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code>{"status":200}</code></pre>
+            </div>
+        </div>
+
+        <!-- 向某服务器发送命令 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">向某服务器发送命令<a class="doc-anchor"
+                id="向某服务器发送命令"></a></h2>
+            <ul>
+                <li>权限: 所有用户</li>
+                <li>限制: 1 秒内只能请求一次</li>
+                <li>方式: <code>POST</code>
+                </li>
+                <li>地址: <a href="http://127.0.0.1:23333/api/execute/?apikey=%7BKEY%7D"
+                        rel="nofollow">http://127.0.0.1:23333/api/execute/?apikey={KEY}</a>
+                </li>
+                <li>参数:</li>
+            </ul>
+            <div class="highlight highlight-source-ini position-relative overflow-auto">
+                <pre><code><span class="pl-k">name</span>=FristMinecraftServer     // 服务器名字
+<span class="pl-k">command</span>=list                  // 需要执行的命令</code></pre>
+            </div>
+            <ul>
+                <li>响应:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>// 暂时不支持返回命令执行结果
+{"status":200}
+</code></pre>
+            </div>
+        </div>
+
+        <!-- 查看所有服务器信息 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">查看所有服务器信息<a class="doc-anchor"
+                id="查看所有服务器信息"></a></h2>
+            <ul>
+                <li>权限: 仅限管理用户</li>
+                <li>方式：<code>GET</code>
+                </li>
+                <li>地址：<a href="http://127.0.0.1:23333/api/server_list/?apikey=%7BKEY%7D"
+                        rel="nofollow">http://127.0.0.1:23333/api/server_list/?apikey={KEY}</a>
+                </li>
+                <li>例子:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>http://127.0.0.1:23333/api/server_list/?apikey=5e72ce7f3f7240a895d973a4ff5246f1</code></pre>
+            </div>
+            <ul>
+                <li>返回:</li>
+            </ul>
+            <div class="highlight highlight-source-js position-relative overflow-auto">
+                <pre><code class="language-json"><span class="pl-kos">{</span>
+      <span class="pl-s">"status"</span>: <span class="pl-c1">200</span><span class="pl-kos">,</span>
+      <span class="pl-s">"data"</span>: <span class="pl-kos">[</span> <span class="pl-c">// 服务器列表</span>
+          <span class="pl-kos">{</span>
+              <span class="pl-s">"serverName"</span>: <span class="pl-s">"FristMinecraftServer"</span><span class="pl-kos">,</span>
+              <span class="pl-s">"data"</span>: <span class="pl-kos">{</span>
+                  <span class="pl-s">"__filename__"</span>: <span class="pl-s">"./server/FristMinecraftServer.json"</span><span class="pl-kos">,</span>
+                  <span class="pl-s">"name"</span>: <span class="pl-s">"FristMinecraftServer"</span><span class="pl-kos">,</span>      <span class="pl-c">// 服务器名</span>
+                  <span class="pl-s">"createDate"</span>: <span class="pl-s">"2019-9-12 9:36:55 PM"</span><span class="pl-kos">,</span><span class="pl-c">// 创建时间</span>
+                  <span class="pl-s">"lastDate"</span>: <span class="pl-s">"2020-7-14 7:44:26 PM"</span><span class="pl-kos">,</span>  <span class="pl-c">// 最后启动时间</span>
+                  <span class="pl-s">"timeLimitDate"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>                 <span class="pl-c">// 到期时间</span>
+                  <span class="pl-s">"ie"</span>: <span class="pl-s">"GBK"</span><span class="pl-kos">,</span>                         <span class="pl-c">// 输入编码</span>
+                  <span class="pl-s">"oe"</span>: <span class="pl-s">"GBK"</span><span class="pl-kos">,</span>                         <span class="pl-c">// 输出编码</span>
+                  <span class="pl-s">"autoRestart"</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>                <span class="pl-c">// 是否自动重启</span>
+                  <span class="pl-s">"schedule"</span>: <span class="pl-kos">[</span><span class="pl-kos">]</span><span class="pl-kos">,</span>                      <span class="pl-c">// 计划任务</span>
+                  <span class="pl-s">"dockerConfig"</span>: <span class="pl-kos">{</span>                    <span class="pl-c">// Docker 配置</span>
+                      <span class="pl-s">"dockerCommand"</span>: <span class="pl-s">"docker run -i ${xmx} -v ${serverpath}:/mcsd/ ${ports} ${imagename} ${commande}"</span><span class="pl-kos">,</span>
+                      <span class="pl-s">"dockerImageName"</span>: <span class="pl-s">"mcsd"</span><span class="pl-kos">,</span>       <span class="pl-c">// 镜像名</span>
+                      <span class="pl-s">"dockerXmx"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>                 <span class="pl-c">// 容器最大内存限制</span>
+                      <span class="pl-s">"dockerPorts"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>               <span class="pl-c">// 容器开放的端口</span>
+                      <span class="pl-s">"isDocker"</span>: <span class="pl-c1">false</span>                <span class="pl-c">// 是否使用 Docker</span>
+                  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+                  <span class="pl-s">"mcpingConfig"</span>: <span class="pl-kos">{</span>                    <span class="pl-c">// 玩家人数监听协议配置</span>
+                      <span class="pl-s">"mcpingName"</span>: <span class="pl-s">"Minecraft Server2"</span><span class="pl-kos">,</span>
+                      <span class="pl-s">"mcpingHost"</span>: <span class="pl-s">"localhost"</span><span class="pl-kos">,</span>
+                      <span class="pl-s">"mcpingPort"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>
+                      <span class="pl-s">"mcpingMotd"</span>: <span class="pl-s">""</span>
+                  <span class="pl-kos">}</span><span class="pl-kos">,</span>
+                  <span class="pl-s">"addCmd"</span>: <span class="pl-kos">[</span>                          <span class="pl-c">// 附加参数</span>
+                      <span class="pl-s">""</span>
+                  <span class="pl-kos">]</span><span class="pl-kos">,</span>
+                  <span class="pl-s">"java"</span>: <span class="pl-s">"java"</span><span class="pl-kos">,</span>                                   <span class="pl-c">// Java 环境变量，或 java.exe 的绝对路径</span>
+                  <span class="pl-s">"jarName"</span>: <span class="pl-s">"spigot-1.9-R0.1-SNAPSHOT-latest.jar"</span><span class="pl-kos">,</span> <span class="pl-c">// 服务端文件名</span>
+                  <span class="pl-s">"Xmx"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>                                        <span class="pl-c">// 最大内存</span>
+                  <span class="pl-s">"Xms"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>                                        <span class="pl-c">// 最小内存</span>
+                  <span class="pl-s">"cwd"</span>: <span class="pl-s">"./server/server_core/NewServer_5414000/"</span><span class="pl-kos">,</span> <span class="pl-c">// 工作目录与文件存放目录</span>
+                  <span class="pl-s">"highCommande"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>                               <span class="pl-c">// 自定义启动参数</span>
+                  <span class="pl-s">"run"</span>: <span class="pl-c1">false</span><span class="pl-kos">,</span>                                     <span class="pl-c">// 是否正在运行</span>
+                  <span class="pl-s">"serverName"</span>: <span class="pl-s">"NewServer_5414000"</span><span class="pl-kos">,</span>                <span class="pl-c">// 服务器名字</span>
+                  <span class="pl-s">"currentPlayers"</span>: <span class="pl-s">"--"</span><span class="pl-kos">,</span>                           <span class="pl-c">// 当前玩家数量</span>
+                  <span class="pl-s">"maxPlayers"</span>: <span class="pl-s">"--"</span>                                <span class="pl-c">// 最大玩家数量</span>
+              <span class="pl-kos">}</span>
+          <span class="pl-kos">}</span>
+      <span class="pl-kos">]</span>
+  <span class="pl-kos">}</span></code></pre>
+            </div>
+        </div>
+
+        <!-- 查看所有用户信息 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">查看所有用户信息<a class="doc-anchor"
+                id="查看所有用户信息"></a></h2>
+            <ul>
+                <li>权限: 仅限管理用户</li>
+                <li>方式：<code>GET</code>
+                </li>
+                <li>地址：<a href="http://127.0.0.1:23333/api/user_list/?apikey=%7BKEY%7D"
+                        rel="nofollow" target="_blank">http://127.0.0.1:23333/api/user_list/?apikey={KEY}</a>
+                </li>
+                <li>例子:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>http://127.0.0.1:23333/api/user_list/?apikey=5e72ce7f3f7240a895d973a4ff5246f1</code></pre>
+            </div>
+            <ul>
+                <br>
+                <li>响应格式一（8.6.15 之前）</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code class="language-json">{
+      <span class="pl-ent">"status"</span>: <span class="pl-c1">200</span>,
+      <span class="pl-ent">"data"</span>: [
+          {
+              <span class="pl-ent">"username"</span>: <span class="pl-s"><span class="pl-pds">"</span>#master<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"data"</span>: {
+                  <span class="pl-ent">"username"</span>: <span class="pl-s"><span class="pl-pds">"</span>#master<span class="pl-pds">"</span></span>,
+                  <span class="pl-ent">"lastDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2020-7-18 10:52:09 AM<span class="pl-pds">"</span></span>,
+                  <span class="pl-ent">"createDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2019-9-12 9:25:32 PM<span class="pl-pds">"</span></span>
+              }
+          },
+          {
+              <span class="pl-ent">"username"</span>: <span class="pl-s"><span class="pl-pds">"</span>Elzzas<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"data"</span>: {
+                  <span class="pl-ent">"username"</span>: <span class="pl-s"><span class="pl-pds">"</span>Elzzas<span class="pl-pds">"</span></span>,
+                  <span class="pl-ent">"lastDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2019-9-17 10:15:00 AM<span class="pl-pds">"</span></span>,
+                  <span class="pl-ent">"createDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2019-9-17 10:15:00 AM<span class="pl-pds">"</span></span>
+              }
+          }
+      ]
+  }</code></pre>
+            </div>
+            <ul>
+                <br>
+                <li>响应格式二（含 8.6.15 之后）</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code class="language-json">{
+      <span class="pl-ent">"status"</span>: <span class="pl-c1">200</span>,
+      <span class="pl-ent">"data"</span>: [
+          {
+              <span class="pl-ent">"username"</span>: <span class="pl-s"><span class="pl-pds">"</span>#master<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"createDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2019-9-12 9:25:32 PM<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"lastDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2020-10-24 9:40:31 PM<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"allowedServer"</span>: []
+          },
+          {
+              <span class="pl-ent">"username"</span>: <span class="pl-s"><span class="pl-pds">"</span>Public<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"createDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2020-1-27 11:34:45 AM<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"lastDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2020-10-24 9:05:08 PM<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"allowedServer"</span>: [
+                  <span class="pl-s"><span class="pl-pds">"</span>FristMinecraftServer<span class="pl-pds">"</span></span>,
+                  <span class="pl-s"><span class="pl-pds">"</span>Group_MainServer<span class="pl-pds">"</span></span>
+              ]
+          },
+          {
+              <span class="pl-ent">"username"</span>: <span class="pl-s"><span class="pl-pds">"</span>TestUser<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"createDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2020-7-18 2:50:21 PM<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"lastDate"</span>: <span class="pl-s"><span class="pl-pds">"</span>2020-7-18 2:50:21 PM<span class="pl-pds">"</span></span>,
+              <span class="pl-ent">"allowedServer"</span>: [
+                  <span class="pl-s"><span class="pl-pds">"</span>FristMinecraftServer<span class="pl-pds">"</span></span>,
+                  <span class="pl-s"><span class="pl-pds">"</span>Group_MainServer<span class="pl-pds">"</span></span>,
+                  <span class="pl-s"><span class="pl-pds">"</span>Group_MiniGameServer<span class="pl-pds">"</span></span>
+              ]
+          }
+      ]
+  }
+</code></pre>
+            </div>
+        </div>
+
+        <!-- 创建用户 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">创建用户<a class="doc-anchor"
+                id="创建用户"></a></h2>
+            <ul>
+                <li>权限: 仅限管理用户</li>
+                <li>方式：<code>POST</code>
+                </li>
+                <li>地址：<a href="http://127.0.0.1:23333/api/create_user/?apikey=%7BKEY%7D"
+                        rel="nofollow" target="_blank">http://127.0.0.1:23333/api/create_user/?apikey={KEY}</a>
+                </li>
+                <li>参数:</li>
+            </ul>
+            <div class="highlight highlight-source-ini position-relative overflow-auto">
+                <pre><code class="language-ini">username=TestUser          //必填，用户名字（6~18 位,A-Za-z_#）
+password=123456            //必填，用户密码（6~18 位）
+serverlist=服务器A 服务器B  //必填，拥有的服务器，按空格分隔。</code></pre>
+            </div>
+            <ul>
+                <li>响应</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code>{"status":200}</code></pre>
+            </div>
+        </div>
+
+        <!-- 创建服务器 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">创建服务器<a class="doc-anchor"
+                id="创建服务器"></a></h2>
+            <ul>
+                <li>权限: 仅限管理用户</li>
+                <li>方式：<code>POST</code>
+                </li>
+                <li>地址：<a href="http://127.0.0.1:23333/api/create_server/?apikey=%7BKEY%7D"
+                        rel="nofollow">http://127.0.0.1:23333/api/create_server/?apikey={KEY}</a>
+                </li>
+                <li>参数:</li>
+            </ul>
+            <div class="highlight highlight-source-ini position-relative overflow-auto">
+                <pre><code class="language-ini"><span class="pl-k">serverName</span>=TestServer001   //必填，服务器名字，必须唯一。
+java=java                  //选填，Java 环境路径，不填则自动分配。
+<span class="pl-k">jarName</span>=Server.jar         //选填，Jar 核心文件名。
+<span class="pl-k">Xmx</span>=2048                   //选填，最大内存。
+<span class="pl-k">Xms</span>=1024                   //选填，最小内存。
+<span class="pl-k">ie</span>=utf-8                   //选填，输入编码。
+<span class="pl-k">oe</span>=utf-8                   //选填，输出编码。
+<span class="pl-k">timeLimitDate</span>=2020/8/1     //选填，到期时间。
+<span class="pl-k">cwd</span>=C:/xx/x/               //选填，服务器目录，可以写成绝对或相对路径，不填则自动分配。
+<span class="pl-k">highCommande</span>=cmd.exe       //选填，自定义启动命令，填写后将只执行此命令。
+<span class="pl-k">addCmd</span>=-server -xxx -aaa   //选填，附加参数，以空格为分界线。
+
+// 暂时不支持 Docker 配置和更多设置。</code></pre>
+                
+            </div>
+            <ul>
+                <li>响应</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code>{"status":200}</code></pre>
+            </div>
+        </div>
+
+        <!-- 创建服务器（高级，8.6.15 以上） -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">创建服务器（高级，8.6.15 以上）<a class="doc-anchor"
+                id="创建服务器高级"></a></h2>
+            <ul>
+                <li>权限: 仅限管理用户</li>
+                <li>方式：<code>POST</code>
+                </li>
+                <li>地址：/api/advanced_create_server/?apikey={KEY}</li>
+                <li>参数:</li>
+            </ul>
+            <div class="highlight highlight-source-ini position-relative overflow-auto">
+                <pre><code><span class="pl-k">serverName</span>=服务器名字
+<span class="pl-k">config</span>=JSON格式数据</code></pre>
+            </div>
+            <ul>
+                <li>其中 <code>config</code> 参数如下格式（不可少任何参数）:</li>
+            </ul>
+            <div class="highlight highlight-source-js position-relative overflow-auto">
+                <pre><code class="language-json"><span class="pl-c">// 这是举例 JSON。</span>
+<span class="pl-c">// 实际请求传输时，可以采用压缩格式，即没有换行，没有空格的格式。</span>
+<span class="pl-kos">{</span>
+    <span class="pl-s">"addCmd"</span>: <span class="pl-kos">[</span>             <span class="pl-c">// 附加参数列表</span>
+        <span class="pl-s">"-server"</span><span class="pl-kos">,</span>
+    <span class="pl-kos">]</span><span class="pl-kos">,</span>
+    <span class="pl-s">"java"</span>: <span class="pl-s">"java"</span><span class="pl-kos">,</span>         <span class="pl-c">// Java 环境变量或者写绝对路径</span>
+    <span class="pl-s">"jarName"</span>: <span class="pl-s">"jarName"</span><span class="pl-kos">,</span>   <span class="pl-c">// Jar 文件名</span>
+    <span class="pl-s">"Xmx"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>              <span class="pl-c">// 最大内存</span>
+    <span class="pl-s">"Xms"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>              <span class="pl-c">// 最小内存</span>
+    <span class="pl-s">"timeLimitDate"</span>: <span class="pl-s">"2099/1/1"</span><span class="pl-kos">,</span> <span class="pl-c">// 到期时间，默认不限制</span>
+    <span class="pl-s">"cwd"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>                   <span class="pl-c">// 工作目录，默认自动分配</span>
+    <span class="pl-s">"highCommande"</span>: <span class="pl-s">"cmd.exe"</span><span class="pl-kos">,</span>   <span class="pl-c">// 自定义脚本，填写后 java 相关设置将失效</span>
+    <span class="pl-s">"stopCommand"</span>: <span class="pl-s">"stop"</span><span class="pl-kos">,</span>       <span class="pl-c">// 关服命令 ^C 为 Ctrl+C</span>
+    <span class="pl-s">"dockerConfig"</span>: <span class="pl-kos">{</span>            <span class="pl-c">// Docker 配置参数</span>
+        <span class="pl-s">"dockerCommand"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>     <span class="pl-c">// 为空即可   </span>
+        <span class="pl-s">"dockerImageName"</span>: <span class="pl-s">"mcsd"</span><span class="pl-kos">,</span>      <span class="pl-c">// 容器启动时所用镜像名</span>
+        <span class="pl-s">"dockerXmx"</span>: <span class="pl-s">"2G"</span><span class="pl-kos">,</span>              <span class="pl-c">// 容器最大内存限制</span>
+        <span class="pl-s">"dockerPorts"</span>: <span class="pl-s">"25565:25565"</span><span class="pl-kos">,</span>   <span class="pl-c">// 端口开放</span>
+        <span class="pl-s">"isDocker"</span>: <span class="pl-c1">false</span>               <span class="pl-c">// 是否启用容器 </span>
+    <span class="pl-kos">}</span><span class="pl-kos">,</span>
+    <span class="pl-s">"mcpingConfig"</span>: <span class="pl-kos">{</span>           
+        <span class="pl-s">"mcpingName"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>       <span class="pl-c">// API 查询时显示的名字</span>
+        <span class="pl-s">"mcpingHost"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>       <span class="pl-c">// 目标地址，为空则自动获取</span>
+        <span class="pl-s">"mcpingPort"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>       <span class="pl-c">// 目标端口，为空则自动获取</span>
+        <span class="pl-s">"mcpingMotd"</span>: <span class="pl-s">""</span>        <span class="pl-c">// API 查询时显示的 motd</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></code></pre>
+            </div>
+            <ul>
+                <li>响应</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code class="language-json"><span class="pl-ii">// 响应200代码创建成功，其他状态码则代表失败！</span>
+{<span class="pl-ent">"status"</span>:<span class="pl-c1">200</span>}</code></pre>
+            </div>
+        </div>
+
+        <!-- 修改服务器高级 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">修改服务器（高级，8.6.15 以上）<a class="doc-anchor"
+                id="修改服务器高级"></a></h2>
+            <ul>
+                <li>权限: 仅限管理用户</li>
+                <li>方式：<code>POST</code>
+                </li>
+                <li>地址：/api/advanced_configure_server/?apikey={KEY}</li>
+                <li>参数:</li>
+            </ul>
+            <div class="highlight highlight-source-ini position-relative overflow-auto">
+                <pre><code class="language-ini"><span class="pl-k">serverName</span>=服务器名字
+<span class="pl-k">config</span>=JSON格式数据</code></pre>
+            </div>
+            <ul>
+                <li>其中 <code>config</code> 参数与 <code>创建服务器（高级）</code>一模一样，但是所有参数都是可以选填:</li>
+                <li>列如我只想修改部分配置，则只需这样写：</li>
+            </ul>
+            <div class="highlight highlight-source-js position-relative overflow-auto">
+                <pre><code class="language-json"><span class="pl-c">// 只发送部分JSON格式数据，代表只修改服务端实例这部分内容</span>
+<span class="pl-kos">{</span>
+    <span class="pl-s">"timeLimitDate"</span>: <span class="pl-s">"2088/8/8"</span><span class="pl-kos">,</span> <span class="pl-c">// 修改到期时间到 2088/8/8</span>
+    <span class="pl-s">"stopCommand"</span>: <span class="pl-s">"test_stop"</span><span class="pl-kos">,</span>  <span class="pl-c">// 修改关服命令</span>
+    <span class="pl-s">"Xmx"</span>: <span class="pl-s">"1000GB"</span><span class="pl-kos">,</span>             <span class="pl-c">// 修改最大内存</span>
+    <span class="pl-c">// 注意：如果写了类似于Docker配置这种子对象，则必须全部写全！  </span>
+    <span class="pl-c">// 但可以直接不写这个配置，则不会进行任何更改。</span>
+    <span class="pl-s">"dockerConfig"</span>: <span class="pl-kos">{</span>             
+        <span class="pl-s">"dockerCommand"</span>: <span class="pl-s">""</span><span class="pl-kos">,</span>     <span class="pl-c">// 必有。为空就行</span>
+        <span class="pl-s">"dockerImageName"</span>: <span class="pl-s">"mcsd"</span><span class="pl-kos">,</span>      <span class="pl-c">// 必有。修改目标实例镜像名</span>
+        <span class="pl-s">"dockerXmx"</span>: <span class="pl-s">"1024"</span><span class="pl-kos">,</span>            <span class="pl-c">// 必有。容器最大内存</span>
+        <span class="pl-s">"dockerPorts"</span>: <span class="pl-s">"25565:25565"</span><span class="pl-kos">,</span>   <span class="pl-c">// 必有。端口分配</span>
+        <span class="pl-s">"isDocker"</span>: <span class="pl-c1">true</span>                <span class="pl-c">// 必有。是否启动</span>
+    <span class="pl-kos">}</span>
+<span class="pl-kos">}</span></code></pre>
+            </div>
+            <ul>
+                <br>
+                <li>其中 <code>config</code> 也可以这样写：</li>
+            </ul>
+            <div class="highlight highlight-source-js position-relative overflow-auto">
+                <pre><code class="language-json"><span class="pl-c">// 这里只修改模板服务端的到期时间与关闭命令</span>
+<span class="pl-kos">{</span>
+    <span class="pl-s">"timeLimitDate"</span>: <span class="pl-s">"2088/8/8"</span><span class="pl-kos">,</span> <span class="pl-c">// 修改到期时间到 2088/8/8</span>
+    <span class="pl-s">"stopCommand"</span>: <span class="pl-s">"test_stop"</span><span class="pl-kos">,</span>  <span class="pl-c">// 修改关闭命令</span>
+<span class="pl-kos">}</span></code></pre>
+            </div>
+            <ul>
+                <br>
+                <li>响应</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code class="language-json">// 响应200代码创建成功，其他状态码则代表失败！
+{<span class="pl-ent">"status"</span>:<span class="pl-c1">200</span>}</code></pre>
+            </div>
+        </div>
+
+        <!-- 删除用户 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">删除用户<a class="doc-anchor"
+                id="删除用户"></a></h2>
+            <ul>
+                <li>权限: 仅限管理用户</li>
+                <li>方式: <code>GET</code>
+                </li>
+                <li>地址: <a
+                        href="http://127.0.0.1:23333/api/delete_user/%7B%E7%94%A8%E6%88%B7%E5%90%8D%7D?apikey=%7BKEY%7D"
+                        rel="nofollow" target="_blank">http://127.0.0.1:23333/api/delete_user/{用户名}?apikey={KEY}</a>
+                </li>
+                <li>列子:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>http://127.0.0.1:23333/api/delete_user/TestUser?apikey=7c5b8edf73b440a5823886eaee4604cd</code></pre>
+            </div>
+            <ul>
+                <br>
+                <li>响应</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code>{<span class="pl-ent">"status"</span>:<span class="pl-c1">200</span>}</code></pre>
+            </div>
+        </div>
+
+        <!-- 删除服务器 -->
+        <div class="mdui-typo">
+            <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">删除服务器<a class="doc-anchor"
+                id="删除服务器"></a></h2>
+            <ul>
+                <li>权限: 仅限管理用户</li>
+                <li>方式: <code>GET</code>
+                </li>
+                <li>地址: <a
+                        href="http://127.0.0.1:23333/api/delete_server/%7B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8D%7D?apikey=%7BKEY%7D"
+                        rel="nofollow" target="_blank">http://127.0.0.1:23333/api/delete_server/{服务器名}?apikey={KEY}</a>
+                </li>
+                <li>列子:</li>
+            </ul>
+            <div class="snippet-clipboard-content position-relative overflow-auto">
+                <pre><code>http://127.0.0.1:23333/api/delete_server/TestServer001?apikey=5e72ce7f3f7240a895d973a4ff5246f1</code></pre>
+            </div>
+            <ul>
+                <br>
+                <li>响应</li>
+            </ul>
+            <div class="highlight highlight-source-json position-relative overflow-auto">
+                <pre><code>{<span class="pl-ent">"status"</span>:<span class="pl-c1">200</span>}</code></pre>
+            </div>
+        </div>
+
+        <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+            <br>
+            <div class="mdui-typo">
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon mdui-color-blue"><i
+                            class="mdui-icon material-icons">access_time</i></span>
+                    <span class="mdui-chip-title">该页面最后编辑于<code>2021-12-5</code></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--正文结束-->
+
+<div class="doc-footer-nav mdui-color-theme">
+    <div class="mdui-container">
+        <div class="mdui-row">
+            <a onclick="a(页面.html)" href="#页面.html"
+                class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+                <div class="doc-footer-nav-text">
+                    <i class="mdui-icon material-icons">arrow_back</i>
+                    <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+                    <div class="doc-footer-nav-chapter mdui-hidden-xs-down">上一个</div>
+                </div>
+            </a>
+
+            <a onclick="a(页面.html)" href="#页面.html"
+                class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+                <div class="doc-footer-nav-text">
+                    <i class="mdui-icon material-icons">arrow_forward</i>
+                    <span class="doc-footer-nav-direction">Next</span>
+                    <div class="doc-footer-nav-chapter">下一个</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
