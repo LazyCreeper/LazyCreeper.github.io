@@ -1,7 +1,9 @@
-<meta charset="utf-8">
-<link rel="stylesheet" href="./css/mdui.css"/>
-<script src="./js/mdui.js"></script>
-<link rel="stylesheet" href="./css/docs.css"/>
+<meta charset="utf-8" />
+<link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css" type="text/css"
+	rel="stylesheet" />
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/js/mdui.min.js"
+	type="application/javascript"></script>
+<link rel="stylesheet" href="./css/docs.css" />
 <div class="mdui-container doc-container doc-no-cover">
 	<div class="null">
 		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
@@ -22,10 +24,10 @@
 	<nav class="doc-toc mdui-text-color-theme">
     	<ul>
 			<li><a data-scroll="" href="#Installer">使用一键安装脚本</a></li>
-			<li><a data-scroll="" href="#ubuntu">运行在Ubuntu</a></li>
+			<li><a data-scroll="" href="#manual">手动安装</a></li>
 			<!--<li><a data-scroll="" href="#centos7">运行在Centos7 / RedHat</a></li>-->
-			<li><a data-scroll="" href="#centos8">运行在Centos8</a></li>
-			<li><a data-scroll="" href="#keep">让面板在后台保持运行</a></li>
+			<li><a data-scroll="" href="#bt">使用宝塔面板安装</a></li>
+			<li><a data-scroll="" href="#docker">使用 Docker 安装</a></li>
 			<li><a data-scroll="" href="#auto">让面板开机自启动</a></li>
 		</ul>
 	</nav>
@@ -33,92 +35,123 @@
 		<!--Installer-->
 		<div class="mdui-typo">
 			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" >一行命令快速安装<a class="doc-anchor" id="Installer"></a></h2>
-			<p>适用于amd64架构 Ubuntu/Centos/Debian/Archlinux</p>
-			<pre>wget -qO- https://gitee.com/Suwingser/MCSManager-installer/raw/master/install.sh | bash</pre>
+			<p>适用于主流 Linux 系统，安装成功后，使用<code>systemctl start mcsm-{web, daemon}</code>命令即可启动。</p>
+			<pre>wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup.sh | bash</pre>
 		</div>
 		
 		<!--Ubuntu-->
 		<div class="mdui-typo">
-		   <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" >运行在Ubuntu<a class="doc-anchor" id="ubuntu"></a><small>（这里使用Win子系统Ubuntu演示)</small></h2>
-		   <p class="mdui-typo-headline">第零步：输入<code>sudo -i</code>切换到<code>root</code>用户（如果已是 root 用户请跳过）</p>
-			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fc5b340.jpg" class="mdui-hoverable">
-			<p class="mdui-typo-headline">第一步：输入<code>apt update</code>更新包</p>
-			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fd2f5c9.jpg" class="mdui-hoverable">
-			<!-- <p class="mdui-typo-headline">第二步：输入<code>apt install nodejs</code>安装<code>nodejs</code>，装完后记得输入<code>node -v</code>检查版本，如果没显示那就重装一次。如果版本过低<a target="_blank" href="https://blog.imlazy.ink:233/index.php/archives/58/">请看这里</a></p>
-			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fd26e35.jpg" class="mdui-hoverable"> -->
-			<p class="mdui-typo-headline">第二步：分别执行以下命令安装 Nodejs</p>
-			<pre>curl -fsSL https://deb.nodesource.com/setup_16.x | bash</pre>
-			<pre>apt install -y nodejs</pre>
-			<p class="mdui-typo-headline">第三步：输入<code>apt install -y git</code>安装<code>git</code>
-			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fdaf74e.jpg" class="mdui-hoverable">
-			<p class="mdui-typo-headline">第四步 [ 可选 ]：输入<code>apt -y install npm</code>安装<code>npm</code><br>
-			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fd664d1.jpg" class="mdui-hoverable">
-			<p class="mdui-typo-headline">第五步：输入：<code>git clone https://github.com/MCSManager/MCSManager-v8.7.git</code>克隆源码</p>
-			<!--<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fe18d1b.jpg" class="mdui-hoverable">-->
-			<p class="mdui-typo-headline">第六步：输入<code>cd MCSManager-v8.7</code>进入程序根目录，然后执行命令<code>npm i</code>，如果提示<code>-bash: npm: command not found</code>就去执行第四步</p>
-			<!--<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fc468fd.jpg" class="mdui-hoverable">-->
-			<p class="mdui-typo-headline">第七步：执行命令<code>node app.js</code>或者<code>npm start</code>启动面板</p>
-			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fca3acd.jpg" class="mdui-hoverable">
-			<p class="mdui-typo-headline">最后一步：打开浏览器访问 http://你的服务器地址:23333 然后输入默认账号：<code>#master</code>密码：<code>123456</code>就可以进入面板啦！</p>
-			<p>如果你还是不会，可以考虑我的<a href="#">付费安装</a>服务<img src="https://tb2.bdstatic.com/tb/editor/images/face/i_f25.png?t=20140803"></p>
+		   <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" >手动安装<a class="doc-anchor" id="manual"></a><small>（这里使用Ubuntu系统做演示）</small></h2>
+		   <ol>
+			<li>切换到安装目录，没有此目录请执行<code>mkdir /opt/</code></li>
+			<pre><code class="language-bash">cd /opt/</code></pre>
+			<li>安装 Nodejs，版本需要>14，如果你已安装可以跳过这一步</li>
+			<pre><code class="language-bash">curl -sL https://rpm.nodesource.com/setup_16.x | bash</code><code class="language-bash">apt install -y nodejs</code></pre>
+			<li>准备安装目录</li>
+			<pre><code class="language-bash">mkdir /opt/mcsmanager/</code><code class="language-bash">cd /opt/mcsmanager/</code></pre>
+			<li>下载面板端（Web）程序，在此之前请先安装<code>git</code></li>
+			<pre><code class="language-bash">git clone https://github.com/MCSManager/MCSManager-Web-Production.git</code></pre>
+			<li>重命名文件夹并进入</li>
+			<pre><code class="language-bash">mv MCSManager-Web-Production web</code><code class="language-bash">cd web</code></pre>
+			<li>安装依赖库</li>
+			<pre><code class="language-bash">npm install --production --registry=https://registry.npmmirror.com/</code></pre>
+			<li>下载守护进程（Daemon）程序</li>
+			<pre><code class="language-bash">git clone https://github.com/MCSManager/MCSManager-Daemon-Production.git</code></pre>
+			<li>重命名文件夹并进入</li>
+			<pre><code class="language-bash">mv MCSManager-Daemon-Production daemon</code><code class="language-bash">cd daemon</code></pre>
+			<li>安装依赖库</li>
+			<pre><code class="language-bash">npm install --production --registry=https://registry.npmmirror.com/</code></pre>
+			<li>打开两个终端或两个 Screen 软件的终端窗口<small>（这里使用 Screen 做演示）</small>，首先创建一个名字叫做<span mdui-tooltip="{content: '这个名字可以随便起'}">mcsm-web</span>的窗口。</li>
+			<pre><code class="language-bash">screen -S mcsm-web</code></pre>
+			<li>先启动守护进程（Daemon）</li>
+			<pre><code class="language-bash">cd /opt/mcsmanager/daemon</code><code class="language-bash">node app.js</code></pre>
+			<li>然后使用<code>Ctrl + A + D</code>退出当前窗口，再新建一个名为<span mdui-tooltip="{content: '这个名字可以随便起'}">mcsm-daemon</span>的窗口。</li>
+			<pre><code class="language-bash">screen -S mcsm-web</code></pre>
+			<li>启动面板（Web）</li>
+			<pre><code class="language-bash">cd /opt/mcsmanager/web</code><code class="language-bash">node app.js</code></pre>
+		   </ol>
+		   <p>至此，面板已经安装完成了，启动浏览器访问<a>http://服务器的ip地址:23333/</a>即可进入面板<br>默认情况下，面板端会自动扫描 daemon 文件夹并且自动连接到守护进程。<br>如果与终端断开连接，可以使用<code>screen -r mcsm-{web,daemon}</code>重新连接。</p>
+			<p>如果你还是不会，可以考虑我的<code>付费安装</code>服务<img src="https://tb2.bdstatic.com/tb/editor/images/face/i_f25.png?t=20140803"></p>
 		</div>
 
-		<!--CentOS-->
+		<!--bt-->
 		<div class="mdui-typo">
-			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" >运行在Centos<a class="doc-anchor" id="centos"></a></h2>
-			<p class="mdui-typo-headline">第一步：用<code>root</code>用户连接到你的CentOS服务器</p>
-			<img src='https://i.zerodream.net/66f4f3ee45784e4a62ff6d728ebdd8f5.jpg' alt='image' class="mdui-hoverable">
-			<p class="mdui-typo-headline">第二步：输入<code>yum -y install curl</code>安装<code>curl</code>工具。</p>
-			<p class="mdui-typo-headline">第三步：输入<code>curl -sL https://rpm.nodesource.com/setup_16.x | bash</code></p>
-			<img src='https://tva4.sinaimg.cn/large/006MpbfMgy1gtf0sro5f5j30wm09odgx.jpg' alt='image' class="mdui-hoverable">
-			<p class="mdui-typo-headline">第四步：输入<code>yum install -y nodejs</code>安装NodeJs 16。</p>
-			<p class="mdui-typo-headline">第五步：输入<code>node -v</code>检查Nodejs是否安装成功（出现版本号即为安装成功）</p>
-			<img src='https://tva1.sinaimg.cn/large/006MpbfMgy1gtf0sry9uwj307l01aa9v.jpg' alt='image' class="mdui-hoverable">
-			<p class="mdui-typo-headline">第六步：输入<code>yum -y install git</code>安装git</p>
-			<img src='https://i.zerodream.net/fe11dac671aed0d0bfe0166345439162.jpg' alt='image' class="mdui-hoverable">
-			<p class="mdui-typo-headline">第七步：输入<code>git clone https://github.com/MCSManager/MCSManager-v8.7.git</code>克隆源码</p>
-			<!--<img src='https://i.zerodream.net/617cd624e3caef8b9d13e4eb491fc364.jpg' alt='image' class="mdui-hoverable">-->
-			<p class="mdui-typo-headline">第八步：输入命令<code>cd MCSManager-v8.7</code>进入程序根目录，然后执行命令<code>npm i</code>安装依赖</p>
-			<!--<img src='https://i.zerodream.net/36a451ac6ce65035ba517ff4ce6239f9.jpg' alt='image' class="mdui-hoverable">-->
-			<p class="mdui-typo-headline">第九步：输入<code>npm start</code>或者<code>node app.js</code>就能启动面板了</p>
-			<img src='https://i.zerodream.net/7b1adcb1e44a3bb445b225a2c4c87dfd.jpg' alt='image' class="mdui-hoverable">
-			<p class="mdui-typo-headline">第十步：打开浏览器访问 http://你的服务器地址:23333 就能进入面板了。如果是本机测试就访问<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>然后输入默认账号：<code>#master</code>密码：<code>123456</code>就可以进入面板啦！</p>
-			<p>无法访问？请<a data-left  href="./error/canthttp.html">点击这里</a></p>
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">使用宝塔面板安装<a class="doc-anchor" id="bt"></a></h2>
+			<ol>
+				<li>请先根据上面的 手动安装 教程，<strong>跳过第2步</strong>，走到第9步</li>
+				<li>登录宝塔面板，依次点击网站->Node项目->Node版本管理器，选择<code>v1.16.0</code>稳定版进行安装</li>
+				<img src="https://qn-store-pub-tx.seewo.com/4828ddbfaa3c4ee7bd0ca4f66b9fef13165977907064674" class="mdui-hoverable">
+				<li>先启动守护进程（Daemon），点击新建Node项目，根据图中所示填写信息</li>
+				<img src="https://qn-store-pub-tx.seewo.com/4828ddbfaa3c4ee7bd0ca4f66b9fef13165977935168915" class="mdui-hoverable">
+				<li>再启动面板端（Web），步骤和上面一样，项目端口为<code>23333</code></li>
+			</ol>
+			<p>至此，面板已经安装完成了，启动浏览器访问<a>http://服务器的ip地址:23333/</a>即可进入面板<br>默认情况下，面板端会自动扫描 daemon 文件夹并且自动连接到守护进程。</p>
 		</div>
 
 		<!--保持后台运行-->
-		<div class="mdui-typo">
+		<!--<div class="mdui-typo">
 			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">在后台保持运行<a class="doc-anchor" id="keep"></a></h2>
-			<p class="mdui-typo-headline">先安装<code>screen</code>软件</p>
-			<p>Ubuntu：<code>apt install -y screen</code><br>
-			CentOS：<code>yum install -y screen</code></p>
-			<p class="mdui-typo-headline">然后输入<code>screen -S mcsm</code>创建一个名字叫做<span mdui-tooltip="{content: '这个名字可以随便起'}">mcsm</span>的窗口。</p>
-			<p class="mdui-typo-headline">最后进入面板目录，然后用<code>npm start</code>启动你的面板。</p>
-			<p class="mdui-typo-headline">如果与终端断开连接，可以使用<code>screen -r <span mdui-tooltip="{content: '你刚才起好的名字'}">mcsm</span></code>重新连接。</p>
+			<ol>
+				<li>如果你使用的是一键安装脚本，则使用<code>systemctl start/stop/restart mcsm-{web, daemon}</code>命令即可</li>
+				<li>如果你是手动安装，则使用使用<code>screen -r mcsm-{web,daemon}</code>重新连接。</li>
+			</ol>
+		</div>-->
+
+		<!--使用Docker-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">使用 Docker 进行安装<a class="doc-anchor" id="docker"></a></h2>
+			<p>来自：<a href="https://github.com/zijiren233/docker-mcsm" target="_blank">https://github.com/zijiren233/docker-mcsm</a></p>
+			<ol>
+				<li>安装 docker-compose 程序<small>（例如在 Ubuntu 系统中）</small></li>
+				<pre><code class="language-bash">apt update && apt install docker-compose</code></pre>
+				<li>克隆仓库</li>
+				<pre><code class="language-bash">git clone https://github.com/zijiren233/docker-mcsm</code></pre>
+				<li>进入程序目录</li>
+				<pre><code class="language-bash">cd ./docker-mcsm/releases</code></pre>
+				<li>然后启动</li>
+				<pre><code class="language-bash">docker-compose up -d</code></pre>
+			</ol>
+			<p>至此，面板已经安装完成了，启动浏览器访问<a>http://服务器的ip地址:23333/</a>即可进入面板</p>
+			<p>如果需要更新：</p>
+			<ol><pre>cd ./docker-mcsm/releases<br>docker-compose down<br>docker-compose build --no-cache<br>docker-compose up -d</pre></ol>
+			<p>关闭服务器请进入到 docker-compose.yml 文件目录运行 ：<code>docker-compose stop</code><br>
+			移除容器：<code>docker-compose down</code></p>
 		</div>
 
 		<!--开机自启动-->
 		<div class="mdui-typo">
 			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">开机自启动<a class="doc-anchor" id="auto"></a></h2>
-			<p ><strong>注意：</strong>该方法同样也可以让面板保持在后台运行，无需使用 screen 。如果你使用的是<a data-scroll="" href="#Installer">一键安装脚本</a>，则无需配置</p>
-			<p class="mdui-typo-headline">第一步：创建文件<code>/lib/systemd/system/mcsm.service</code></p>
+			<p><strong>注意：</strong>如果你使用的是<a>一键安装脚本</a>，或者通过<a>宝塔面板</a>进行安装，则无需配置</p>
+			<p>第一步：创建文件<code>/lib/systemd/system/mcsm-web.service</code>和<code>/lib/systemd/system/mcsm-daemon.service</code></p>
 			<pre>[Unit]
-Description=MCSManager 											
+Description=MCSManager-Web										
 				
 [Service]
-ExecStart=node <node mdui-tooltip="{content: '面板目录'}">/root/MCSManager/app.js</node>
+ExecStart=node <node mdui-tooltip="{content: '面板目录'}">/opt/mcsmanager/web/app.js</node>
 Restart=always
 Environment=PATH=/usr/bin:/usr/local/bin:/usr/local/node/bin
 Environment=NODE_ENV=production
-WorkingDirectory=/opt/MCSManager/
+WorkingDirectory=/opt/mcsmanager/web
 				
 [Install]
 WantedBy=multi-user.target </pre>
-			<p class="mdui-typo-headline">第二步：输入<code>systemctl enable mcsm</code>设置面板开机自启动</p>
-			<p class="mdui-typo-headline">第三步：即可使用<code>systemctl</code>管理面板启动与关闭</p>
-			<pre>开启：systemctl start mcsm
-关闭: systemctl stop mcsm
-状态: systemctl status mcsm</pre>
+<pre>[Unit]
+Description=MCSManager-Daemon										
+					
+[Service]
+ExecStart=node <node mdui-tooltip="{content: '面板目录'}">/opt/mcsmanager/daemon/app.js</node>
+Restart=always
+Environment=PATH=/usr/bin:/usr/local/bin:/usr/local/node/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/mcsmanager/daemon0
+					
+[Install]
+WantedBy=multi-user.target </pre>
+			<p>第二步：输入<code>systemctl enable mcsm-web</code>和<code>systemctl enable mcsm-daemon</code>设置面板开机自启动</p>
+			<p>第三步：即可使用<code>systemctl</code>管理面板启动与关闭</p>
+			<pre>开启：systemctl start mcsm-{web, daemon}
+关闭: systemctl stop mcsm-{web, daemon}
+状态: systemctl status mcsm-{web, daemon}</pre>
 		</div>
 		
 		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
@@ -145,11 +178,6 @@ WantedBy=multi-user.target </pre>
   </button>
   <div class="mdui-fab-dial">
 	<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#" mdui-tooltip="{content: '回到顶部'}"><i class="mdui-icon material-icons">navigation</i></a>
-    <a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#Installer" mdui-tooltip="{content: '一键脚本'}"><i class="mdui-icon material-icons">&#xeb42;</i></a>
-	<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#ubuntu" mdui-tooltip="{content: 'Ubuntu'}"><i class="mdui-icon material-icons">directions_walk</i></a>
-	<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#centos" mdui-tooltip="{content: 'CentOS'}"><i class="mdui-icon material-icons">directions_run</i></a>
-	<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#keep" mdui-tooltip="{content: '保持在后台运行'}"><i class="mdui-icon material-icons">&#xeb3e;</i></a>
-	<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#auto" mdui-tooltip="{content: '开机自启动'}"><i class="mdui-icon material-icons">&#xe52f;</i></a>
     <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" href="https://qn-store-pub-tx.seewo.com/676b69a1b8ad4f9391555c127a2331c7165760252223383" mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
   </div>
 </div>
@@ -175,3 +203,4 @@ WantedBy=multi-user.target </pre>
     </div>
   </div>
 </div>
+<script>hljs.highlightAll();</script>
