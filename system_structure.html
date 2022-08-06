@@ -1,0 +1,114 @@
+<meta charset="utf-8" />
+<link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css" type="text/css"
+	rel="stylesheet" />
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/js/mdui.min.js"
+	type="application/javascript"></script>
+<link rel="stylesheet" href="./css/docs.css" />
+<div class="mdui-container doc-container doc-no-cover">
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">
+			警告：文档成分丢失，请返回首页后重试！
+		</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+	</div>
+	<script>
+		if ($(".null").length > 0) {
+			$(".null").css("display", "none"); // 存在
+		}
+		$("body").addClass("mdui-appbar-with-toolbar");
+		$("body").addClass("mdui-drawer-body-left");
+		$("#main-drawer").removeClass("mdui-drawer-close");
+		$("header").css("display", "block");
+		document.title = "分布式工作原理 - MCSManager 帮助文档";
+	</script>
+
+	<h1 class="doc-title mdui-text-color-theme">分布式工作原理</h1>
+	<nav class="doc-toc mdui-text-color-theme">
+		<ul>
+			<li>
+				<a data-scroll="" href="#子项目职责">子项目职责</a>
+				<ul>
+					<li>
+						<a data-scroll="" href="#面板端的功能划分">面板端的功能划分</a>
+					</li>
+					<li>
+						<a data-scroll="" href="#守护进程端的功能划分">守护进程端的功能划分</a>
+					</li>
+				</ul>
+			</li>
+			<li><a data-scroll="" href="#分布式连接原理图">分布式连接原理图</a></li>
+		</ul>
+	</nav>
+	<div class="doc-chapter">
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				子项目职责<a class="doc-anchor" id="子项目职责"></a>
+			</h2>
+			整体项目总共分为两个部分，一个面板端（Web），一个守护进程端（Daemon）。
+			<h3 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				面板端的功能划分<a class="doc-anchor" id="面板端的功能划分"></a>
+			</h3>
+			<ul>
+				<li>用户管理</li>
+				<li>连接守护进程</li>
+				<li>大多数操作的权限认证与授权</li>
+				<li>API 接口提供</li>
+				<li>更多...</li>
+			</ul>
+			<h3 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				守护进程端的功能划分<a class="doc-anchor" id="守护进程端的功能划分"></a>
+			</h3>
+			<ul>
+				<li>真实的进程管理（Bukkit，Spigot 程序运行）</li>
+				<li>Docker 容器管理</li>
+				<li>文件管理</li>
+				<li>终端实时通信</li>
+				<li>更多</li>
+			</ul>
+		</div>
+
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				分布式连接原理图<a class="doc-anchor" id="分布式连接原理图"></a>
+			</h2>
+			<p>在无其他配置和因素下，浏览器需要与守护进程进行直接访问，以便于文件上传下载和实时数据传输，从而减小面板端的流量压力。<br>正因如此，连接守护进程的 IP 地址不得使用内网段，否则外部用户将无法访问到守护进程并且会一直显示连接中字样。</p>
+			<img src="https://docs.mcsmanager.com/tutorial/images/distributed_principle.png">
+		</div>
+
+		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+			<br />
+			<div class="mdui-typo">
+				<div class="mdui-chip">
+					<span class="mdui-chip-icon mdui-color-blue"><i
+							class="mdui-icon material-icons">access_time</i></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2022-8-6</code></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--正文结束-->
+
+<div class="doc-footer-nav mdui-color-theme">
+	<div class="mdui-container">
+		<div class="mdui-row">
+			<a onclick="a('connect_daemon.html')" href="#connect_daemon.html"
+				class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_back</i>
+					<span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+					<div class="doc-footer-nav-chapter mdui-hidden-xs-down">连接守护进程</div>
+				</div>
+			</a>
+
+			<a onclick="a('pty.html')" href="#pty.html"
+				class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_forward</i>
+					<span class="doc-footer-nav-direction">Next</span>
+					<div class="doc-footer-nav-chapter">仿真终端</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
