@@ -1,8 +1,9 @@
 @font-face {
-    font-family:tx;src:url(../fonts/tx.woff2) format("woff2")
+  font-family: tx;
+  src: url(../fonts/tx.woff2) format("woff2");
 }
 body {
-	font-family:'等线',Roboto,'微软雅黑',Consolas;
+  font-family: "等线", Roboto, "微软雅黑", Consolas;
 }
 
 .mdui-toolbar-spacer {
@@ -10,35 +11,40 @@ body {
 }
 
 .abg {
-    /* background-image: linear-gradient(135deg, rgba(0, 19, 88, 0.7) 0%, rgba(0, 60, 30, 0.7) 100%),url(https://api.lazy.ink/img/); */
-    background-image: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.5) 100%),url('https://api.imlazy.ink/img/');
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-width: 100%!important;
-    position: fixed;
-    width: 100%;
-    height: 100%;
+  /* background-image: linear-gradient(135deg, rgba(0, 19, 88, 0.7) 0%, rgba(0, 60, 30, 0.7) 100%),url(https://api.lazy.ink/img/); */
+  background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5) 100%
+    ),
+    url("https://api.imlazy.ink/img/");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 100% !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .ApiList {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .load {
-	position: fixed;
-    top: 0;
-    z-index: 10000;
-    width: 100%;
-    left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  width: 100%;
+  left: 0;
 }
 
 .index-a {
-	height: 46px;
+  height: 46px;
   margin-right: 8px;
   margin-left: 8px;
-	margin-top: 21px;
+  margin-top: 21px;
   padding: 0 24px;
   color: #1c1c1c;
   font-size: 16px;
@@ -51,16 +57,32 @@ body {
   padding: 0 30px;
 }
 
-@media (max-width:790px) {
-	.abg {
-		background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.43) 0%, rgba(28, 103, 146, 0.7) 100%),url(https://api.imlazy.ink/img-phone/)!important;
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
-	
-	.index-a {
-		display:block
-	}
+@media (max-width: 790px) {
+  .abg {
+    background-image: linear-gradient(
+        135deg,
+        rgba(230, 230, 230, 0.43) 0%,
+        rgba(195, 233, 255, 0.7) 100%
+      ),
+      url(https://api.imlazy.ink/img-phone/) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .abg {
+      background-image: linear-gradient(
+          135deg,
+          rgba(48, 48, 48, 0.5),
+          rgba(48, 48, 48, 0.5) 100%
+        ),
+        url("https://api.imlazy.ink/img-phone/") !important;
+    }
+  }
+
+  .index-a {
+    display: block;
+  }
 }
 
 /* æ–‡æ¡£æœ€å¤–å±‚ */
@@ -144,7 +166,7 @@ h1.doc-title {
   color: inherit;
 }
 .doc-toc:before {
-  content: 'Contents';
+  content: "Contents";
   font-size: 15px;
   line-height: 16px;
   font-weight: 400;
@@ -222,7 +244,12 @@ h1.doc-title {
     border: 1px solid #ff98df;
   }
   .abg {
-    background-image: linear-gradient(135deg, rgba(48,48,48,0.5), rgba(48,48,48,0.5) 100%),url('https://api.imlazy.ink/img/');
+    background-image: linear-gradient(
+        135deg,
+        rgba(48, 48, 48, 0.5),
+        rgba(48, 48, 48, 0.5) 100%
+      ),
+      url("https://api.imlazy.ink/img/");
   }
   .mdui-theme-layout-auto .doc-chapter-title {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -253,9 +280,9 @@ script + .doc-article-title {
 }
 
 /**
- * ==============================================================
- * ======================================================= åº•éƒ¨ç¿»é¡µ
- */
+* ==============================================================
+* ======================================================= åº•éƒ¨ç¿»é¡µ
+*/
 /* åº•éƒ¨ç¿»é¡µ */
 .doc-footer-nav {
   height: 96px;
@@ -329,9 +356,9 @@ script + .doc-article-title {
 }
 
 /**
- * ===============================================================
- * =========================================================== æ¼”ç¤º
- */
+* ===============================================================
+* =========================================================== æ¼”ç¤º
+*/
 .doc-example {
   position: relative;
   margin-bottom: 2.6em;
@@ -339,16 +366,16 @@ script + .doc-article-title {
 /* å®žä¾‹æ¼”ç¤º */
 .doc-example-demo {
   padding: 0;
-  -webkit-transition: padding .3s;
-  -moz-transition: padding .3s;
-  -ms-transition: padding .3s;
-  -o-transition: padding .3s;
-  transition: padding .3s;
+  -webkit-transition: padding 0.3s;
+  -moz-transition: padding 0.3s;
+  -ms-transition: padding 0.3s;
+  -o-transition: padding 0.3s;
+  transition: padding 0.3s;
 }
 .doc-example-demo:after {
   clear: both;
   display: table;
-  content: ' ';
+  content: " ";
 }
 
 /* Example æ–‡å­— */
@@ -403,10 +430,10 @@ script + .doc-article-title {
 /* ä»£ç ä¸­å…³é”®ç±»åé«˜äº® */
 .doc-example-code-required {
   padding: 2px;
-  background-color: #E8EAF6;
+  background-color: #e8eaf6;
 }
 .doc-example-code-required * {
-  color: #FF4081;
+  color: #ff4081;
 }
 /* ä»£ç ä¸­æ·»åŠ é“¾æŽ¥ */
 .doc-example-code a {
@@ -420,11 +447,11 @@ script + .doc-article-title {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-transition: top .3s;
-  -moz-transition: top .3s;
-  -ms-transition: top .3s;
-  -o-transition: top .3s;
-  transition: top .3s;
+  -webkit-transition: top 0.3s;
+  -moz-transition: top 0.3s;
+  -ms-transition: top 0.3s;
+  -o-transition: top 0.3s;
+  transition: top 0.3s;
 }
 .doc-example-tools a {
   color: rgba(0, 0, 0, 0.54);
@@ -471,9 +498,9 @@ script + .doc-article-title {
 }
 
 /**
- * ============================================================
- * =================================================== å¸¸ç”¨å·¥å…·ç±»
- */
+* ============================================================
+* =================================================== å¸¸ç”¨å·¥å…·ç±»
+*/
 /* å°åž‹çš„åœ†å½¢ */
 .doc-color-circle {
   display: inline-block;
@@ -489,9 +516,9 @@ script + .doc-article-title {
 }
 
 /**
- * =========================================================
- * ======================================== æ ¹æ®ä¸»é¢˜è®¾ç½®å¯è§çŠ¶æ€
- */
+* =========================================================
+* ======================================== æ ¹æ®ä¸»é¢˜è®¾ç½®å¯è§çŠ¶æ€
+*/
 /* äº®è‰²ä¸»é¢˜å¯è§ */
 .doc-visible-light-theme {
   display: block;
@@ -517,11 +544,11 @@ script + .doc-article-title {
 }
 
 /**
- * =========================================================
- * ======================================== æš—è‰²ä¸»é¢˜ä¸‹ä¼˜åŒ–
- */
+* =========================================================
+* ======================================== æš—è‰²ä¸»é¢˜ä¸‹ä¼˜åŒ–
+*/
 @media (prefers-color-scheme: dark) {
   img {
-    filter: brightness(.8); /* é™ä½Žå›¾ç‰‡äº®åº¦ */
+    filter: brightness(0.8); /* é™ä½Žå›¾ç‰‡äº®åº¦ */
   }
 }
