@@ -1,91 +1,168 @@
-<meta charset="utf-8">
-<link rel="stylesheet" href="./css/mdui.css"/>
-<script src="./js/mdui.js"></script>
-<link rel="stylesheet" href="./css/docs.css"/>
+<meta charset="utf-8" />
+<link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css" type="text/css"
+	rel="stylesheet" />
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/js/mdui.min.js"
+	type="application/javascript"></script>
+<link rel="stylesheet" href="./css/docs.css" />
 <div class="mdui-container doc-container doc-no-cover">
 	<div class="null">
-		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">
+			警告：文档成分丢失，请返回首页后重试！
+		</h1>
 		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
 	</div>
 	<script>
-		if ( $(".null").length > 0 ) { 
-			$('.null').css('display', 'none'); // 存在
+		if ($(".null").length > 0) {
+			$(".null").css("display", "none"); // 存在
 		}
-		$('body').addClass('mdui-appbar-with-toolbar');
-		$('body').addClass('mdui-drawer-body-left');
-		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("body").addClass("mdui-appbar-with-toolbar");
+		$("body").addClass("mdui-drawer-body-left");
+		$("#main-drawer").removeClass("mdui-drawer-close");
 		$("header").css("display", "block");
 
-		document.title = "运行在Windows - MCSManager 帮助文档"
+		document.title = "运行在Windows - MCSManager 帮助文档";
 	</script>
-	
+
 	<!--White down..-->
 	<h1 class="doc-title mdui-text-color-theme">运行在Windows</h1>
+	<nav class="doc-toc mdui-text-color-theme">
+		<ul>
+			<li><a data-scroll="" href="#all">完整安装（面板+守护程序）</a></li>
+			<li><a data-scroll="" href="#module">仅安装面板或者守护程序</a></li>
+		</ul>
+	</nav>
 	<div class="doc-chapter">
-   
-	<div class="mdui-typo">
-	  <p class="mdui-typo-headline">第一步：从<a target="_blank" href="https://wwp.lanzouj.com/iuMWN046f9ni">蓝奏云</a>下载已经整合好的 MCSManager</p>
-	  <!--<img src='https://tvax2.sinaimg.cn/large/008qLT8ggy1gx26ll284yj30z10lyjul.jpg' alt='image' class="mdui-hoverable">-->
-	  
-	  <p class="mdui-typo-headline">第二步：解压到一个你喜欢的地方</p>
-	 <img src='https://i.zerodream.net/a34f1910bcd1bccbfc3b184b6870c1c8.jpg' alt='image' class="mdui-hoverable">
-	 
-	  <p class="mdui-typo-headline">第三步：双击<code>Start.bat</code>运行</p>
-	  <img src='https://i.zerodream.net/a98bb91c2af0e802b4561308d5c6296c.jpg' alt='image' class="mdui-hoverable">
-	  
-	  <p class="mdui-typo-headline">第四步：打开浏览器输入<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>然后输入账号：<code>#master</code>密码：<code>123456</code>就可以进入面板啦！</p>
-	  <img src='https://i.zerodream.net/e451e8b624bb54bfe778812f54c834b9.jpg' alt='image' class="mdui-hoverable">
-	  <p class="mdui-typo-headline">如果你对文字不感兴趣，你可以试试下面的<a href="https://www.bilibili.com/video/av86935504/" target="_blank">视频教程</a>（不一定100%和文档一样）</p>
-	  <div class="mdui-video-container">
-	  <iframe src="//player.bilibili.com/player.html?aid=86935504&bvid=BV1Y7411H72c&cid=148560936&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-	  </div>
-	</div>
+		<!--完整安装-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				完整安装（面板+守护程序）<a class="doc-anchor" id="all"></a>
+			</h2>
+			<p>
+				第一步：从<a target="_blank"
+					href="https://i81.lanzoug.com/080615bb/2022/07/18/88e2c260a5ce8ee43549c6d0514ed795.zip?st=O2lcmyRGV3MvVaBF5lhBag&e=1659774736&b=VkkAQwhbWBBQZFVtCjtSMVZmDSNQDgNzAGoML11vVXkJaw5RBXJSPlBrUjICZgMpVXoPOgJz&fi=75674308&pid=171-104-110-48&up=2&mp=0&co=1">这里</a>下载已经整合好的
+				MCSManager<br />
+				<small>注意：不支持 Windows 7 及以下系统</small>
+			</p>
+
+			<!--<img src='https://tvax2.sinaimg.cn/large/008qLT8ggy1gx26ll284yj30z10lyjul.jpg' alt='image' class="mdui-hoverable">-->
+
+			<p>第二步：解压到一个你喜欢的地方</p>
+
+			<p>第三步：双击<code>启动.bat</code>运行（会同时启动面板和Daemon）</p>
+
+			<p>
+				第四步：打开浏览器输入<a href="http://127.0.0.1:23333" target="_blank">127.0.0.1:23333</a>进行安装面板
+			</p>
+
+			<p>
+				如果你对文字不感兴趣，你可以试试下面的<a href="https://www.bilibili.com/video/BV1Wb4y177QZ"
+					target="_blank">视频教程</a>（不一定100%和文档一样）
+			</p>
+			<div class="mdui-video-container">
+				<iframe src="//player.bilibili.com/player.html?aid=636414795&bvid=BV1Wb4y177QZ&cid=507116547&page=1"
+					scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+				</iframe>
+			</div>
+		</div>
+
+		<!--部分安装-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				仅安装面板或者守护程序<a class="doc-anchor" id="module"></a>
+			</h2>
+			<p>
+				第一步：从<a target="_blank"
+					href="https://i81.lanzoug.com/080615bb/2022/07/18/88e2c260a5ce8ee43549c6d0514ed795.zip?st=O2lcmyRGV3MvVaBF5lhBag&e=1659774736&b=VkkAQwhbWBBQZFVtCjtSMVZmDSNQDgNzAGoML11vVXkJaw5RBXJSPlBrUjICZgMpVXoPOgJz&fi=75674308&pid=171-104-110-48&up=2&mp=0&co=1">这里</a>下载已经整合好的
+				MCSManager<br />
+				<small>注意：不支持 Windows 7 及以下系统</small>
+			</p>
+
+			<p>第二步：解压到一个你喜欢的地方</p>
+
+			<h3 class="mdui-text-color-theme">
+				只安装面板
+			</h3>
+
+			<p>进入<code>web</code>文件夹内，双击<code>start.bat</code>即可启动<br>
+				然后打开浏览器输入<a href="http://127.0.0.1:23333" target="_blank">127.0.0.1:23333</a>进行安装面板
+			</p>
+
+			<h3 class="mdui-text-color-theme">
+				只安装守护程序
+			</h3>
+
+			<p>进入<code>daemon</code>文件夹内，双击<code>start.bat</code>即可启动<br>
+				你可以只复制 Daemon 文件夹，部署到其他服务器上，并且在面板内【节点管理】中连接它即可。
+			</p>
+
+			<p>
+				第四步：打开浏览器输入<a href="http://127.0.0.1:23333" target="_blank">127.0.0.1:23333</a>进行安装面板
+			</p>
+
+			
+		</div>
+
+		<!--注意事项-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				注意事项<a class="doc-anchor" id="attention"></a>
+			</h2>
+			<ol style="margin-top: -1.2em;">
+				<li>如需关闭面板，使用<kbt>Ctrl + C</kbt>组合键即可</li>
+				<li>将<code>web</code>和<code>daemon</code>放在同一个文件夹内，<code>web</code>会自动读取守护进程的密钥</li>
+			</ol>
+		</div>
 		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
-	<br>
-    <div class="mdui-typo">
-		<div class="mdui-chip"> 
-		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2022-8-6</code></span>
+			<br />
+			<div class="mdui-typo">
+				<div class="mdui-chip">
+					<span class="mdui-chip-icon mdui-color-blue"><i
+							class="mdui-icon material-icons">access_time</i></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2022-8-6</code></span>
+				</div>
+			</div>
 		</div>
-    </div>
-		</div>
-  </div>
+	</div>
 </div>
 <!--正文结束-->
 
-	<!--右下角浮动按钮-->
+<!--右下角浮动按钮-->
 <div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
-  <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
-    <!-- 默认显示的图标 -->
-    <i class="mdui-icon material-icons">add</i>
-    
-	<!--hover-->
-    <i class="mdui-icon mdui-fab-opened material-icons">add</i>
-  </button>
-  <div class="mdui-fab-dial">
-    <a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#" mdui-tooltip="{content: '回到顶部'}"><i class="mdui-icon material-icons">navigation</i></a>
-    <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" href="https://qn-store-pub-tx.seewo.com/676b69a1b8ad4f9391555c127a2331c7165760252223383" mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
-  </div>
+	<button class="mdui-fab mdui-ripple mdui-color-theme-accent">
+		<!-- 默认显示的图标 -->
+		<i class="mdui-icon material-icons">add</i>
+
+		<!--hover-->
+		<i class="mdui-icon mdui-fab-opened material-icons">add</i>
+	</button>
+	<div class="mdui-fab-dial">
+		<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#"
+			mdui-tooltip="{content: '回到顶部'}"><i class="mdui-icon material-icons">navigation</i></a>
+		<a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink"
+			href="https://qn-store-pub-tx.seewo.com/676b69a1b8ad4f9391555c127a2331c7165760252223383"
+			mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
+	</div>
 </div>
 <!--Next-->
 <div class="doc-footer-nav mdui-color-theme">
-  <div class="mdui-container">
-    <div class="mdui-row">
-            <a href="./index.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
-        <div class="doc-footer-nav-text">
-          <i class="mdui-icon material-icons">arrow_back</i>
-          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
-          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">文档首页</div>
-        </div>
-      </a>
-      
-            <a onclick="a('in-linux.html')" href="#in-linux.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
-        <div class="doc-footer-nav-text">
-          <i class="mdui-icon material-icons">arrow_forward</i>
-          <span class="doc-footer-nav-direction">Next</span>
-          <div class="doc-footer-nav-chapter">运行在Linux</div>
-        </div>
-      </a>
-          </div>
-  </div>
+	<div class="mdui-container">
+		<div class="mdui-row">
+			<a href="./index.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_back</i>
+					<span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+					<div class="doc-footer-nav-chapter mdui-hidden-xs-down">文档首页</div>
+				</div>
+			</a>
+
+			<a onclick="a('in-linux.html')" href="#in-linux.html"
+				class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_forward</i>
+					<span class="doc-footer-nav-direction">Next</span>
+					<div class="doc-footer-nav-chapter">运行在Linux</div>
+				</div>
+			</a>
+		</div>
+	</div>
 </div>
