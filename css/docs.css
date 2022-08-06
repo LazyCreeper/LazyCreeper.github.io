@@ -7,7 +7,7 @@ body {
 }
 
 pre, code {
-  font-family: "Cascadia Code","Source Code Pro", Consolas,"Courier New", "Courier"!important;
+  font-family: "Cascadia Code","Source Code Pro", Consolas,MiSans,"小米兰亭","等线","Courier New", "Courier"!important;
 }
 
 .mdui-toolbar-spacer {
