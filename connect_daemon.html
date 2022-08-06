@@ -1,0 +1,98 @@
+<meta charset="utf-8" />
+<link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css" type="text/css"
+	rel="stylesheet" />
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/js/mdui.min.js"
+	type="application/javascript"></script>
+<link rel="stylesheet" href="./css/docs.css" />
+<div class="mdui-container doc-container doc-no-cover">
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+	</div>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");
+		document.title = "连接守护进程 - MCSManager 帮助文档"
+	</script>
+
+	<h1 class="doc-title mdui-text-color-theme">连接守护进程</h1>
+	<nav class="doc-toc mdui-text-color-theme">
+		<ul>
+			<li><a data-scroll="" href="#如何使用">如何使用</a></li>
+			<li><a data-scroll="" href="#如何知道守护进程的密钥">如何知道守护进程的密钥</a></li>
+			<li><a data-scroll="" href="#连接协议">连接协议</a></li>
+			
+		</ul>
+	</nav>
+	<div class="doc-chapter">
+		<!--如何使用-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				如何使用<a class="doc-anchor" id="如何使用"></a>
+		    </h2>
+		    <p>在面板左侧的<code>守护进程</code>或<code>节点管理</code>界面，可以看见所有的守护进程，如果是<code>localhost</code>则代表此服务在本地，您可以在全世界任何一台拥有公网 IP 的服务器上部署远程守护进程，然后利用此界面连接它。</p>
+			<blockquote>默认情况下，守护进程会自动连接本地节点，请将本地的守护进程 daemon 文件夹和 web 文件夹处于同级目录（默认情况），面板会自动识别，如果没有识别到，请重启一次面板即可。</blockquote>
+		</div>
+
+		<!--怎么知道密钥-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				如何知道守护进程的密钥<a class="doc-anchor" id="如何知道守护进程的密钥"></a>
+		    </h2>
+			<p>
+				密钥默认情况下会在启动时输出显示，请及时复制，或者去以下方法查找：<br>
+				<ol>
+					<li>&lt;面板安装路径&gt;/daemon/data/Config/global.json</li>
+					<li>在<code>daemon</code>窗口内输入<code>key</code>即可获得</li>
+				</ol>
+			</p>
+		</div>
+
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				连接协议<a class="doc-anchor" id="连接协议"></a>
+		    </h2>
+		    <p>填写 <code>远程服务所在主机的IP地址</code> 时，您可以直接填写域名或 IP，但是如果有特殊需求，您也可以以 <code>ws://x.x.x.x</code> 或 <code>wss://x.x.x.x</code> 选择连接协议。<br><code>ws</code> 对应 <code>http</code>，<code>wss</code> 对应 <code>https</code>。</p>
+			<blockquote>
+				<p>如果您不知道这些意味着什么，那么就不要进行任何操作。</p></blockquote>
+		</div>
+		
+		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+			<br>
+			<div class="mdui-typo">
+				<div class="mdui-chip"> 
+					<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2022-8-6</code></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--正文结束-->
+	
+<div class="doc-footer-nav mdui-color-theme">
+	<div class="mdui-container">
+		<div class="mdui-row">
+			<a onclick="a(页面.html)" href="#页面.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_back</i>
+					<span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+					<div class="doc-footer-nav-chapter mdui-hidden-xs-down">上一个</div>
+				</div>
+			</a>
+      
+			<a onclick="a(页面.html)" href="#页面.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_forward</i>
+					<span class="doc-footer-nav-direction">Next</span>
+					<div class="doc-footer-nav-chapter">下一个</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
