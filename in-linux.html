@@ -40,7 +40,7 @@
 		<!--Ubuntu-->
 		<div class="mdui-typo">
 		   <h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme" >运行在Ubuntu<a class="doc-anchor" id="ubuntu"></a><small>（这里使用Win子系统Ubuntu演示)</small></h2>
-		   <p class="mdui-typo-headline">第零步：输入<code>sudo -i</code>切换到<code>root</code>用户</p>
+		   <p class="mdui-typo-headline">第零步：输入<code>sudo -i</code>切换到<code>root</code>用户（如果已是 root 用户请跳过）</p>
 			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fc5b340.jpg" class="mdui-hoverable">
 			<p class="mdui-typo-headline">第一步：输入<code>apt update</code>更新包</p>
 			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fd2f5c9.jpg" class="mdui-hoverable">
@@ -53,10 +53,10 @@
 			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fdaf74e.jpg" class="mdui-hoverable">
 			<p class="mdui-typo-headline">第四步 [ 可选 ]：输入<code>apt -y install npm</code>安装<code>npm</code><br>
 			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fd664d1.jpg" class="mdui-hoverable">
-			<p class="mdui-typo-headline">第五步：输入：<code>git clone https://github.com/Suwings/MCSManager.git</code>克隆源码</p>
-			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fe18d1b.jpg" class="mdui-hoverable">
-			<p class="mdui-typo-headline">第六步：输入<code>cd MCSManager</code>进入程序根目录，然后执行命令<code>npm i</code>，如果提示<code>-bash: npm: command not found</code>就去执行第四步</p>
-			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fc468fd.jpg" class="mdui-hoverable">
+			<p class="mdui-typo-headline">第五步：输入：<code>git clone https://github.com/MCSManager/MCSManager-v8.7.git</code>克隆源码</p>
+			<!--<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fe18d1b.jpg" class="mdui-hoverable">-->
+			<p class="mdui-typo-headline">第六步：输入<code>cd MCSManager-v8.7</code>进入程序根目录，然后执行命令<code>npm i</code>，如果提示<code>-bash: npm: command not found</code>就去执行第四步</p>
+			<!--<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fc468fd.jpg" class="mdui-hoverable">-->
 			<p class="mdui-typo-headline">第七步：执行命令<code>node app.js</code>或者<code>npm start</code>启动面板</p>
 			<img src="https://s1.imlazy.ink:233/img/2019/08/04/5d46d3fca3acd.jpg" class="mdui-hoverable">
 			<p class="mdui-typo-headline">最后一步：打开浏览器访问 http://你的服务器地址:23333 然后输入默认账号：<code>#master</code>密码：<code>123456</code>就可以进入面板啦！</p>
@@ -76,10 +76,10 @@
 			<img src='https://tva1.sinaimg.cn/large/006MpbfMgy1gtf0sry9uwj307l01aa9v.jpg' alt='image' class="mdui-hoverable">
 			<p class="mdui-typo-headline">第六步：输入<code>yum -y install git</code>安装git</p>
 			<img src='https://i.zerodream.net/fe11dac671aed0d0bfe0166345439162.jpg' alt='image' class="mdui-hoverable">
-			<p class="mdui-typo-headline">第七步：输入<code>git clone https://github.com/Suwings/MCSManager.git</code>克隆源码</p>
-			<img src='https://i.zerodream.net/617cd624e3caef8b9d13e4eb491fc364.jpg' alt='image' class="mdui-hoverable">
-			<p class="mdui-typo-headline">第八步：输入命令<code>cd MCSManager</code>进入程序根目录，然后执行命令<code>npm i</code>安装依赖</p>
-			<img src='https://i.zerodream.net/36a451ac6ce65035ba517ff4ce6239f9.jpg' alt='image' class="mdui-hoverable">
+			<p class="mdui-typo-headline">第七步：输入<code>git clone https://github.com/MCSManager/MCSManager-v8.7.git</code>克隆源码</p>
+			<!--<img src='https://i.zerodream.net/617cd624e3caef8b9d13e4eb491fc364.jpg' alt='image' class="mdui-hoverable">-->
+			<p class="mdui-typo-headline">第八步：输入命令<code>cd MCSManager-v8.7</code>进入程序根目录，然后执行命令<code>npm i</code>安装依赖</p>
+			<!--<img src='https://i.zerodream.net/36a451ac6ce65035ba517ff4ce6239f9.jpg' alt='image' class="mdui-hoverable">-->
 			<p class="mdui-typo-headline">第九步：输入<code>npm start</code>或者<code>node app.js</code>就能启动面板了</p>
 			<img src='https://i.zerodream.net/7b1adcb1e44a3bb445b225a2c4c87dfd.jpg' alt='image' class="mdui-hoverable">
 			<p class="mdui-typo-headline">第十步：打开浏览器访问 http://你的服务器地址:23333 就能进入面板了。如果是本机测试就访问<a href="http://127.0.0.1:23333">127.0.0.1:23333</a>然后输入默认账号：<code>#master</code>密码：<code>123456</code>就可以进入面板啦！</p>
@@ -100,7 +100,7 @@
 		<!--开机自启动-->
 		<div class="mdui-typo">
 			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">开机自启动<a class="doc-anchor" id="auto"></a></h2>
-			<p class="mdui-typo-headline"><strong>注意：</strong>该方法同样也可以让面板保持在后台运行，无需使用 screen 。如果你使用的是<a data-scroll="" href="#Installer">一键安装脚本</a>，则无需配置</p>
+			<p ><strong>注意：</strong>该方法同样也可以让面板保持在后台运行，无需使用 screen 。如果你使用的是<a data-scroll="" href="#Installer">一键安装脚本</a>，则无需配置</p>
 			<p class="mdui-typo-headline">第一步：创建文件<code>/lib/systemd/system/mcsm.service</code></p>
 			<pre>[Unit]
 Description=MCSManager 											
@@ -126,7 +126,7 @@ WantedBy=multi-user.target </pre>
 			<div class="mdui-typo">
 				<div class="mdui-chip"> 
 					<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-					<span class="mdui-chip-title">该页面最后编辑于<code>2021-12-4</code></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2022-8-6</code></span>
 				</div>
 			</div>
 		</div>
@@ -150,7 +150,7 @@ WantedBy=multi-user.target </pre>
 	<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#centos" mdui-tooltip="{content: 'CentOS'}"><i class="mdui-icon material-icons">directions_run</i></a>
 	<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#keep" mdui-tooltip="{content: '保持在后台运行'}"><i class="mdui-icon material-icons">&#xeb3e;</i></a>
 	<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#auto" mdui-tooltip="{content: '开机自启动'}"><i class="mdui-icon material-icons">&#xe52f;</i></a>
-    <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" href="https://s1.imlazy.ink:233/img/2020/07/07/f0d49c4bb6c8520200707.jpg" mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
+    <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" href="https://qn-store-pub-tx.seewo.com/676b69a1b8ad4f9391555c127a2331c7165760252223383" mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
   </div>
 </div>
 
