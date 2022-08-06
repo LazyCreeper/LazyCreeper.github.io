@@ -1,7 +1,9 @@
-<meta charset="utf-8">
-<link rel="stylesheet" href="./css/mdui.css"/>
-<script src="./js/mdui.js"></script>
-<link rel="stylesheet" href="./css/docs.css"/>
+<meta charset="utf-8" />
+<link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css" type="text/css"
+	rel="stylesheet" />
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/js/mdui.min.js"
+	type="application/javascript"></script>
+<link rel="stylesheet" href="./css/docs.css" />
 <div class="mdui-container doc-container doc-no-cover">
 	<div class="null">
 		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
@@ -18,32 +20,55 @@
 		document.title = "运行在Andorid - MCSManager 帮助文档"
 	</script>
 
-  <h1 class="doc-title mdui-text-color-theme">运行在Android</h1>
+	<h1 class="doc-title mdui-text-color-theme">运行在Android</h1>
 	<div class="doc-chapter">
-    <div class="mdui-typo">
-		<p class="mdui-typo-headline">第一步：安装 <a href="https://termux.com/">Termux</a></p>
-		<img src='https://i.zerodream.net/40287c482fcaa65dcdc945400ada512f.png' alt='image' class="mdui-hoverable">
-		<p class="mdui-typo-headline">第二步：打开Termux，输入<code>apt update</code>并按回车更新包</p>
-		<img src='https://i.zerodream.net/4ea528871704d03aecc60009c17e6225.png' alt='image' class="mdui-hoverable">
-		<p class="mdui-typo-headline">第三步：输入<code>apt install nodejs</code>安装Nodejs</p>
-		<img src='https://i.zerodream.net/bc59b15cfd12b000e0bd896b8fadece5.png' alt='image' class="mdui-hoverable">
-		<p class="mdui-typo-headline">第四步：输入<code>apt install git</code>安装git</p>
-		<img src='https://i.loli.net/2019/08/05/lRkOs7Za1iQwrAH.jpg' alt='image'>
-		<p class="mdui-typo-headline">第五步[可选]：输入命令<code>pkg install npm</code>安装npm</p>
-		<img src='https://s1.imlazy.ink:233/img/2019/08/05/5d482db5a7784.jpg' alt='image' class="mdui-hoverable">
-		<p class="mdui-typo-headline">第六步：输入<code>git clone https://github.com/MCSManager/MCSManager-v8.7.git</code>克隆源代码</p>
-		<!--<img src="https://s1.imlazy.ink:233/img/2019/08/05/5d482eac79924.png" class="mdui-hoverable">-->
-		<p class="mdui-typo-headline">第七步：输入<code>cd MCSManager-v8.7</code>进入程序根目录</p>
-		<!--<img src='https://i.zerodream.net/b82faae104485be006c1c749d3795b34.png' alt='image' class="mdui-hoverable">-->
-		<p class="mdui-typo-headline">第八步：输入<code>npm install --production</code>安装(如果出现错误请从第五步开始)</p>
-		<img src='https://i.zerodream.net/dc11c99b16c7954e027b0f2014be0d68.png' alt='image' class="mdui-hoverable">
-		<p class="mdui-typo-headline">最后输入<code>npm start</code>或者<code>node app.js</code>启动你的面板</p>
-		<img src='https://i.zerodream.net/8856ac5c4a491c82d5b01dcf665ab268.png' alt='image' class="mdui-hoverable">
-         <p>视频教程来惹~~：<a href="https://www.bilibili.com/video/av85160380/" target="_blank">https://www.bilibili.com/video/av85160380/</a></p>
-		 <div class="mdui-video-container">
-			<iframe src="//player.bilibili.com/player.html?aid=85160380&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+    	<div class="mdui-typo">
+			<ol>
+				<li>安装 <a href="https://termux.com/" target="_blank">Termux</a></li>
+				<li>更新软件包</li>
+				<pre><code class="language-bash">apt update</code></pre>
+				<li>安装 Nodejs</li>
+				<pre><code class="language-bash">apt install nodejs</code></pre>
+				<li>安装 npm</li>
+				<pre><code class="language-bash">pkg install npm</code></pre>
+				<li>安装 git</li>
+				<pre><code class="language-bash">pkg install git</code></pre>
+				<li>准备安装目录<code>mcsm</code></li>
+				<pre><code class="language-bash">cd ~</code><code class="language-bash">mkdir mcsm</code><code class="language-bash">cd ~/mcsm</code></pre>
+				<li>下载面板端（Web）程序</li>
+				<pre><code class="language-bash">git clone https://github.com/MCSManager/MCSManager-Web-Production.git</code></pre>
+				<li>重命名文件夹并进入</li>
+				<pre><code class="language-bash">mv MCSManager-Web-Production web</code><code class="language-bash">cd web</code></pre>
+				<li>安装依赖库</li>
+				<pre><code class="language-bash">npm install --production --registry=https://registry.npmmirror.com/</code></pre>
+				<li>返回安装目录</li>
+				<pre><code class="language-bash">cd ~/mcsm</code></pre>
+				<li>下载守护进程（Daemon）程序</li>
+				<pre><code class="language-bash">git clone https://github.com/MCSManager/MCSManager-Daemon-Production.git</code></pre>
+				<li>重命名文件夹并进入</li>
+				<pre><code class="language-bash">mv MCSManager-Daemon-Production daemon</code><code class="language-bash">cd daemon</code></pre>
+				<li>安装依赖库</li>
+				<pre><code class="language-bash">npm install --production --registry=https://registry.npmmirror.com/</code></pre>
+				<li>然后启动守护进程（Daemon）</li>
+				<pre><code class="language-bash">node app.js</code></pre>
+				<li>在屏幕左边往右滑，选择 NEW SESSION 新建一个终端</li>
+				<img src="https://qn-store-pub-tx.seewo.com/0e94b3461aa642cb96650ce372bc1c5c165978631184186" width="50%">
+				<li>进入Web端目录</li>
+				<pre><code class="language-bash">cd ~/mcsm/web</code></pre>
+				<li>启动面板（Web）</li>
+				<pre><code class="language-bash">node app.js</code></pre>
+			</ol>
+			<p>至此，面板已经安装完成了，启动浏览器访问<a>http://安卓设备的ip地址:23333/</a>即可进入面板<br>默认情况下，面板端会自动扫描 daemon 文件夹并且自动连接到守护进程。</p>
+			<h3 class="doc-chapter-title-first mdui-text-color-theme">手机 ip 地址获取方法</h1>
+			<ol>
+				<li>在设置->WLAN里面看</li>
+				<li>如果设置里面没有，可以使用第三方软件查看（比如Devcheck）</li>
+				<img src="https://qn-store-pub-tx.seewo.com/0e94b3461aa642cb96650ce372bc1c5c165978658539264">
+				<li>在路由器后台看</li>
+			</ol>
+			<p>经测试，MCSManager在小米平板1、红米Note5A，酷珀K11这三台设备上运行良好</p>
 		</div>
-  </div>
+ 	</div>
    <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
 	<br>
     <div class="mdui-typo">
@@ -94,3 +119,4 @@
           </div>
   </div>
 </div>
+<script>hljs.highlightAll();</script>
