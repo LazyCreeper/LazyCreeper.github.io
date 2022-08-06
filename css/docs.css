@@ -53,10 +53,16 @@ body {
 
 @media (max-width:790px) {
 	.abg {
-		background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.43) 0%, rgba(28, 103, 146, 0.7) 100%),url(https://api.imlazy.ink/img-phone/)!important;
+		background-image: linear-gradient(135deg, rgba(230,230,230, 0.43) 0%, rgba(195,233,255, 0.7) 100%),url(https://api.imlazy.ink/img-phone/)!important;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
+
+  @media (prefers-color-scheme: dark) {
+    .abg {
+      background-image: linear-gradient(135deg, rgba(48,48,48,0.5), rgba(48,48,48,0.5) 100%),url('https://api.imlazy.ink/img-phone/')!important;
+    }
+  }
 	
 	.index-a {
 		display:block
