@@ -6,6 +6,10 @@ body {
   font-family: MiSans,"小米兰亭","等线", Roboto, "微软雅黑", Consolas;
 }
 
+pre, code {
+  font-family: "Cascadia Code","Source Code Pro", Consolas,"Courier New", "Courier"!important;
+}
+
 .mdui-toolbar-spacer {
   height: 100%;
 }
