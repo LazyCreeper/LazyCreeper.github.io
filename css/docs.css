@@ -1,9 +1,9 @@
-@font-face {
+/*@font-face {
   font-family: tx;
   src: url(../fonts/tx.woff2) format("woff2");
-}
+}*/
 body {
-  font-family: "等线", Roboto, "微软雅黑", Consolas;
+  font-family: MiSans,"小米兰亭","等线", Roboto, "微软雅黑", Consolas;
 }
 
 .mdui-toolbar-spacer {
