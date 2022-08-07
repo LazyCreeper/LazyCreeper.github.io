@@ -1,0 +1,86 @@
+<meta charset="utf-8" />
+<link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css" type="text/css"
+	rel="stylesheet" />
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/js/mdui.min.js"
+	type="application/javascript"></script>
+<link rel="stylesheet" href="./css/docs.css" />
+<div class="mdui-container doc-container doc-no-cover">
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+	</div>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");
+		document.title = "修改访问端口 - MCSManager 帮助文档"
+	</script>
+
+	<h1 class="doc-title mdui-text-color-theme">修改访问端口</h1>
+	<nav class="doc-toc mdui-text-color-theme">
+		<ul>
+			<li><a data-scroll="" href="#修改面板访问端口">修改面板访问端口</a></li>
+			<li><a data-scroll="" href="#修改守护进程端口">修改守护进程端口</a></li>
+		</ul>
+	</nav>
+	<div class="doc-chapter">
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				修改面板访问端口<a class="doc-anchor" id="修改面板访问端口"></a>
+		    </h2>
+		    <p>修改面板端（Web）的端口请进入面板，左侧菜单的<kbd>设置</kbd>选项，您可以看见端口设置，修改它并重启面板即可。</p>
+
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				修改守护进程端口<a class="doc-anchor" id="修改守护进程端口"></a>
+		    </h2>
+		    找到<code><面板安装路径>/daemon/data/Config/global.json</code>
+			<pre><code class="language-json">{
+  "version": 2,
+  "ip": "",               // 绑定 IP，用于绑定多网卡的情况，请勿乱用 
+  "port": 24444,          // 守护进程端口
+  "key": "8f75626304c34e302c3f9557e694e17890b2f853cf1be65",   // 守护进程访问密钥（面板连接用）
+  "maxFileTask": 2,       // 每个实例，最大同时解压缩任务数
+  "maxZipFileSize": 60    // 最大文件解压缩限制，单位（GB）
+}</code></pre>
+			<p>修改完后重启守护进程即可</p>
+		</div>
+		
+		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+			<br>
+			<div class="mdui-typo">
+				<div class="mdui-chip"> 
+					<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2022-8-6</code></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--正文结束-->
+	
+<div class="doc-footer-nav mdui-color-theme">
+	<div class="mdui-container">
+		<div class="mdui-row">
+			<a onclick="a('pty.html')" href="#pty.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_back</i>
+					<span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+					<div class="doc-footer-nav-chapter mdui-hidden-xs-down">仿真终端</div>
+				</div>
+			</a>
+      
+			<a onclick="a('file_unzip_limit.html')" href="#file_unzip_limit.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_forward</i>
+					<span class="doc-footer-nav-direction">Next</span>
+					<div class="doc-footer-nav-chapter">更改文件解压缩大小限制</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+<script>hljs.highlightAll();</script>
