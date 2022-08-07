@@ -1,0 +1,90 @@
+<meta charset="utf-8" />
+<link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/css/mdui.min.css" type="text/css"
+	rel="stylesheet" />
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mdui/1.0.2/js/mdui.min.js"
+	type="application/javascript"></script>
+<link rel="stylesheet" href="./css/docs.css" />
+<div class="mdui-container doc-container doc-no-cover">
+	<div class="null">
+		<h1 class="mdui-text-color-red-a400 mdui-typo-display-3">警告：文档成分丢失，请返回首页后重试！</h1>
+		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
+	</div>
+	<script>
+		if ( $(".null").length > 0 ) { 
+			$('.null').css('display', 'none'); // 存在
+		}
+		$('body').addClass('mdui-appbar-with-toolbar');
+		$('body').addClass('mdui-drawer-body-left');
+		$('#main-drawer').removeClass('mdui-drawer-close');
+		$("header").css("display", "block");
+		document.title = "仿真终端 - MCSManager 帮助文档"
+	</script>
+
+	<h1 class="doc-title mdui-text-color-theme">仿真终端</h1>
+	<nav class="doc-toc mdui-text-color-theme">
+		<ul>
+			<li><a data-scroll="" href="#开启或关闭仿真终端">开启或关闭仿真终端</a></li>
+			<li><a data-scroll="" href="#仿真终端乱码">仿真终端乱码</a></li>
+			<li><a data-scroll="" href="#仿真终端能做什么？">仿真终端能做什么？</a></li>
+		</ul>
+	</nav>
+	<div class="doc-chapter">
+		<!--开启或关闭仿真终端-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				开启或关闭仿真终端<a class="doc-anchor" id="开启或关闭仿真终端"></a>
+		    </h2>
+		    进入实例终端界面，点击左侧的“实例设置”按钮，在弹出的窗口中有一个“仿真终端”开关，通过更改此项目来更改。
+		</div>
+
+		<!--仿真终端乱码-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				仿真终端乱码<a class="doc-anchor" id="仿真终端乱码"></a>
+		    </h2>
+		    参考：<a onclick="a('模板.html')" href="#模板.html">乱码常见问题</a>
+		</div>
+
+		<!--仿真终端能做什么？-->
+		<div class="mdui-typo">
+			<h2 class="doc-chapter-title doc-chapter-title-first mdui-text-color-theme">
+				仿真终端能做什么？<a class="doc-anchor" id="仿真终端能做什么？"></a>
+		    </h2>
+		    <p></p>MCSManager 9.5 以上提供<code>仿真终端</code>功能，它可以实现在网页输入<kbd>Ctrl</kbd>，<kbd>Tab</kbd>，<kbd>Alt</kbd>等快捷键，就像一个 SSH 客户端一样，拥有完全的终端能力，支持所有控制台程序。<br>
+			众所周知，程序拥有输入与输出流，但是数据流与显示器之间有一个区别，那便是缺少行和高的排列维度。简而言之，PTY 的中文意义就是伪装设备终端，让我们的程序伪装成一个拥有固定高宽的显示器，接受来自程序的输出内容，这就是仿真终端的工作原理，专业术语称之为 PTY（pseudo-teletype）。</p>
+		</div>
+		
+		<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+			<br>
+			<div class="mdui-typo">
+				<div class="mdui-chip"> 
+					<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+					<span class="mdui-chip-title">该页面最后编辑于<code>2022-8-7</code></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--正文结束-->
+	
+<div class="doc-footer-nav mdui-color-theme">
+	<div class="mdui-container">
+		<div class="mdui-row">
+			<a onclick="a('system_structure.html')" href="#system_structure.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_back</i>
+					<span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+					<div class="doc-footer-nav-chapter mdui-hidden-xs-down">分布式工作原理</div>
+				</div>
+			</a>
+      
+			<a onclick="a('modify_port.html')" href="#modify_port.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_forward</i>
+					<span class="doc-footer-nav-direction">Next</span>
+					<div class="doc-footer-nav-chapter">修改访问端口</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
