@@ -10,7 +10,7 @@
 		<a class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red-a700" href="./index.html">返回首页</a>
 	</div>
 	<script>
-		if ( $(".null").length > 0 ) { 
+		if ($(".null").length > 0) {
 			$('.null').css('display', 'none'); // 存在
 		}
 		$('body').addClass('mdui-appbar-with-toolbar');
@@ -22,7 +22,7 @@
 
 	<h1 class="doc-title mdui-text-color-theme">运行在Android</h1>
 	<div class="doc-chapter">
-    	<div class="mdui-typo">
+		<div class="mdui-typo">
 			<ol>
 				<li>安装 <a href="https://termux.com/" target="_blank">Termux</a></li>
 				<li>更新软件包</li>
@@ -52,7 +52,8 @@
 				<li>然后启动守护进程（Daemon）</li>
 				<pre><code class="language-bash">node app.js</code></pre>
 				<li>在屏幕左边往右滑，选择 NEW SESSION 新建一个终端</li>
-				<img src="https://qn-store-pub-tx.seewo.com/0e94b3461aa642cb96650ce372bc1c5c165978631184186" width="50%">
+				<img src="https://blog.imlazy.ink:233/usr/uploads/2023/04/0e94b3461aa642cb96650ce372bc1c5c165978631184186"
+					width="50%">
 				<li>进入Web端目录</li>
 				<pre><code class="language-bash">cd ~/mcsm/web</code></pre>
 				<li>启动面板（Web）</li>
@@ -60,63 +61,67 @@
 			</ol>
 			<p>至此，面板已经安装完成了，启动浏览器访问<a>http://安卓设备的ip地址:23333/</a>即可进入面板<br>默认情况下，面板端会自动扫描 daemon 文件夹并且自动连接到守护进程。</p>
 			<h3 class="doc-chapter-title-first mdui-text-color-theme">手机 ip 地址获取方法</h1>
-			<ol>
-				<li>在设置->WLAN里面看</li>
-				<li>如果设置里面没有，可以使用第三方软件查看（比如Devcheck）</li>
-				<img src="https://qn-store-pub-tx.seewo.com/0e94b3461aa642cb96650ce372bc1c5c165978658539264">
-				<li>在路由器后台看</li>
-			</ol>
-			<p>经测试，MCSManager在小米平板1、红米Note5A，酷珀K11这三台设备上运行良好</p>
+				<ol>
+					<li>在设置->WLAN里面看</li>
+					<li>如果设置里面没有，可以使用第三方软件查看（比如Devcheck）</li>
+					<img src="https://blog.imlazy.ink:233/usr/uploads/2023/04/0e94b3461aa642cb96650ce372bc1c5c165978658539264">
+					<li>在路由器后台看</li>
+				</ol>
+				<p>经测试，MCSManager在小米平板1、红米Note5A，酷珀K11这三台设备上运行良好</p>
 		</div>
- 	</div>
-   <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
-	<br>
-    <div class="mdui-typo">
-		<div class="mdui-chip"> 
-		     <span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
-             <span class="mdui-chip-title">该页面最后编辑于<code>2022-8-6</code></span>
-		</div>
-    </div>
 	</div>
-  
+	<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-3 mdui-row-lg-4">
+		<br>
+		<div class="mdui-typo">
+			<div class="mdui-chip">
+				<span class="mdui-chip-icon mdui-color-blue"><i class="mdui-icon material-icons">access_time</i></span>
+				<span class="mdui-chip-title">该页面最后编辑于<code>2022-8-6</code></span>
+			</div>
+		</div>
+	</div>
+
 </div>
 </div>
 <!--正文结束-->
-	
-	<!--右下角浮动按钮-->
+
+<!--右下角浮动按钮-->
 <div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
-  <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
-    <!-- 默认显示的图标 -->
-    <i class="mdui-icon material-icons">add</i>
-    
-	<!--hover-->
-    <i class="mdui-icon mdui-fab-opened material-icons">add</i>
-  </button>
-  <div class="mdui-fab-dial">
-    <a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#" mdui-tooltip="{content: '回到顶部'}"><i class="mdui-icon material-icons">navigation</i></a>
-    <a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" href="https://qn-store-pub-tx.seewo.com/676b69a1b8ad4f9391555c127a2331c7165760252223383" mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
-  </div>
+	<button class="mdui-fab mdui-ripple mdui-color-theme-accent">
+		<!-- 默认显示的图标 -->
+		<i class="mdui-icon material-icons">add</i>
+
+		<!--hover-->
+		<i class="mdui-icon mdui-fab-opened material-icons">add</i>
+	</button>
+	<div class="mdui-fab-dial">
+		<a data-scroll="" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" href="#"
+			mdui-tooltip="{content: '回到顶部'}"><i class="mdui-icon material-icons">navigation</i></a>
+		<a class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" href="https://cdn.imlazy.ink:233/img/20220924.jpg"
+			mdui-tooltip="{content: '捐助我'}"><i class="mdui-icon material-icons">attach_money</i></a>
+	</div>
 </div>
 <!--Next-->
 <div class="doc-footer-nav mdui-color-theme">
-  <div class="mdui-container">
-    <div class="mdui-row">
-            <a onclick="a('in-macos.html')" href="#in-macos.html" class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
-        <div class="doc-footer-nav-text">
-          <i class="mdui-icon material-icons">arrow_back</i>
-          <span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
-          <div class="doc-footer-nav-chapter mdui-hidden-xs-down">运行在MacOS</div>
-        </div>
-      </a>
-      
-            <a onclick="a('otpanel.html')" href="#otpanel.html" class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
-        <div class="doc-footer-nav-text">
-          <i class="mdui-icon material-icons">arrow_forward</i>
-          <span class="doc-footer-nav-direction">Next</span>
-          <div class="doc-footer-nav-chapter">运行在其他面板上</div>
-        </div>
-      </a>
-          </div>
-  </div>
+	<div class="mdui-container">
+		<div class="mdui-row">
+			<a onclick="a('in-macos.html')" href="#in-macos.html"
+				class="mdui-ripple mdui-color-theme mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_back</i>
+					<span class="doc-footer-nav-direction mdui-hidden-xs-down">Previous</span>
+					<div class="doc-footer-nav-chapter mdui-hidden-xs-down">运行在MacOS</div>
+				</div>
+			</a>
+
+			<a onclick="a('otpanel.html')" href="#otpanel.html"
+				class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
+				<div class="doc-footer-nav-text">
+					<i class="mdui-icon material-icons">arrow_forward</i>
+					<span class="doc-footer-nav-direction">Next</span>
+					<div class="doc-footer-nav-chapter">运行在其他面板上</div>
+				</div>
+			</a>
+		</div>
+	</div>
 </div>
 <script>hljs.highlightAll();</script>
